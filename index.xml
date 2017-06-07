@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogrammer&#39;s.Net</title>
+    <link>http://blogrammers.net/</link>
+    <description>Recent content on Blogrammer&#39;s.Net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 07 Jun 2017 15:50:05 +0900</lastBuildDate>
+    
+	<atom:link href="http://blogrammers.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>コマンドプロンプトの表示を変更する</title>
+      <link>http://blogrammers.net/post/2017/06/07/cmd-prompt/</link>
+      <pubDate>Wed, 07 Jun 2017 15:50:05 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/06/07/cmd-prompt/</guid>
+      <description>コマンドプロンプトを使って作業するときプロンプトにカレントディレクトリのパスが表示され、カレントディレクトリによってコマンド入力位置が異なる。
+これがとてもウザいのでカスタマイズしてみた。
+デフォルトのプロンプト 以下のようにcdするたびに入力位置が変わり作業しづらい。 プロンプト変更 プロンプトに表示される内容はpromptコマンドで変更できる。
+prompt 特殊コード  ※特殊コードの大文字・小文字は問わない。
+   特殊コード 説明     $d 現在日付   $t 現在時刻(100分の1秒まで)   $h バックスペース(直前の1文字消去)   $g &amp;gt;   $l &amp;lt;   $q =   $v Windowsのバージョン   $$ $   $p カレントのドライブとパス   $s 空白   $_ 改行    どんなプロンプトが使いやすいか考えたが、とりあえず以下の三点を満たすプロンプトにする。
+ 現在日時を表示 カレントのドライブとパスを表示を表示 コマンド入力は常に同じ位置  この三つを改行して設定するには以下のようにする。</description>
+    </item>
+    
+    <item>
+      <title>CentOSにChromiumブラウザをインストール</title>
+      <link>http://blogrammers.net/post/2017/06/03/centos-chromium-install/</link>
+      <pubDate>Sat, 03 Jun 2017 10:29:43 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/06/03/centos-chromium-install/</guid>
+      <description>会社でも自宅でもブラウザはChromeを使っていて、サブPCのCentOSでもChromeを使いたいと思ったのでインストール方法について調べてみた。
+しかし、ChromeはCentOSには提供されていないらしい。
+なので、代わりにChromiumブラウザをインストールしてみた。
+ChromiumはChromeのベースになっているオープンソースプロジェクトで機能的にはあまりほとんど違いはないようだ。
+ChromeとChromium、何が違う?
+環境 CentOS6.8
+Chromiumブラウザインストール手順 rootでChromiumのyumリポジトリをダウンロード
+$ cd /etc/yum.repo.d $ wget http://people.centos.org/hughesjr/chromium/6/chromium-el6.repo  yumでchromiumをインストールする。何か聞かれたらyを入力して続ける。
+$ yum install chromium  正常にインストールが完了するとアプリケーションメニューから起動できる。 参考サイト http://dotnsf.blog.jp/archives/2924133.html</description>
+    </item>
+    
+    <item>
+      <title>CentOSのバージョン確認・アーキテクチャ確認のコマンド</title>
+      <link>http://blogrammers.net/post/2017/06/02/centos-version-arch/</link>
+      <pubDate>Fri, 02 Jun 2017 09:49:39 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/06/02/centos-version-arch/</guid>
+      <description> 自宅のサブPCとしてCentOSをたまに使っているのだが、バージョン確認のコマンドも知らなかったのでメモ。
+CentOSのバージョン確認 $ cat /etc/centos-release CentOS release 6.8 (Final)  アーキテクチャ確認(OSが32bitか64bitか確認) $ arch i686  32bitの場合i686、64bitの場合x86_64と表示される
+以下のコマンドでも確認できる。
+$ uname -a Linux localhost.home 2.6.32-642.11.1.el6.centos.plus.i686 #1 SMP Sat Nov 19 13:25:46 UTC 2016 i686 i686 i386 GNU/Linux $ uname -m i686  </description>
+    </item>
+    
+    <item>
+      <title>Windowsサービスのインストール</title>
+      <link>http://blogrammers.net/post/2017/06/01/windows-service-install/</link>
+      <pubDate>Thu, 01 Jun 2017 22:57:46 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/06/01/windows-service-install/</guid>
+      <description>exeをWindowsのサービスとして登録する機会があったので調べてみた。
+サービスとして登録するには以下のコマンドを実行する必要がある。
+サービスのインストール InstallUtil exeのパス  サービスのアンインストール InstallUtil /u exeのパス  InstallUtilのパス InstallUtil.exeは.NET Frameworkのバージョンごとにパスが異なる。
+なのでディレクトリを移動して実行するか絶対パスで実行するかしないといけない。
+   バージョン パス     2.0, 3.5 C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe   4 C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe    が、コマンドプロンプトではなく、Visual Studio用開発者コマンドプロンプトを起動すると上記のパスが環境変数PATHに設定されているのでInstallUtilだけで実行できるようだ。</description>
+    </item>
+    
+    <item>
+      <title>gitの設定ファイルについてまとめてみた</title>
+      <link>http://blogrammers.net/post/2017/06/01/git-config/</link>
+      <pubDate>Thu, 01 Jun 2017 22:16:45 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/06/01/git-config/</guid>
+      <description>Gitの設定ファイルには多くの設定があるが、設定ファイルの種類やよく使うコマンドについてまとめてみた。
+設定ファイルの種類 設定ファイルは以下の三つがあり、上から順に優先順位が高い。
+   ファイルパス 対象 使用するオプション     .git/config リポジトリごと --local または指定なし   ~/.gitconfig ユーザーごと --global   /etc/gitconfig /usr/local/etc/gitconfig
+など(※1) システム全体 --system    (※1)私のPCのWindows7ではC:\Program Files\Git\mingw64/etc/gitconfigにある
+設定の一覧を表示 $ git config (--system|--global|--local) -l  現在有効な設定を表示 $ git config -l  リポジトリ設定、ユーザー設定、システム設定をあわせて表示される
+設定値がどのファイルで設定されているかを表示 $ git config (--system|--global|--local) --show-origin -l  設定ファイルをエディタで編集 $ git config (--system|--global|--local) -e(--edit)  設定(置き換え) $ git config (--system|--global|--local) 設定名 設定値 # 設定が複数ある場合のすべて置き換え $ git config (--system|--global|--local) --replace-all 設定名 設定値  設定の追加 $ git config (--system|--global|--local) --add 設定名 設定値  設定の削除 $ git config (--system|--global|--local) --unset 設定名 # 設定が複数ある場合の１つを削除 $ git config (--system|--global|--local) --unset 設定名 設定値 # 設定が複数ある場合のすべてを削除 $ git config (--system|--global|--local) --unset-all 設定名  よく使う設定一覧 よく使う設定名と設定する内容を表にした。随時追加する予定。</description>
+    </item>
+    
+    <item>
+      <title>TortoiseGitのアイコンオーバレイが表示されない件の解決方法</title>
+      <link>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</link>
+      <pubDate>Tue, 30 May 2017 22:26:07 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</guid>
+      <description>TortoiseGitのアイコンオーバレイがなんらかのタイミングで表示されなくなったので解決方法のメモです。
+アイコンオーバレイとはエクスプローラーのフォルダやファイルのアイコン上に表示されるマークです。
+TortoiseGitの設定確認 TortoiseGitの[設定]-[アイコンオーバーレイ]-[オーバーレイハンドラー]の順に開きます。 TortoiseGit以外で9個のオーバーレイがインストールされているようです。
+レジストリの確認 レジストリエディターを起動するをクリックし、レジストリを確認します。
+キー：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+TortoiseGitで9個とTortoiseGit以外で9個で合計18個のオーバーレイの設定があります。
+Windowsの上限は15個のようです。
+この上限を超えると優先順位の低いものから表示されなくなるようです。
+不要レジストリの削除 解決方法としては、不要なオーバーレイアイコンを削除します。
+Dropboxのオーバーレイアイコンが４つありますが、Dropboxはほとんど使ってないので削除します。
+ちなみに一番下の三つのオーバーレイアイコンはWindowsで使用しているらしいのでそのままにしておきます。
+ EnhancedStorageShell
+ Offline Files
+ SharingPrivate
+  00aswと00avastも削除して問題ないと思いますがとりあえずそのままにしておきます。
+PC再起動 オーバーレイアイコンの設定が15個以下になったのでPCを再起動します。
+オーバーレイアイコンが表示されることを確認できました。</description>
+    </item>
+    
+    <item>
+      <title>git statusのショートフォーマット</title>
+      <link>http://blogrammers.net/post/2017/05/28/git-status-short/</link>
+      <pubDate>Sun, 28 May 2017 22:38:41 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/28/git-status-short/</guid>
+      <description>git statusってよく使いますよね。ファイルを追加する前やコミットした後、Git Bashの起動直後など実によく使います。
+そのよく使うコマンドの一つのgit statusですが普通にオプションなしで実行すると
+$ git status On branch master Changes to be committed: (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage) modified: b.txt Changes not staged for commit: (use &amp;quot;git add/rm &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed) (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory) deleted: dir1/d.txt Untracked files: (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to include in what will be committed) a.txt  こんな感じで非常に長いです。
+最近まで私も知らなかったのですが、実は、短いフォーマットで出力するオプションが存在します。</description>
+    </item>
+    
+    <item>
+      <title>ローカルリポジトリから共有リポジトリを作成する方法</title>
+      <link>http://blogrammers.net/post/2017/05/27/git-shared-repo-from-local-repo/</link>
+      <pubDate>Sat, 27 May 2017 22:57:38 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/27/git-shared-repo-from-local-repo/</guid>
+      <description>今回はローカルリポジトリが存在する状態で共有リポジトリを作成する方法を調べてみました。
+以下の二つがあるようです。
+ 空の共有リポジトリを作成しローカルリポジトリからプッシュする ローカルリポジトリを共有リポジトリとして複製する  準備 以下のディレクトリを用意します。
+ 共有リポジトリを作成するディレクトリ：c:/share
+ ローカルリポジトリのあるディレクトリ:c:/gittest/hoge
+(コミット履歴ありのリポジトリ)
+  方法１．空の共有リポジトリを作成しローカルリポジトリからプッシュ $ cd c:/share # 共有リポジトリは慣例としてディレクトリ名の終わりを`.git`にします $ mkdir hoge.git $ cd hoge.git $ git init --bare --shared  --bareはベアリポジトリを作成するオプション。 ベアリポジトリとは作業ディレクトリを持たないリポジトリです。
+--sharedはリポジトリを共有するときのアクセス権を設定するオプションで--shared=0666のようにアクセス権を設定します。
+パーミッション指定なしの場合は0664です。
+同じグループのみに読み書き許可するには0660を指定します。
+これで空の共有リポジトリが作成できました。
+あとはローカルリポジトリから共有リポジトリにプッシュします。
+$ cd c:/gittest/hoge # 送信対象で&amp;quot;*&amp;quot;を指定するとすべてのブランチ、タグがプッシュされるようです $ git push c:/share/hoge.git &amp;quot;*&amp;quot;  方法２.ローカルリポジトリを共有リポジトリとして複製する $ cd c:/share $ git clone --bare c:/gittest/hoge hoge.git  --bareはgit initと同様にベアリポジトリを作成します。
+方法1.と2.で設定ファイルが微妙に違ったりしますが、特に問題ないと思います。
+あとはこのリポジトリをサーバー上に置き、アクセスするためのプロトコルの準備をすると他の開発者と共有できるようになります。</description>
+    </item>
+    
+    <item>
+      <title>Gitリポジトリ内のファイル削除・ファイル名変更</title>
+      <link>http://blogrammers.net/post/2017/05/26/git-repo-rm-mv/</link>
+      <pubDate>Fri, 26 May 2017 21:53:17 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/26/git-repo-rm-mv/</guid>
+      <description>Gitで管理しているファイルを管理から外して削除したり、ファイル名を変更したい場合があります。
+Git Bashのrmやmvを実行してからでもできるのですが、gitに専用のコマンドが用意されています。
+両方試してみましょう。
+ 最初にrmやmvを実行する git rmまたはgit mvを実行する  リポジトリにファイル用意 a.txt
+b.txt
+最初にrmやmv実行 aを削除、bをファイル名変更します。
+$ rm a.txt $ mv b.txt c.txt $ git status -s D a.txt D b.txt ?? c.txt  a.txtとb.txtが削除ファイル、c.txtが未追跡ファイルとなりました。インデックスには登録されていませんのでgit addとgit commitします。
+$ git add . $ git status -s D a.txt R b.txt -&amp;gt; c.txt $ git commit -m &amp;quot;remove a.txt , rename b.txt &amp;quot;  git addすることによりa.txtが削除ファイル、b.txtがファイル名変更として認識されました。
+git rmまたはgit mv aを削除、bをファイル名変更します。
+$ git rm a.</description>
+    </item>
+    
+    <item>
+      <title>Hugoを使いはじめる</title>
+      <link>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</link>
+      <pubDate>Wed, 24 May 2017 21:55:38 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</guid>
+      <description>前回はHugoをインストールしたので今回はサイトを作って記事を書いて動作確認までやってみる。
+環境 Windows7 64bit
+Hugo v0.20.7
+サイト作成 適当なディレクトリでhugo new siteコマンドを実行しサイトディレクトリを作成。
+hugo new site [path]
+ここではC:\hugo\sitesにmysiteというサイトを作成する。
+$ mkdir c:\hugo\sites $ cd c:\hugo\sites $ hugo new site mysite $ tree . /F C:\HUGO\SITES\MYSITE │ config.toml │ ├─archetypes ├─content ├─data ├─layouts ├─static └─themes  1ファイル、6ディレクトリが作成された。
+   ファイル/ディレクトリ 説明     config.toml サイト全体の設定ファイル。デフォルトでは設定ファイルはTOML形式だがYAMLまたはJSONも使用できる。   archetypes このディレクトリのdefault.mdの設定が新しい記事に適用される。   content サイトのコンテンツ(記事など)を置く。   data config.toml以外にサイト全体で使用する設定ファイルを置く。TOML、YAML、またはJSON形式。   layouts コンテンツを静的なサイトに変換するために使用するレイアウト(html)を置く。   static 画像、CSS、JavaScriptなどの静的コンテンツを置く。   themes サイトのテーマを置く。テーマは独自に作成することも可能。    記事作成 サイトディレクトリでhugo newコマンドを実行し記事を作成。</description>
+    </item>
+    
+    <item>
+      <title>Gitで使うエディタを変更してみる</title>
+      <link>http://blogrammers.net/post/2017/05/24/git-config-editor/</link>
+      <pubDate>Wed, 24 May 2017 11:47:28 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/24/git-config-editor/</guid>
+      <description>gitでコミットのメッセージを編集するときなどに使うエディタはviエディタが使われます(※)。viに慣れていない人にとっては他のエディタを使いたいかもしれません。ここではWindows環境で他のエディタを使用するように設定を変更してみます。
+(※)ただし、デフォルトエディタ(環境変数VISUALまたはEDITOR)が設定されている場合は、そのエディタが使われます。
+エディタを変更する エディタを変更するためには以下のコマンドを実行します。
+$ git config --global core.editor &amp;quot;エディタを実行するコマンド&amp;quot;  今回はサクラエディタに変更してみます。
+# パスにスペースがあるのでシングルクオーテーションで囲む # -CODE=4はUTF-8で開くためのサクラエディタのオプション # フォルダの区切りは「/」(スラッシュ) $ git config --global core.editor &amp;quot;&#39;C:/Program Files/sakura2-2-0-1_x64/sakura.exe&#39; -CODE=4&amp;quot; # サクラエディタの実行ファイルのフォルダにパスが通っている場合は以下でもOK $ git config --global core.editor &amp;quot;sakura.exe -CODE=4&amp;quot;  実際にファイルを用意し、コミットすると
+$ echo a &amp;gt; a.txt $ git add a.txt $ git commit a.txt  コミットメッセージのファイルがサクラエディタで開きました。 まとめ viに慣れてない、またはお気に入りのエディタがある人は変更するとよいでしょう。</description>
+    </item>
+    
+    <item>
+      <title>Gitのローカルリポジトリ作成</title>
+      <link>http://blogrammers.net/post/2017/05/23/git-local-repo/</link>
+      <pubDate>Tue, 23 May 2017 17:45:03 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/23/git-local-repo/</guid>
+      <description>Gitのローカルリポジトリを作成するには以下の二つの方法があります。
+1. ディレクトリでリポジトリを作成(git init)
+2. 共有リポジトリを複製する(git clone)
+実際にローカルリポジトリを作成してみます。
+ディレクトリでリポジトリ作成  Gitで管理したいディレクトリを右クリックし、Git Bash Hereを選択してGit Bashを起動   Git Bashでgit initを実行  $ git init Initialized empty Git repository in C:/gittest/sample/.git/  すると、空のローカルリポジトリとして.gitディレクトリが作成されます。
+.gitディレクトリにはリポジトリデータ、設定ファイルなどが入っています。
+ローカルリポジトリの作成は、ディレクトリが空の場合でも、すでにファイルが存在する場合でも関係なく実行できます。 なので、開発しているプロジェクトを途中からGitで管理することが可能です。
+共有リポジトリを複製 ローカルにある共有リポジトリを複製してみます。
+ 共有リポジトリのパス：c:/share/test.git 複製するディレクトリのパス:c:/gittest
+# Git Bash起動し複製するディレクトリに移動 $ cd c:/gittest $ git clone c:/share/test.git Cloning into &#39;test&#39;... done. $ ls test/   testディレクトリができました。
+サーバーにある共有リポジトリの複製についてはまた後日やってみたいと思います。</description>
+    </item>
+    
+    <item>
+      <title>Gitの初期設定</title>
+      <link>http://blogrammers.net/post/2017/05/22/git-initial-setting/</link>
+      <pubDate>Mon, 22 May 2017 15:49:04 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/22/git-initial-setting/</guid>
+      <description>前回、Gitのインストールを行いました。今回はGitを使い始めるためのいくつかの設定をします。
+名前とメールアドレスの設定 GitでファイルをコミットしたときにAuthorが記録されるのですが、名前とメールアドレスを設定していないとコミット時にエラーになるので最初に設定しておきます。
+以下の二つのコマンドを実行します。
+$ git config --global user.name &amp;quot;Yamada Taro&amp;quot; $ git config --global user.email &amp;quot;yamadataro@example.com&amp;quot;  git configコマンドはGitの設定を表示したり変更したりするコマンドです。
+--globalを指定するとユーザのGitの設定が対象で、指定なしの場合はリポジトリのGitの設定が対象となります。
+~~globalで設定した内容は下記のファイルに書かれます。
+~/.gitconfig
+このファイルを直接編集してもよいのですが、いちいち開くのは面倒ですのでコマンドの方が便利です。また、以下のコマンドを実行すると.gitconfigをエディタで開くことができ、編集することもできます。
+$ git config --global -e または $ git config --global --edit  日本語ファイル名を表示する ファイル名に日本語が含まれる場合、git statusなどでファイル名がエスケープして表示されます。これを防止するには以下のコマンドを実行します。
+$ git config --global core.quotepath false  これでGitを使うための準備ができました。</description>
+    </item>
+    
+    <item>
+      <title>imgタグのalt属性とtitle属性の違い</title>
+      <link>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</link>
+      <pubDate>Mon, 22 May 2017 11:56:05 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</guid>
+      <description>HTMLで画像を表示する際に使用するimgタグですが、属性としてaltとtitleがあります。
+   属性 意味 必須     alt 代替テキストを指定 ○   title 説明(補足情報)を指定 -    alt属性は必須で代替テキストを指定し、title属性は省略可で説明を指定します。
+実際どのような違いがあるのでしょうか。調べてみました。
+alt属性  代替テキストを指定 画像を認識できない検索エンジンの説明として使う 指定すると画像を表示できないブラウザで表示され、音声読み上げソフトで読み上げられる img、input、applet、areaなど指定できる要素が限られてる  title属性  要素の説明(補足情報)のために使う 指定すると多くのブラウザではカーソルを合わせたときに吹き出しで表示される imgだけでなくほとんどすべての要素で指定することが可能  title属性の表示を確かめてみます。
+例 &amp;lt;!--title指定ありの画像--&amp;gt; &amp;lt;img src=&amp;quot;sample.png&amp;quot; alt=&amp;quot;サンプル画像1&amp;quot; title=&amp;quot;サンプル表示のための画像&amp;quot;&amp;gt; &amp;lt;!--title指定ありのリンク--&amp;gt; &amp;lt;a href=&amp;quot;http://www.google.co.jp/&amp;quot; title=&amp;quot;検索サイトへ&amp;quot;&amp;gt;google&amp;lt;/a&amp;gt;  実際の表示 google
+カーソルを合わせたときにtitle属性で指定した説明が吹き出しで表示されると思います。ただ、画像の場合は画像が表示されているので吹き出しは特に必要なさそうですね。リンクの場合は、リンクをクリックする先の説明として利用すると有効かもしれません。
+alt属性はアクセシビリティのために有効になりますし、SEO対策にもなりますのできちんと指定する方がよさそうです。</description>
+    </item>
+    
+    <item>
+      <title>GitHubのリポジトリを削除する方法</title>
+      <link>http://blogrammers.net/post/2017/05/22/github-delete-repo/</link>
+      <pubDate>Mon, 22 May 2017 09:44:16 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/22/github-delete-repo/</guid>
+      <description>GitHubにいくつかリポジトリを作成していますが、不要なリポジトリがあるので削除してみました。
+削除方法は以下のとおりです。
+ GitHubのリポジトリのページにアクセス Settingsをクリック  遷移した画面の一番下のDanger ZoneにあるDelete this repositoriyをクリック  削除すると元に戻せないメッセージなどの警告ダイアログが出る
+リポジトリ名を入力し、I understand the consequences, delete this repositoryをクリックするかEnterを押す   以上で、リポジトリを削除できました。
+GitHub Helpは以下にあります。
+Deleting a repository</description>
+    </item>
+    
+    <item>
+      <title>GitHubのユーザー名を変える</title>
+      <link>http://blogrammers.net/post/2017/05/20/github-change-username/</link>
+      <pubDate>Sat, 20 May 2017 09:58:33 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/20/github-change-username/</guid>
+      <description>GitHubのユーザー名にもろに自分を名字入れてまして、それをずっと変えたいと思ってましたので変更してみました。
+ユーザー名を変更するとどうなるか GitHub Helpでユーザー名変えるとどうなるかのページがあったので確認。
+What happens when I change my username?
+何が書いてあるかまとめるとだいたいこんな感じ。
+ 旧ユーザー名のリポジトリへの参照は新ユーザー名にリダイレクトされる プロフィールページ(https://github.com/旧ユーザー名)はリダイレクトされない(404エラー) 旧リポジトリへのpush、旧リポジトリからのcloneは可能 旧ユーザー名を他人が取得でき、その人が自分と同じ名前のリポジトリを作成するとリダイレクトされなくなる 旧ユーザー名のURLを新ユーザー名のURLに速やかに変更した方がよい  変更手順  GitHubのプロフィールページ(https://github.com/旧ユーザー名)にアクセス [Settings]をクリック [Account]をクリック Change usernameをクリック  すると以下のような確認ダイアログが出ます。
+メッセージの内容はGitHub Helpに書いていたとおりです。
+5. I understand, let&#39;s change my usernameをクリック 6. 新しいユーザー名を入力し、Change my usernameをクリック
+7. ユーザー名変更完了 表示されているリンクのupdate your local repositoriesにリモートURL変更手順が書いてありますので手順どおり変更します。
+ローカルPCの設定変更 # Git Bash起動 $ cd ローカルプロジェクト # 変更前の設定確認 $ git remote -v origin git@github.com:old_username/repository_name.git (fetch) origin git@github.com:old_username/repository_name.git (push) # リモートURL変更 $ git remote set-url origin git@github.</description>
+    </item>
+    
+    <item>
+      <title>git add .とgit add -Aとgit add -uの違い</title>
+      <link>http://blogrammers.net/post/2017/05/19/git-add-option/</link>
+      <pubDate>Fri, 19 May 2017 14:56:48 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/19/git-add-option/</guid>
+      <description>今までgit addするときはgit add .をずっと使ってきたのだが、-Aと-uとの違いがわからなかったので調べてみた。
+バージョン Git for Windows2.13.0
+ヘルプで確認 とりあえずヘルプで-Aと-uを確認。
+$ git help add   -A
+&amp;ndash;all
+&amp;ndash;no-ignore-removal
+Update the index not only where the working tree has a file matching &amp;lt;pathspec&amp;gt; but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree.
+If no &amp;lt;pathspec&amp;gt; is given when -A option is used, all files in the entire working tree are updated (old versions of Git used to limit the update to the current directory and its subdirectories).</description>
+    </item>
+    
+    <item>
+      <title>Gitインストール</title>
+      <link>http://blogrammers.net/post/2017/05/17/git-install/</link>
+      <pubDate>Wed, 17 May 2017 16:09:38 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/17/git-install/</guid>
+      <description>環境とインストールバージョン  Windows7 64bit Git for Windows2.13.0  インストール手順  以下のページのDownloadsから最新版をダウンロードする。
+https://git-scm.com/
+ ダウンロードしたexeファイルをダブルクリック。
+ Nextをクリック  インストール先の設定
+デフォルトのままNextをクリック。  インストールするコンポーネントの選択
+すべてデフォルトで問題ありませんが、コンポートネントの詳細を記載します。
+ Additional icons
+デスクトップのショートカットアイコンの設定。使うことはなさそうなのでOFF。 Windows Explorer integration
+エクスプローラーのコンテキストメニューの設定。CUIでGitを使う場合はよく使ので必須。ON。
+ Git LFS
+サイズの大きなバイナリファイルを扱うための設定。ON。
+ Associate .git* configration files with the default text editor
+.gitファイルをデフォルトのテキストエディタで起動する設定。ON。
+ Associate .sh files to be run with Bash
+.shファイルをBashで起動する設定。ON。
+ Use a TrueType font in all console Windows
+コマンドプロンプトなどすべてのコンソールのフォントを変更する設定。 ONにすると文字化けすることもあるようなのでOFF。
+  スタートメニューフォルダの選択</description>
+    </item>
+    
+    <item>
+      <title>Hugoインストール</title>
+      <link>http://blogrammers.net/post/2017/05/17/hugo-install/</link>
+      <pubDate>Wed, 17 May 2017 14:35:27 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/17/hugo-install/</guid>
+      <description>このサイトはHugoを使用して作成しています。
+Hugoとは静的なHTMLを生成する静的ページジェネレータでGoogleのGo言語で作られています。
+他にもJekyllやHexoなどのツールがあるようですが、記事数が増えるとビルドに時間がかかるらしく
+Hugoを使用することにしました。
+Windows7とCentOS6にインストールしてみましたのでその手順です。
+Windows7へのインストール  Hugo ReleasesのDownloadsで自分の環境に合うファイルをダウンロード ダウンロードしたファイルを展開 中にあるバイナリがhugo.exeでなければhugo.exeにリネーム(私がダウンロードしたバージョンではhugo.exeでした) hugo.exeを任意のディレクトリに置く そのディレクトリを環境変数に追加 バージョン確認  # バージョン確認(以下のように表示されればOK) $hugo version Hugo Static Site Generator v0.20.7 windows/amd64 BuildDate: 2017-05-16T09:23:19+09:00  CentOS6へのインストール  Hugo ReleasesのDownloadsで自分の環境に合うファイルをダウンロード ダウンロードしたファイルを展開 中にあるバイナリを/usr/local/binに置く バージョン確認  $wget https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-32bit.tar.gz $tar -zxf hugo_0.20.7_Linux-32bit.tar.gz $sudo mv hugo /usr/local/bin/hugo # バージョン確認(以下のように表示されればOK) $hugo version Hugo Static Site Generator v0.20.7 linux/386 BuildDate: 2017-05-03T16:39:25+09:00  参考リンク  Hugo公式サイト(インストール手順) Let’s study HUGO!! Hugoサイト構築 JekyllからHugoに移行しました  http://kenixi.github.io/2016/02/01/basic-use-hugo/</description>
+    </item>
+    
+    <item>
+      <title>Markdown記法</title>
+      <link>http://blogrammers.net/post/2017/05/12/markdown-notation/</link>
+      <pubDate>Fri, 12 May 2017 21:27:11 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/12/markdown-notation/</guid>
+      <description>このサイトはMarkdownを使用して記述しています。
+まだ使い始めたばかりですが、これからサクサク記事を書いていくために
+Markdown記法についてまとめてみました。
+Markdownとは  文書を記述するための軽量マークアップ言語 HTMLタグを記述するより簡単 メモ書きにも便利
+ 最近流行りのAtomエディタに標準でMarkdownをプレビューする機能がある  よく使う記法一覧     Markdown HTML     見出し 行頭に「#」(1～6個) &amp;lt;h1&amp;gt;～&amp;lt;h6&amp;gt;   改行 行末半角スペース2個以上 &amp;lt;br&amp;gt;   段落 行間に空行 &amp;lt;p&amp;gt;   強調(イタリック) *文字列* or _文字列_ &amp;lt;em&amp;gt;   強調(Bold) **文字列** or __文字列__ &amp;lt;strong&amp;gt;   強調(イタリック&amp;amp;Bold) ***文字列*** or ___文字列___ &amp;lt;strong&amp;gt;&amp;lt;em&amp;gt;   打ち消し ~~文字列~~ &amp;lt;del&amp;gt;   リスト(順序なし) 行頭に「*」「-」「+」のいずれか &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;   リスト(順序付き) 行頭に数字と.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://blogrammers.net/about/</link>
+      <pubDate>Thu, 11 May 2017 21:26:46 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/about/</guid>
+      <description>自己紹介 はじめまして、そうたろう です。プログラマをしています。
+一児の父で毎日子育てに奮闘しています。
+このブログでは日々仕事で経験したことや学んだこと、仕事以外で考えていることなどを中心に楽しく書いていきます。
+プログラミング経験  Java
+ C#
+ JavaScript
+ VBScript
+ Excel VBA
+ PowerShell
+ C/C++
+  趣味・興味のあるもの スポーツ。特に野球とサッカー。
+読書が好きでIT、科学、哲学、数学などの本をよく読みます。小説はあまり読みません。</description>
+    </item>
+    
+  </channel>
+</rss>

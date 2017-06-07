@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on Blogrammer&#39;s.Net</title>
+    <link>http://blogrammers.net/tags/tips/</link>
+    <description>Recent content in Tips on Blogrammer&#39;s.Net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 02 Jun 2017 09:49:39 +0900</lastBuildDate>
+    
+	<atom:link href="http://blogrammers.net/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOSのバージョン確認・アーキテクチャ確認のコマンド</title>
+      <link>http://blogrammers.net/post/2017/06/02/centos-version-arch/</link>
+      <pubDate>Fri, 02 Jun 2017 09:49:39 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/06/02/centos-version-arch/</guid>
+      <description> 自宅のサブPCとしてCentOSをたまに使っているのだが、バージョン確認のコマンドも知らなかったのでメモ。
+CentOSのバージョン確認 $ cat /etc/centos-release CentOS release 6.8 (Final)  アーキテクチャ確認(OSが32bitか64bitか確認) $ arch i686  32bitの場合i686、64bitの場合x86_64と表示される
+以下のコマンドでも確認できる。
+$ uname -a Linux localhost.home 2.6.32-642.11.1.el6.centos.plus.i686 #1 SMP Sat Nov 19 13:25:46 UTC 2016 i686 i686 i386 GNU/Linux $ uname -m i686  </description>
+    </item>
+    
+  </channel>
+</rss>

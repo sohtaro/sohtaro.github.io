@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tortoisegit on Blogrammer&#39;s.Net</title>
+    <link>http://blogrammers.net/tags/tortoisegit/</link>
+    <description>Recent content in Tortoisegit on Blogrammer&#39;s.Net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 30 May 2017 22:26:07 +0900</lastBuildDate>
+    
+	<atom:link href="http://blogrammers.net/tags/tortoisegit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TortoiseGitのアイコンオーバレイが表示されない件の解決方法</title>
+      <link>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</link>
+      <pubDate>Tue, 30 May 2017 22:26:07 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</guid>
+      <description>TortoiseGitのアイコンオーバレイがなんらかのタイミングで表示されなくなったので解決方法のメモです。
+アイコンオーバレイとはエクスプローラーのフォルダやファイルのアイコン上に表示されるマークです。
+TortoiseGitの設定確認 TortoiseGitの[設定]-[アイコンオーバーレイ]-[オーバーレイハンドラー]の順に開きます。 TortoiseGit以外で9個のオーバーレイがインストールされているようです。
+レジストリの確認 レジストリエディターを起動するをクリックし、レジストリを確認します。
+キー：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+TortoiseGitで9個とTortoiseGit以外で9個で合計18個のオーバーレイの設定があります。
+Windowsの上限は15個のようです。
+この上限を超えると優先順位の低いものから表示されなくなるようです。
+不要レジストリの削除 解決方法としては、不要なオーバーレイアイコンを削除します。
+Dropboxのオーバーレイアイコンが４つありますが、Dropboxはほとんど使ってないので削除します。
+ちなみに一番下の三つのオーバーレイアイコンはWindowsで使用しているらしいのでそのままにしておきます。
+ EnhancedStorageShell
+ Offline Files
+ SharingPrivate
+  00aswと00avastも削除して問題ないと思いますがとりあえずそのままにしておきます。
+PC再起動 オーバーレイアイコンの設定が15個以下になったのでPCを再起動します。
+オーバーレイアイコンが表示されることを確認できました。</description>
+    </item>
+    
+  </channel>
+</rss>

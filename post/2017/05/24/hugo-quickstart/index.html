@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Hugoを使いはじめる | Blogrammer&#39;s.Net
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blogrammers.net/post/2017/05/24/hugo-quickstart/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://blogrammers.net/index.xml" rel="alternate" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+  <link href="http://blogrammers.net/index.xml" rel="feed" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blogrammers.net/">Blogrammer&#39;s.Net</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/zth2" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Hugoを使いはじめる</h1>
+      <div class="meta">
+        May 24, 2017 &nbsp;
+        
+          #<a href="/tags/hugo">hugo</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p><a href="/post/hugo-install">前回</a>はHugoをインストールしたので今回はサイトを作って記事を書いて動作確認までやってみる。</p>
+
+<h2 id="環境">環境</h2>
+
+<p>Windows7 64bit<br />
+Hugo v0.20.7</p>
+
+<h2 id="サイト作成">サイト作成</h2>
+
+<p>適当なディレクトリでhugo new siteコマンドを実行しサイトディレクトリを作成。</p>
+
+<p><code>hugo new site [path]</code></p>
+
+<p>ここではC:\hugo\sitesにmysiteというサイトを作成する。</p>
+
+<pre><code>$ mkdir c:\hugo\sites
+$ cd c:\hugo\sites
+
+$ hugo new site mysite
+$ tree . /F
+C:\HUGO\SITES\MYSITE
+  │  config.toml
+  │
+  ├─archetypes
+  ├─content
+  ├─data
+  ├─layouts
+  ├─static
+  └─themes
+</code></pre>
+
+<p>1ファイル、6ディレクトリが作成された。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">ファイル/ディレクトリ</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">config.toml</td>
+<td align="left">サイト全体の設定ファイル。デフォルトでは設定ファイルはTOML形式だがYAMLまたはJSONも使用できる。</td>
+</tr>
+
+<tr>
+<td align="left">archetypes</td>
+<td align="left">このディレクトリのdefault.mdの設定が新しい記事に適用される。</td>
+</tr>
+
+<tr>
+<td align="left">content</td>
+<td align="left">サイトのコンテンツ(記事など)を置く。</td>
+</tr>
+
+<tr>
+<td align="left">data</td>
+<td align="left">config.toml以外にサイト全体で使用する設定ファイルを置く。TOML、YAML、またはJSON形式。</td>
+</tr>
+
+<tr>
+<td align="left">layouts</td>
+<td align="left">コンテンツを静的なサイトに変換するために使用するレイアウト(html)を置く。</td>
+</tr>
+
+<tr>
+<td align="left">static</td>
+<td align="left">画像、CSS、JavaScriptなどの静的コンテンツを置く。</td>
+</tr>
+
+<tr>
+<td align="left">themes</td>
+<td align="left">サイトのテーマを置く。テーマは独自に作成することも可能。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="記事作成">記事作成</h2>
+
+<p>サイトディレクトリでhugo newコマンドを実行し記事を作成。</p>
+
+<p><code>hugo new [コンテンツのパス]</code></p>
+
+<pre><code>$ hugo new post/hello.md
+</code></pre>
+
+<p>このコマンドによってmysite/content/post/hello.mdが作られる。</p>
+
+<p>hello.mdの中身は以下のようになっている。</p>
+
+<pre><code>+++
+date = &quot;2017-05-24T22:49:45+09:00&quot;
+draft = true
+title = &quot;hello&quot;
+
++++
+</code></pre>
+
+<p>+++内の内容はTOMLで記述された記事のための設定で、front matterという。</p>
+
+<p>デフォルトでは三つの設定プロパティがある。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">プロパティ</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">date</td>
+<td align="left">記事が作成された日時</td>
+</tr>
+
+<tr>
+<td align="left">draft</td>
+<td align="left">下書きかどうかのフラグ</td>
+</tr>
+
+<tr>
+<td align="left">title</td>
+<td align="left">記事のタイトル（デフォルトはファイル名)</td>
+</tr>
+</tbody>
+</table>
+
+<p>とりあえず最後の+++の下に記事を書いてみる。</p>
+
+<pre><code>+++
+date = &quot;2017-05-24T22:49:45+09:00&quot;
+draft = true
+title = &quot;hello&quot;
+
++++
+
+Hello World!
+</code></pre>
+
+<p>記事が書けたらテストサーバーで起動し表示確認できるが、この状態ではまだ何も表示されない。</p>
+
+<p>hugoにはデフォルトのテーマがないのでテーマをインストールする必要がある。</p>
+
+<h2 id="テーマインストール">テーマインストール</h2>
+
+<p>テーマは下記のサイトからダウンロードし、<code>themes</code>ディレクトリに置く。<br />
+<a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></p>
+
+<p>今回は<a href="https://themes.gohugo.io/blackburn/">Blackburn</a>というテーマをインストールしてみる。</p>
+
+<pre><code>$ cd themes
+$ git clone https://github.com/yoshiharuyamashita/blackburn.git
+</code></pre>
+
+<p>テーマをインストールしたディレクトリには以下のファイルが含まれる。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">ファイル/ディレクトリ</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">theme.toml</td>
+<td align="left">テーマの設定ファイル。テーマの名前や定義、author、ライセンスなどを記述。</td>
+</tr>
+
+<tr>
+<td align="left">images</td>
+<td align="left">screenshot.pngとtn.pngを含むディレクトリ。 screenshot.pngは一覧表示の画像でtn.pngは単一の記事の画像。</td>
+</tr>
+
+<tr>
+<td align="left">layouts</td>
+<td align="left">異なるコンテンツタイプのビューを含む。すべてのコンテンツタイプはsingle.htmlとlist.htmlが必要。single.htmlは単一のコンテンツ、list.htmlは一覧表示に使われる。</td>
+</tr>
+
+<tr>
+<td align="left">static</td>
+<td align="left">画像、CSS、JavaScriptなどの静的コンテンツを置く。</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="動作確認">動作確認</h2>
+
+<p>サイトディレクトリに戻り下記のコマンドを実行。</p>
+
+<pre><code>$ cd ..
+$ hugo server -t blackburn -D
+</code></pre>
+
+<p>HTMLが生成され、サーバーが起動する。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">オプション</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">-t</td>
+<td align="left">テーマ名を指定</td>
+</tr>
+
+<tr>
+<td align="left">-D</td>
+<td align="left">draftがtrueの記事も表示する</td>
+</tr>
+</tbody>
+</table>
+
+<p>hugoはデフォルトでライブリロードが有効になっているので、記事を変更すると再読み込みされる。<br />
+なので表示内容を確認しながら記事を書くことができる。すばらしい。</p>
+
+<p>表示確認は<code>http://localhost:1313/</code>にアクセス。</p>
+
+<p>以下のように表示された。</p>
+
+<p><img src="/images/hugo/quickstart.png" alt="quickstart" /></p>
+
+<p>テーマを変えたい場合は、別のテーマをcloneし<code>-t</code>で指定するだけ。</p>
+
+<h2 id="ビルド">ビルド</h2>
+
+<p>動作確認が終わったらビルド。</p>
+
+<p><code>hugo</code>コマンドでテーマを指定する。<br />
+<code>hugo server</code>コマンドと同様に-Dを指定すると下書き(draftがtrue)の記事も生成されるがここでは指定しない。</p>
+
+<pre><code>$ hugo -t blackburn
+</code></pre>
+
+<p>これで<code>public</code>フォルダに公開用のサイトが生成される。あとは<code>public</code>フォルダをWebサーバーに公開すればいい。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blogrammers.net/post/2017/05/24/git-config-editor/" rel="prev">Gitで使うエディタを変更してみる</a></span>
+    
+    
+      <span class="next"><a href="http://blogrammers.net/post/2017/05/26/git-repo-rm-mv/" rel="next">Gitリポジトリ内のファイル削除・ファイル名変更</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Soutarou</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

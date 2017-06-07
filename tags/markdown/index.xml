@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on Blogrammer&#39;s.Net</title>
+    <link>http://blogrammers.net/tags/markdown/</link>
+    <description>Recent content in Markdown on Blogrammer&#39;s.Net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 12 May 2017 21:27:11 +0900</lastBuildDate>
+    
+	<atom:link href="http://blogrammers.net/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown記法</title>
+      <link>http://blogrammers.net/post/2017/05/12/markdown-notation/</link>
+      <pubDate>Fri, 12 May 2017 21:27:11 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/12/markdown-notation/</guid>
+      <description>このサイトはMarkdownを使用して記述しています。
+まだ使い始めたばかりですが、これからサクサク記事を書いていくために
+Markdown記法についてまとめてみました。
+Markdownとは  文書を記述するための軽量マークアップ言語 HTMLタグを記述するより簡単 メモ書きにも便利
+ 最近流行りのAtomエディタに標準でMarkdownをプレビューする機能がある  よく使う記法一覧     Markdown HTML     見出し 行頭に「#」(1～6個) &amp;lt;h1&amp;gt;～&amp;lt;h6&amp;gt;   改行 行末半角スペース2個以上 &amp;lt;br&amp;gt;   段落 行間に空行 &amp;lt;p&amp;gt;   強調(イタリック) *文字列* or _文字列_ &amp;lt;em&amp;gt;   強調(Bold) **文字列** or __文字列__ &amp;lt;strong&amp;gt;   強調(イタリック&amp;amp;Bold) ***文字列*** or ___文字列___ &amp;lt;strong&amp;gt;&amp;lt;em&amp;gt;   打ち消し ~~文字列~~ &amp;lt;del&amp;gt;   リスト(順序なし) 行頭に「*」「-」「+」のいずれか &amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;   リスト(順序付き) 行頭に数字と.</description>
+    </item>
+    
+  </channel>
+</rss>

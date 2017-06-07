@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.Net on Blogrammer&#39;s.Net</title>
+    <link>http://blogrammers.net/tags/.net/</link>
+    <description>Recent content in .Net on Blogrammer&#39;s.Net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Thu, 01 Jun 2017 22:57:46 +0900</lastBuildDate>
+    
+	<atom:link href="http://blogrammers.net/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windowsサービスのインストール</title>
+      <link>http://blogrammers.net/post/2017/06/01/windows-service-install/</link>
+      <pubDate>Thu, 01 Jun 2017 22:57:46 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/06/01/windows-service-install/</guid>
+      <description>exeをWindowsのサービスとして登録する機会があったので調べてみた。
+サービスとして登録するには以下のコマンドを実行する必要がある。
+サービスのインストール InstallUtil exeのパス  サービスのアンインストール InstallUtil /u exeのパス  InstallUtilのパス InstallUtil.exeは.NET Frameworkのバージョンごとにパスが異なる。
+なのでディレクトリを移動して実行するか絶対パスで実行するかしないといけない。
+   バージョン パス     2.0, 3.5 C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe   4 C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe    が、コマンドプロンプトではなく、Visual Studio用開発者コマンドプロンプトを起動すると上記のパスが環境変数PATHに設定されているのでInstallUtilだけで実行できるようだ。</description>
+    </item>
+    
+  </channel>
+</rss>

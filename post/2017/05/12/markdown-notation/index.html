@@ -1,0 +1,545 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Markdown記法 | Blogrammer&#39;s.Net
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blogrammers.net/post/2017/05/12/markdown-notation/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://blogrammers.net/index.xml" rel="alternate" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+  <link href="http://blogrammers.net/index.xml" rel="feed" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blogrammers.net/">Blogrammer&#39;s.Net</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/zth2" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Markdown記法</h1>
+      <div class="meta">
+        May 12, 2017 &nbsp;
+        
+          #<a href="/tags/markdown">markdown</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>このサイトはMarkdownを使用して記述しています。<br />
+まだ使い始めたばかりですが、これからサクサク記事を書いていくために<br />
+Markdown記法についてまとめてみました。</p>
+
+<h1 id="markdownとは">Markdownとは</h1>
+
+<ul>
+<li>文書を記述するための軽量マークアップ言語</li>
+<li>HTMLタグを記述するより簡単</li>
+<li>メモ書きにも便利<br /></li>
+<li>最近流行りのAtomエディタに標準でMarkdownをプレビューする機能がある</li>
+</ul>
+
+<h1 id="よく使う記法一覧">よく使う記法一覧</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Markdown</th>
+<th align="left">HTML</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><a href="#見出し">見出し</a></td>
+<td align="left">行頭に「#」(1～6個)</td>
+<td align="left">&lt;h1&gt;～&lt;h6&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#改行">改行</a></td>
+<td align="left">行末半角スペース2個以上</td>
+<td align="left">&lt;br&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#段落">段落</a></td>
+<td align="left">行間に空行</td>
+<td align="left">&lt;p&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#強調">強調(イタリック)</a></td>
+<td align="left">*文字列* or _文字列_</td>
+<td align="left">&lt;em&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#強調">強調(Bold)</a></td>
+<td align="left">**文字列** or __文字列__</td>
+<td align="left">&lt;strong&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#強調">強調(イタリック&amp;Bold)</a></td>
+<td align="left">***文字列*** or ___文字列___</td>
+<td align="left">&lt;strong&gt;&lt;em&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#打ち消し">打ち消し</a></td>
+<td align="left">~~文字列~~</td>
+<td align="left">&lt;del&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#リスト">リスト(順序なし)</a></td>
+<td align="left">行頭に「*」「-」「+」のいずれか</td>
+<td align="left">&lt;ul&gt;&lt;li&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#リスト">リスト(順序付き)</a></td>
+<td align="left">行頭に数字と.(ピリオド)</td>
+<td align="left">&lt;ol&gt;&lt;li&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#リンク">リンク</a></td>
+<td align="left">[リンク文字列](URL)</td>
+<td align="left">&lt;a&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#画像">画像</a></td>
+<td align="left">![代替テキスト](URL &ldquo;タイトル&rdquo;)</td>
+<td align="left">&lt;img&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#引用文">引用文</a></td>
+<td align="left">行頭に「&gt;」</td>
+<td align="left">&lt;blockquote&gt;</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#ソースコード">インラインコード</a></td>
+<td align="left">`インラインコード`</td>
+<td align="left">-</td>
+</tr>
+
+<tr>
+<td align="left"><a href="#ソースコード">コードブロック</a></td>
+<td align="left">```<br>コードブロック<br>```</td>
+<td align="left">-</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="見出し">見出し</h1>
+
+<p>行頭に「#」をつけると見出しになります。「#」の個数が見出しのレベルに対応します。
+h1とh2はそれぞれ「=」、「-」2個以上でも可。</p>
+
+<h5 id="書き方">書き方</h5>
+
+<pre><code># レベル1
+## レベル2
+レベル1
+==
+レベル2
+--
+### レベル3
+#### レベル4
+##### レベル5
+###### レベル6
+</code></pre>
+
+<h5 id="html出力">HTML出力</h5>
+
+<p>&lt;h1&gt;レベル1&lt;/h1&gt;<br />
+&lt;h2&gt;レベル2&lt;/h2&gt;<br />
+&lt;h1&gt;レベル1&lt;/h1&gt;<br />
+&lt;h2&gt;レベル2&lt;/h2&gt;<br />
+&lt;h3&gt;レベル3&lt;/h3&gt;<br />
+&lt;h4&gt;レベル4&lt;/h4&gt;<br />
+&lt;h5&gt;レベル5&lt;/h5&gt;<br />
+&lt;h6&gt;レベル6&lt;/h6&gt;</p>
+
+<h5 id="実際の表示">実際の表示</h5>
+
+<h1 id="レベル1">レベル1</h1>
+
+<h2 id="レベル2">レベル2</h2>
+
+<h1 id="レベル1-1">レベル1</h1>
+
+<h2 id="レベル2-1">レベル2</h2>
+
+<h3 id="レベル3">レベル3</h3>
+
+<h4 id="レベル4">レベル4</h4>
+
+<h5 id="レベル5">レベル5</h5>
+
+<h6 id="レベル6">レベル6</h6>
+
+<h1 id="改行">改行</h1>
+
+<p>行末に半角スペース2つ以上入れると改行になります。</p>
+
+<h5 id="書き方-1">書き方</h5>
+
+<pre><code>1行目
+2行目 ←半角スペース1個
+3行目  ←半角スペース2個
+4行目
+…
+</code></pre>
+
+<h5 id="html出力-1">HTML出力</h5>
+
+<p>1行目
+2行目
+3行目<code>&lt;br&gt;</code>
+4行目
+…</p>
+
+<h5 id="実際の表示-1">実際の表示</h5>
+
+<p>1行目
+2行目
+3行目<br />
+4行目
+…</p>
+
+<h1 id="段落">段落</h1>
+
+<p>行間に空行を入れると段落になります。</p>
+
+<h5 id="書き方-2">書き方</h5>
+
+<pre><code>段落1の文章です。
+
+段落2の文章です。
+</code></pre>
+
+<h5 id="html出力-2">HTML出力</h5>
+
+<p><code>&lt;p&gt;</code>段落1の文章です。 <code>&lt;/p&gt;</code><br />
+<code>&lt;p&gt;</code>段落2の文章です。 <code>&lt;/p&gt;</code></p>
+
+<h5 id="実際の表示-2">実際の表示</h5>
+
+<p>段落1の文章です。</p>
+
+<p>段落2の文章です。</p>
+
+<h1 id="強調">強調</h1>
+
+<p>強調した文字列を 「*」 または 「_」 で囲むと強調表示されます。<br />
+通常の強調(em)は１つ、強い強調(strong)は二つで囲みます。<br />
+三つで囲むとstrongとemが適用されます。<br />
+Internet Explorerなど多くのブラウザでは&lt;em&gt;はイタリック体、&lt;strong&gt;は太字で表示されます。</p>
+
+<h5 id="書き方-3">書き方</h5>
+
+<pre><code>*baseball* と *soccer* が好き。   
+**カレー** と __ステーキ__ が好き。
+***Japan*** と ___America___ 。
+</code></pre>
+
+<h5 id="html出力-3">HTML出力</h5>
+
+<p><code>&lt;em&gt;</code>baseball <code>&lt;/em&gt;</code>と
+<code>&lt;em&gt;</code>soccer <code>&lt;/em&gt;</code>が好き。<br />
+<code>&lt;strong&gt;</code>カレー <code>&lt;/strong&gt;</code> と
+<code>&lt;strong&gt;</code>ステーキ <code>&lt;/strong&gt;</code>が好き。<br />
+<code>&lt;strong&gt;&lt;em&gt;</code>Japan <code>&lt;/em&gt;&lt;/strong&gt;</code> と
+<code>&lt;strong&gt;&lt;em&gt;</code>America <code>&lt;/em&gt;&lt;/strong&gt;</code>。</p>
+
+<h5 id="実際の表示-3">実際の表示</h5>
+
+<p><em>baseball</em> と <em>soccer</em> が好き。<br />
+<strong>カレー</strong> と <strong>ステーキ</strong> が好き。<br />
+<strong><em>Japan</em></strong> と <strong><em>America</em></strong> 。</p>
+
+<h1 id="打ち消し">打ち消し</h1>
+
+<p>打ち消したい文字列を「~」二つで囲むと打ち消しになります。</p>
+
+<h5 id="書き方-4">書き方</h5>
+
+<pre><code>私の年齢は~~４８歳~~５０歳です。   
+</code></pre>
+
+<h5 id="実際の表示-4">実際の表示</h5>
+
+<p>私の年齢は<del>４８歳</del>５０歳です。</p>
+
+<h1 id="リスト">リスト</h1>
+
+<p>「*」、「-」、「+」のいずれかの後に半角スペースまたはタブを入れるとリスト表示されます。<br />
+階層にするには半角スペース<code>4個</code>必要。<br />
+三種類の記号を混在させてもOK。<br />
+順序付きリストを表示する場合は「1.」のように数字とピリオドにします。<br />
+ただし、入力した数字に関わらず1からの連番が割り当てられます。</p>
+
+<h5 id="書き方-5">書き方</h5>
+
+<pre><code># 「-」のみ使用して階層表示
+- 第１章
+  - 第１節
+    - 第１章
+    - 第２章
+  - 第２節
+    - 第１章
+- 第２章
+  - 第１節
+
+1. りんご
+2. バナナ
+3. ぶどう
+
+</code></pre>
+
+<h5 id="html出力-4">HTML出力</h5>
+
+<p>&lt;ul&gt;<br />
+&nbsp;&nbsp;&lt;li&gt;第１章<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;第１節<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;第１章&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;第２章&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;第２節<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;第１章&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/li&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br />
+&nbsp;&nbsp;&lt;/li&gt;<br />
+&nbsp;&nbsp;&lt;li&gt;第２章<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;第１節<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br />
+&nbsp;&nbsp;&lt;li&gt;<br />
+&lt;ul&gt;</p>
+
+<p>&lt;ol&gt;<br />
+&nbsp;&nbsp;&lt;li&gt;りんご&lt;/li&gt;<br />
+&nbsp;&nbsp;&lt;li&gt;バナナ&lt;/li&gt;<br />
+&nbsp;&nbsp;&lt;li&gt;ぶどう&lt;/li&gt;<br />
+&lt;/ol&gt;</p>
+
+<h5 id="実際の表示-5">実際の表示</h5>
+
+<ul>
+<li>第１章
+
+<ul>
+<li>第１節
+
+<ul>
+<li>第１章</li>
+<li>第２章</li>
+</ul></li>
+<li>第２節
+
+<ul>
+<li>第１章</li>
+</ul></li>
+</ul></li>
+<li>第２章
+
+<ul>
+<li>第１節</li>
+</ul></li>
+</ul>
+
+<ol>
+<li>りんご</li>
+<li>バナナ</li>
+<li>ぶどう</li>
+</ol>
+
+<h1 id="リンク">リンク</h1>
+
+<p>リンク文字列を<code>[</code>と<code>]</code>で囲み直後にURLを<code>(</code>と<code>)</code>で囲むとリンクになります。</p>
+
+<h5 id="書き方-6">書き方</h5>
+
+<pre><code>[Yahoo!](http://www.yahoo.co.jp/)
+
+</code></pre>
+
+<h5 id="html出力-5">HTML出力</h5>
+
+<p>&lt;a href=&ldquo;<a href="http://www.yahoo.co.jp/&quot;">http://www.yahoo.co.jp/&quot;</a>  &gt;Yahoo!&lt;/a&gt;</p>
+
+<h5 id="実際の表示-6">実際の表示</h5>
+
+<p><a href="http://www.yahoo.co.jp/">Yahoo!</a></p>
+
+<h1 id="画像">画像</h1>
+
+<p>!の後に代替テキストを<code>[</code>と<code>]</code>で囲み、直後にURLと<code>&quot;</code>で囲んだタイトルを<code>(</code>と<code>)</code>で囲むとリンクになります。<br />
+タイトルは省略可。</p>
+
+<h5 id="書き方-7">書き方</h5>
+
+<pre><code>![サンプル画像](画像URL &quot;サンプル&quot;)
+</code></pre>
+
+<h5 id="html出力-6">HTML出力</h5>
+
+<p>&lt;img href=&ldquo;画像URL&rdquo; alt=&ldquo;サンプル画像&rdquo; title=&ldquo;サンプル&rdquo; &gt;</p>
+
+<h5 id="実際の表示-7">実際の表示</h5>
+
+<p>画像にカーソルを合わせるとtitleで指定した文字列が吹き出しで表示されます。
+<img src="/images/markdown/sample.png" alt="サンプル画像" title="サンプル" /></p>
+
+<h1 id="引用文">引用文</h1>
+
+<p>「&gt;」で始まる行は引用文になります。</p>
+
+<h5 id="書き方-8">書き方</h5>
+
+<pre><code>&gt;Markdown（マークダウン）は、文書を記述するための軽量マークアップ言語のひとつである。  
+&gt;本来はプレーンテキスト形式で手軽に書いた文書からHTMLを生成するために開発されたものである。
+</code></pre>
+
+<h5 id="html出力-7">HTML出力</h5>
+
+<p>&lt;blockquote&gt;<br />
+&lt;p&gt;<br />
+Markdown（マークダウン）は、文書を記述するための軽量マークアップ言語のひとつである。&lt;br&gt;<br />
+本来はプレーンテキスト形式で手軽に書いた文書からHTMLを生成するために開発されたものである。<br />
+&lt;/p&gt;<br />
+&lt;/blockquote&gt;</p>
+
+<h5 id="実際の表示-8">実際の表示</h5>
+
+<blockquote>
+<p>Markdown（マークダウン）は、文書を記述するための軽量マークアップ言語のひとつである。<br />
+本来はプレーンテキスト形式で手軽に書いた文書からHTMLを生成するために開発されたものである。</p>
+</blockquote>
+
+<h1 id="ソースコード">ソースコード</h1>
+
+<p>インラインで文中にソースコードを表示する場合は、「`」(バッククオート)で囲みます。複数行のコードブロックの場合は、「`」(バッククオート)三つで囲みます。</p>
+
+<h5 id="書き方-9">書き方</h5>
+
+<p>`function hoge(){alert(&ldquo;Hello&rdquo;);}`</p>
+
+<p>```<br />
+function hoge(){<br />
+    alert(&ldquo;Hello&rdquo;);<br />
+}<br />
+```</p>
+
+<h5 id="実際の表示-9">実際の表示</h5>
+
+<p><code>function hoge(){alert(&quot;Hello&quot;);}</code></p>
+
+<pre><code>function hoge(){  
+    alert(&quot;Hello&quot;);  
+}  
+</code></pre>
+
+<!--# 参考リンク
+http://cartman0.hatenablog.com/entry/2015/03/31/034758  
+https://nelog.jp/markdown  
+https://gist.github.com/wate/7072365
+-->
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blogrammers.net/about/" rel="prev">About</a></span>
+    
+    
+      <span class="next"><a href="http://blogrammers.net/post/2017/05/17/hugo-install/" rel="next">Hugoインストール</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Soutarou</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

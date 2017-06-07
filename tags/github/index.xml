@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Blogrammer&#39;s.Net</title>
+    <link>http://blogrammers.net/tags/github/</link>
+    <description>Recent content in Github on Blogrammer&#39;s.Net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 22 May 2017 09:44:16 +0900</lastBuildDate>
+    
+	<atom:link href="http://blogrammers.net/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GitHubのリポジトリを削除する方法</title>
+      <link>http://blogrammers.net/post/2017/05/22/github-delete-repo/</link>
+      <pubDate>Mon, 22 May 2017 09:44:16 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/22/github-delete-repo/</guid>
+      <description>GitHubにいくつかリポジトリを作成していますが、不要なリポジトリがあるので削除してみました。
+削除方法は以下のとおりです。
+ GitHubのリポジトリのページにアクセス Settingsをクリック  遷移した画面の一番下のDanger ZoneにあるDelete this repositoriyをクリック  削除すると元に戻せないメッセージなどの警告ダイアログが出る
+リポジトリ名を入力し、I understand the consequences, delete this repositoryをクリックするかEnterを押す   以上で、リポジトリを削除できました。
+GitHub Helpは以下にあります。
+Deleting a repository</description>
+    </item>
+    
+    <item>
+      <title>GitHubのユーザー名を変える</title>
+      <link>http://blogrammers.net/post/2017/05/20/github-change-username/</link>
+      <pubDate>Sat, 20 May 2017 09:58:33 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/20/github-change-username/</guid>
+      <description>GitHubのユーザー名にもろに自分を名字入れてまして、それをずっと変えたいと思ってましたので変更してみました。
+ユーザー名を変更するとどうなるか GitHub Helpでユーザー名変えるとどうなるかのページがあったので確認。
+What happens when I change my username?
+何が書いてあるかまとめるとだいたいこんな感じ。
+ 旧ユーザー名のリポジトリへの参照は新ユーザー名にリダイレクトされる プロフィールページ(https://github.com/旧ユーザー名)はリダイレクトされない(404エラー) 旧リポジトリへのpush、旧リポジトリからのcloneは可能 旧ユーザー名を他人が取得でき、その人が自分と同じ名前のリポジトリを作成するとリダイレクトされなくなる 旧ユーザー名のURLを新ユーザー名のURLに速やかに変更した方がよい  変更手順  GitHubのプロフィールページ(https://github.com/旧ユーザー名)にアクセス [Settings]をクリック [Account]をクリック Change usernameをクリック  すると以下のような確認ダイアログが出ます。
+メッセージの内容はGitHub Helpに書いていたとおりです。
+5. I understand, let&#39;s change my usernameをクリック 6. 新しいユーザー名を入力し、Change my usernameをクリック
+7. ユーザー名変更完了 表示されているリンクのupdate your local repositoriesにリモートURL変更手順が書いてありますので手順どおり変更します。
+ローカルPCの設定変更 # Git Bash起動 $ cd ローカルプロジェクト # 変更前の設定確認 $ git remote -v origin git@github.com:old_username/repository_name.git (fetch) origin git@github.com:old_username/repository_name.git (push) # リモートURL変更 $ git remote set-url origin git@github.</description>
+    </item>
+    
+  </channel>
+</rss>

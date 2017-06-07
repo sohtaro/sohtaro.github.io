@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html on Blogrammer&#39;s.Net</title>
+    <link>http://blogrammers.net/tags/html/</link>
+    <description>Recent content in Html on Blogrammer&#39;s.Net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 22 May 2017 11:56:05 +0900</lastBuildDate>
+    
+	<atom:link href="http://blogrammers.net/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>imgタグのalt属性とtitle属性の違い</title>
+      <link>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</link>
+      <pubDate>Mon, 22 May 2017 11:56:05 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</guid>
+      <description>HTMLで画像を表示する際に使用するimgタグですが、属性としてaltとtitleがあります。
+   属性 意味 必須     alt 代替テキストを指定 ○   title 説明(補足情報)を指定 -    alt属性は必須で代替テキストを指定し、title属性は省略可で説明を指定します。
+実際どのような違いがあるのでしょうか。調べてみました。
+alt属性  代替テキストを指定 画像を認識できない検索エンジンの説明として使う 指定すると画像を表示できないブラウザで表示され、音声読み上げソフトで読み上げられる img、input、applet、areaなど指定できる要素が限られてる  title属性  要素の説明(補足情報)のために使う 指定すると多くのブラウザではカーソルを合わせたときに吹き出しで表示される imgだけでなくほとんどすべての要素で指定することが可能  title属性の表示を確かめてみます。
+例 &amp;lt;!--title指定ありの画像--&amp;gt; &amp;lt;img src=&amp;quot;sample.png&amp;quot; alt=&amp;quot;サンプル画像1&amp;quot; title=&amp;quot;サンプル表示のための画像&amp;quot;&amp;gt; &amp;lt;!--title指定ありのリンク--&amp;gt; &amp;lt;a href=&amp;quot;http://www.google.co.jp/&amp;quot; title=&amp;quot;検索サイトへ&amp;quot;&amp;gt;google&amp;lt;/a&amp;gt;  実際の表示 google
+カーソルを合わせたときにtitle属性で指定した説明が吹き出しで表示されると思います。ただ、画像の場合は画像が表示されているので吹き出しは特に必要なさそうですね。リンクの場合は、リンクをクリックする先の説明として利用すると有効かもしれません。
+alt属性はアクセシビリティのために有効になりますし、SEO対策にもなりますのできちんと指定する方がよさそうです。</description>
+    </item>
+    
+  </channel>
+</rss>

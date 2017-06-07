@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    gitの設定ファイルについてまとめてみた | Blogrammer&#39;s.Net
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blogrammers.net/post/2017/06/01/git-config/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://blogrammers.net/index.xml" rel="alternate" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+  <link href="http://blogrammers.net/index.xml" rel="feed" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blogrammers.net/">Blogrammer&#39;s.Net</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/zth2" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>gitの設定ファイルについてまとめてみた</h1>
+      <div class="meta">
+        Jun 1, 2017 &nbsp;
+        
+          #<a href="/tags/git">git</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>Gitの設定ファイルには多くの設定があるが、設定ファイルの種類やよく使うコマンドについてまとめてみた。</p>
+
+<h2 id="設定ファイルの種類">設定ファイルの種類</h2>
+
+<p>設定ファイルは以下の三つがあり、上から順に優先順位が高い。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">ファイルパス</th>
+<th align="left">対象</th>
+<th align="left">使用するオプション</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">.git/config</td>
+<td align="left">リポジトリごと</td>
+<td align="left">--local または指定なし</td>
+</tr>
+
+<tr>
+<td align="left">~/.gitconfig</td>
+<td align="left">ユーザーごと</td>
+<td align="left">--global</td>
+</tr>
+
+<tr>
+<td align="left">/etc/gitconfig <br> /usr/local/etc/gitconfig<br>など(※1)</td>
+<td align="left">システム全体</td>
+<td align="left">--system</td>
+</tr>
+</tbody>
+</table>
+
+<p>(※1)私のPCのWindows7ではC:\Program Files\Git\mingw64/etc/gitconfigにある</p>
+
+<h2 id="設定の一覧を表示">設定の一覧を表示</h2>
+
+<pre><code>$ git config (--system|--global|--local) -l
+</code></pre>
+
+<h2 id="現在有効な設定を表示">現在有効な設定を表示</h2>
+
+<pre><code>$ git config -l
+</code></pre>
+
+<p>リポジトリ設定、ユーザー設定、システム設定をあわせて表示される</p>
+
+<h2 id="設定値がどのファイルで設定されているかを表示">設定値がどのファイルで設定されているかを表示</h2>
+
+<pre><code>$ git config (--system|--global|--local) --show-origin -l
+</code></pre>
+
+<h2 id="設定ファイルをエディタで編集">設定ファイルをエディタで編集</h2>
+
+<pre><code>$ git config (--system|--global|--local) -e(--edit)
+</code></pre>
+
+<h2 id="設定-置き換え">設定(置き換え)</h2>
+
+<pre><code>$ git config (--system|--global|--local) 設定名 設定値
+# 設定が複数ある場合のすべて置き換え
+$ git config (--system|--global|--local) --replace-all 設定名 設定値
+</code></pre>
+
+<h2 id="設定の追加">設定の追加</h2>
+
+<pre><code>$ git config (--system|--global|--local) --add 設定名 設定値
+</code></pre>
+
+<h2 id="設定の削除">設定の削除</h2>
+
+<pre><code>$ git config (--system|--global|--local) --unset 設定名
+# 設定が複数ある場合の１つを削除
+$ git config (--system|--global|--local) --unset 設定名 設定値
+# 設定が複数ある場合のすべてを削除
+$ git config (--system|--global|--local) --unset-all 設定名
+</code></pre>
+
+<h2 id="よく使う設定一覧">よく使う設定一覧</h2>
+
+<p>よく使う設定名と設定する内容を表にした。随時追加する予定。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">設定名</th>
+<th align="left">設定値</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">user.name</td>
+<td align="left">ユーザー名を指定</td>
+</tr>
+
+<tr>
+<td align="left">user.email</td>
+<td align="left">メールアドレスを指定</td>
+</tr>
+</tbody>
+</table>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/" rel="prev">TortoiseGitのアイコンオーバレイが表示されない件の解決方法</a></span>
+    
+    
+      <span class="next"><a href="http://blogrammers.net/post/2017/06/01/windows-service-install/" rel="next">Windowsサービスのインストール</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Soutarou</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

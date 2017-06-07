@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Blogrammer&#39;s.Net</title>
+    <link>http://blogrammers.net/tags/hugo/</link>
+    <description>Recent content in Hugo on Blogrammer&#39;s.Net</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 24 May 2017 21:55:38 +0900</lastBuildDate>
+    
+	<atom:link href="http://blogrammers.net/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugoを使いはじめる</title>
+      <link>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</link>
+      <pubDate>Wed, 24 May 2017 21:55:38 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</guid>
+      <description>前回はHugoをインストールしたので今回はサイトを作って記事を書いて動作確認までやってみる。
+環境 Windows7 64bit
+Hugo v0.20.7
+サイト作成 適当なディレクトリでhugo new siteコマンドを実行しサイトディレクトリを作成。
+hugo new site [path]
+ここではC:\hugo\sitesにmysiteというサイトを作成する。
+$ mkdir c:\hugo\sites $ cd c:\hugo\sites $ hugo new site mysite $ tree . /F C:\HUGO\SITES\MYSITE │ config.toml │ ├─archetypes ├─content ├─data ├─layouts ├─static └─themes  1ファイル、6ディレクトリが作成された。
+   ファイル/ディレクトリ 説明     config.toml サイト全体の設定ファイル。デフォルトでは設定ファイルはTOML形式だがYAMLまたはJSONも使用できる。   archetypes このディレクトリのdefault.mdの設定が新しい記事に適用される。   content サイトのコンテンツ(記事など)を置く。   data config.toml以外にサイト全体で使用する設定ファイルを置く。TOML、YAML、またはJSON形式。   layouts コンテンツを静的なサイトに変換するために使用するレイアウト(html)を置く。   static 画像、CSS、JavaScriptなどの静的コンテンツを置く。   themes サイトのテーマを置く。テーマは独自に作成することも可能。    記事作成 サイトディレクトリでhugo newコマンドを実行し記事を作成。</description>
+    </item>
+    
+    <item>
+      <title>Hugoインストール</title>
+      <link>http://blogrammers.net/post/2017/05/17/hugo-install/</link>
+      <pubDate>Wed, 17 May 2017 14:35:27 +0900</pubDate>
+      
+      <guid>http://blogrammers.net/post/2017/05/17/hugo-install/</guid>
+      <description>このサイトはHugoを使用して作成しています。
+Hugoとは静的なHTMLを生成する静的ページジェネレータでGoogleのGo言語で作られています。
+他にもJekyllやHexoなどのツールがあるようですが、記事数が増えるとビルドに時間がかかるらしく
+Hugoを使用することにしました。
+Windows7とCentOS6にインストールしてみましたのでその手順です。
+Windows7へのインストール  Hugo ReleasesのDownloadsで自分の環境に合うファイルをダウンロード ダウンロードしたファイルを展開 中にあるバイナリがhugo.exeでなければhugo.exeにリネーム(私がダウンロードしたバージョンではhugo.exeでした) hugo.exeを任意のディレクトリに置く そのディレクトリを環境変数に追加 バージョン確認  # バージョン確認(以下のように表示されればOK) $hugo version Hugo Static Site Generator v0.20.7 windows/amd64 BuildDate: 2017-05-16T09:23:19+09:00  CentOS6へのインストール  Hugo ReleasesのDownloadsで自分の環境に合うファイルをダウンロード ダウンロードしたファイルを展開 中にあるバイナリを/usr/local/binに置く バージョン確認  $wget https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-32bit.tar.gz $tar -zxf hugo_0.20.7_Linux-32bit.tar.gz $sudo mv hugo /usr/local/bin/hugo # バージョン確認(以下のように表示されればOK) $hugo version Hugo Static Site Generator v0.20.7 linux/386 BuildDate: 2017-05-03T16:39:25+09:00  参考リンク  Hugo公式サイト(インストール手順) Let’s study HUGO!! Hugoサイト構築 JekyllからHugoに移行しました  http://kenixi.github.io/2016/02/01/basic-use-hugo/</description>
+    </item>
+    
+  </channel>
+</rss>

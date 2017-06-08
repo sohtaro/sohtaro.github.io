@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>.Net on Blogrammer&#39;s.Net</title>
-    <link>http://blogrammers.net/tags/.net/</link>
-    <description>Recent content in .Net on Blogrammer&#39;s.Net</description>
+    <title>.Net on Sohtaro.com</title>
+    <link>http://sohtaro.com/tags/.net/</link>
+    <description>Recent content in .Net on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 01 Jun 2017 22:57:46 +0900</lastBuildDate>
     
-	<atom:link href="http://blogrammers.net/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/tags/.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windowsサービスのインストール</title>
-      <link>http://blogrammers.net/post/2017/06/01/windows-service-install/</link>
+      <link>http://sohtaro.com/blog/2017/06/01/windows-service-install/</link>
       <pubDate>Thu, 01 Jun 2017 22:57:46 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/01/windows-service-install/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/01/windows-service-install/</guid>
       <description>exeをWindowsのサービスとして登録する機会があったので調べてみた。
 サービスとして登録するには以下のコマンドを実行する必要がある。
 サービスのインストール InstallUtil exeのパス  サービスのアンインストール InstallUtil /u exeのパス  InstallUtilのパス InstallUtil.exeは.NET Frameworkのバージョンごとにパスが異なる。

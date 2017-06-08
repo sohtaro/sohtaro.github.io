@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>コマンドプロンプト on Blogrammer&#39;s.Net</title>
-    <link>http://blogrammers.net/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/</link>
-    <description>Recent content in コマンドプロンプト on Blogrammer&#39;s.Net</description>
+    <title>コマンドプロンプト on Sohtaro.com</title>
+    <link>http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/</link>
+    <description>Recent content in コマンドプロンプト on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 07 Jun 2017 15:50:05 +0900</lastBuildDate>
     
-	<atom:link href="http://blogrammers.net/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>コマンドプロンプトの表示を変更する</title>
-      <link>http://blogrammers.net/post/2017/06/07/cmd-prompt/</link>
+      <link>http://sohtaro.com/blog/2017/06/07/cmd-prompt/</link>
       <pubDate>Wed, 07 Jun 2017 15:50:05 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/07/cmd-prompt/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/07/cmd-prompt/</guid>
       <description>コマンドプロンプトを使って作業するときプロンプトにカレントディレクトリのパスが表示され、カレントディレクトリによってコマンド入力位置が異なる。
 これがとてもウザいのでカスタマイズしてみた。
 デフォルトのプロンプト 以下のようにcdするたびに入力位置が変わり作業しづらい。 プロンプト変更 プロンプトに表示される内容はpromptコマンドで変更できる。

@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Hugoインストール | Sohtaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/05/17/hugo-install/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="Sohtaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="Sohtaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">Sohtaro.com</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Hugoインストール</h1>
+      <div class="meta">
+        May 17, 2017 &nbsp;
+        
+          #<a href="/tags/hugo">hugo</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>このサイトはHugoを使用して作成しています。<br />
+Hugoとは静的なHTMLを生成する静的ページジェネレータでGoogleのGo言語で作られています。<br />
+他にもJekyllやHexoなどのツールがあるようですが、記事数が増えるとビルドに時間がかかるらしく<br />
+Hugoを使用することにしました。<br />
+Windows7とCentOS6にインストールしてみましたのでその手順です。</p>
+
+<h2 id="windows7へのインストール">Windows7へのインストール</h2>
+
+<ol>
+<li><a href="https://github.com/spf13/hugo/releases">Hugo Releases</a>のDownloadsで自分の環境に合うファイルをダウンロード</li>
+<li>ダウンロードしたファイルを展開</li>
+<li>中にあるバイナリがhugo.exeでなければhugo.exeにリネーム(私がダウンロードしたバージョンではhugo.exeでした)</li>
+<li>hugo.exeを任意のディレクトリに置く</li>
+<li>そのディレクトリを環境変数に追加</li>
+<li>バージョン確認</li>
+</ol>
+
+<pre><code># バージョン確認(以下のように表示されればOK)
+$hugo version  
+Hugo Static Site Generator v0.20.7 windows/amd64 BuildDate: 2017-05-16T09:23:19+09:00
+</code></pre>
+
+<h2 id="centos6へのインストール">CentOS6へのインストール</h2>
+
+<ol>
+<li><a href="https://github.com/spf13/hugo/releases">Hugo Releases</a>のDownloadsで自分の環境に合うファイルをダウンロード</li>
+<li>ダウンロードしたファイルを展開</li>
+<li>中にあるバイナリを/usr/local/binに置く</li>
+<li>バージョン確認</li>
+</ol>
+
+<pre><code>$wget https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-32bit.tar.gz  
+$tar -zxf hugo_0.20.7_Linux-32bit.tar.gz  
+$sudo mv hugo /usr/local/bin/hugo  
+
+# バージョン確認(以下のように表示されればOK)
+$hugo version  
+Hugo Static Site Generator v0.20.7 linux/386 BuildDate: 2017-05-03T16:39:25+09:00
+</code></pre>
+
+<h1 id="参考リンク">参考リンク</h1>
+
+<ul>
+<li><a href="https://gohugo.io/overview/installing/">Hugo公式サイト(インストール手順)</a></li>
+<li><a href="http://www.study-hugo.com/">Let’s study HUGO!!</a></li>
+<li><a href="http://wdkk.co.jp/lab/hugo/">Hugoサイト構築</a></li>
+<li><a href="http://ureta.net/2015/05/hugo-on-windows/">JekyllからHugoに移行しました</a></li>
+</ul>
+
+<p><a href="http://kenixi.github.io/2016/02/01/basic-use-hugo/">http://kenixi.github.io/2016/02/01/basic-use-hugo/</a></p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/05/12/markdown-notation/" rel="prev">Markdown記法</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/05/17/git-install/" rel="next">Gitインストール</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Sohtaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

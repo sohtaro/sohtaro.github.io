@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Markdown on Blogrammer&#39;s.Net</title>
-    <link>http://blogrammers.net/tags/markdown/</link>
-    <description>Recent content in Markdown on Blogrammer&#39;s.Net</description>
+    <title>Markdown on Sohtaro.com</title>
+    <link>http://sohtaro.com/tags/markdown/</link>
+    <description>Recent content in Markdown on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 12 May 2017 21:27:11 +0900</lastBuildDate>
     
-	<atom:link href="http://blogrammers.net/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Markdown記法</title>
-      <link>http://blogrammers.net/post/2017/05/12/markdown-notation/</link>
+      <link>http://sohtaro.com/blog/2017/05/12/markdown-notation/</link>
       <pubDate>Fri, 12 May 2017 21:27:11 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/12/markdown-notation/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/12/markdown-notation/</guid>
       <description>このサイトはMarkdownを使用して記述しています。
 まだ使い始めたばかりですが、これからサクサク記事を書いていくために
 Markdown記法についてまとめてみました。

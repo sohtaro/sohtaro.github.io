@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Windowsサービスのインストール | Sohtaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/06/01/windows-service-install/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="Sohtaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="Sohtaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">Sohtaro.com</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Windowsサービスのインストール</h1>
+      <div class="meta">
+        Jun 1, 2017 &nbsp;
+        
+          #<a href="/tags/visualstudio">visualstudio</a>&nbsp;
+        
+          #<a href="/tags/.net">.net</a>&nbsp;
+        
+          #<a href="/tags/windows">windows</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>exeをWindowsのサービスとして登録する機会があったので調べてみた。</p>
+
+<p>サービスとして登録するには以下のコマンドを実行する必要がある。</p>
+
+<h2 id="サービスのインストール">サービスのインストール</h2>
+
+<pre><code>InstallUtil exeのパス
+</code></pre>
+
+<h2 id="サービスのアンインストール">サービスのアンインストール</h2>
+
+<pre><code>InstallUtil /u exeのパス
+</code></pre>
+
+<h2 id="installutilのパス">InstallUtilのパス</h2>
+
+<p>InstallUtil.exeは.NET Frameworkのバージョンごとにパスが異なる。</p>
+
+<p>なのでディレクトリを移動して実行するか絶対パスで実行するかしないといけない。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">バージョン</th>
+<th align="left">パス</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">2.0, 3.5</td>
+<td align="left">C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe</td>
+</tr>
+</tbody>
+</table>
+
+<p>が、コマンドプロンプトではなく、Visual Studio用開発者コマンドプロンプトを起動すると上記のパスが環境変数PATHに設定されているのでInstallUtilだけで実行できるようだ。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/06/01/git-config/" rel="prev">gitの設定ファイルについてまとめてみた</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/06/02/centos-version-arch/" rel="next">CentOSのバージョン確認・アーキテクチャ確認のコマンド</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Sohtaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

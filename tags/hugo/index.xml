@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Blogrammer&#39;s.Net</title>
-    <link>http://blogrammers.net/tags/hugo/</link>
-    <description>Recent content in Hugo on Blogrammer&#39;s.Net</description>
+    <title>Hugo on Sohtaro.com</title>
+    <link>http://sohtaro.com/tags/hugo/</link>
+    <description>Recent content in Hugo on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 24 May 2017 21:55:38 +0900</lastBuildDate>
     
-	<atom:link href="http://blogrammers.net/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugoを使いはじめる</title>
-      <link>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</link>
+      <link>http://sohtaro.com/blog/2017/05/24/hugo-quickstart/</link>
       <pubDate>Wed, 24 May 2017 21:55:38 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/24/hugo-quickstart/</guid>
       <description>前回はHugoをインストールしたので今回はサイトを作って記事を書いて動作確認までやってみる。
 環境 Windows7 64bit
 Hugo v0.20.7
@@ -29,10 +29,10 @@ $ mkdir c:\hugo\sites $ cd c:\hugo\sites $ hugo new site mysite $ tree . /F C:\H
     
     <item>
       <title>Hugoインストール</title>
-      <link>http://blogrammers.net/post/2017/05/17/hugo-install/</link>
+      <link>http://sohtaro.com/blog/2017/05/17/hugo-install/</link>
       <pubDate>Wed, 17 May 2017 14:35:27 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/17/hugo-install/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/17/hugo-install/</guid>
       <description>このサイトはHugoを使用して作成しています。
 Hugoとは静的なHTMLを生成する静的ページジェネレータでGoogleのGo言語で作られています。
 他にもJekyllやHexoなどのツールがあるようですが、記事数が増えるとビルドに時間がかかるらしく

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Editor on Blogrammer&#39;s.Net</title>
-    <link>http://blogrammers.net/tags/editor/</link>
-    <description>Recent content in Editor on Blogrammer&#39;s.Net</description>
+    <title>Editor on Sohtaro.com</title>
+    <link>http://sohtaro.com/tags/editor/</link>
+    <description>Recent content in Editor on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 24 May 2017 11:47:28 +0900</lastBuildDate>
     
-	<atom:link href="http://blogrammers.net/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/tags/editor/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gitで使うエディタを変更してみる</title>
-      <link>http://blogrammers.net/post/2017/05/24/git-config-editor/</link>
+      <link>http://sohtaro.com/blog/2017/05/24/git-config-editor/</link>
       <pubDate>Wed, 24 May 2017 11:47:28 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/24/git-config-editor/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/24/git-config-editor/</guid>
       <description>gitでコミットのメッセージを編集するときなどに使うエディタはviエディタが使われます(※)。viに慣れていない人にとっては他のエディタを使いたいかもしれません。ここではWindows環境で他のエディタを使用するように設定を変更してみます。
 (※)ただし、デフォルトエディタ(環境変数VISUALまたはEDITOR)が設定されている場合は、そのエディタが使われます。
 エディタを変更する エディタを変更するためには以下のコマンドを実行します。

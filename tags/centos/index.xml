@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Centos on Blogrammer&#39;s.Net</title>
-    <link>http://blogrammers.net/tags/centos/</link>
-    <description>Recent content in Centos on Blogrammer&#39;s.Net</description>
+    <title>Centos on Sohtaro.com</title>
+    <link>http://sohtaro.com/tags/centos/</link>
+    <description>Recent content in Centos on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 03 Jun 2017 10:29:43 +0900</lastBuildDate>
     
-	<atom:link href="http://blogrammers.net/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOSにChromiumブラウザをインストール</title>
-      <link>http://blogrammers.net/post/2017/06/03/centos-chromium-install/</link>
+      <link>http://sohtaro.com/blog/2017/06/03/centos-chromium-install/</link>
       <pubDate>Sat, 03 Jun 2017 10:29:43 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/03/centos-chromium-install/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/03/centos-chromium-install/</guid>
       <description>会社でも自宅でもブラウザはChromeを使っていて、サブPCのCentOSでもChromeを使いたいと思ったのでインストール方法について調べてみた。
 しかし、ChromeはCentOSには提供されていないらしい。
 なので、代わりにChromiumブラウザをインストールしてみた。
@@ -30,10 +30,10 @@ $ yum install chromium  正常にインストールが完了するとアプリ�
     
     <item>
       <title>CentOSのバージョン確認・アーキテクチャ確認のコマンド</title>
-      <link>http://blogrammers.net/post/2017/06/02/centos-version-arch/</link>
+      <link>http://sohtaro.com/blog/2017/06/02/centos-version-arch/</link>
       <pubDate>Fri, 02 Jun 2017 09:49:39 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/02/centos-version-arch/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/02/centos-version-arch/</guid>
       <description> 自宅のサブPCとしてCentOSをたまに使っているのだが、バージョン確認のコマンドも知らなかったのでメモ。
 CentOSのバージョン確認 $ cat /etc/centos-release CentOS release 6.8 (Final)  アーキテクチャ確認(OSが32bitか64bitか確認) $ arch i686  32bitの場合i686、64bitの場合x86_64と表示される
 以下のコマンドでも確認できる。

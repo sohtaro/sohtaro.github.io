@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogrammer&#39;s.Net</title>
-    <link>http://blogrammers.net/</link>
-    <description>Recent content on Blogrammer&#39;s.Net</description>
+    <title>Sohtaro.com</title>
+    <link>http://sohtaro.com/</link>
+    <description>Recent content on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 07 Jun 2017 15:50:05 +0900</lastBuildDate>
     
-	<atom:link href="http://blogrammers.net/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>コマンドプロンプトの表示を変更する</title>
-      <link>http://blogrammers.net/post/2017/06/07/cmd-prompt/</link>
+      <link>http://sohtaro.com/blog/2017/06/07/cmd-prompt/</link>
       <pubDate>Wed, 07 Jun 2017 15:50:05 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/07/cmd-prompt/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/07/cmd-prompt/</guid>
       <description>コマンドプロンプトを使って作業するときプロンプトにカレントディレクトリのパスが表示され、カレントディレクトリによってコマンド入力位置が異なる。
 これがとてもウザいのでカスタマイズしてみた。
 デフォルトのプロンプト 以下のようにcdするたびに入力位置が変わり作業しづらい。 プロンプト変更 プロンプトに表示される内容はpromptコマンドで変更できる。
@@ -27,10 +27,10 @@ prompt 特殊コード  ※特殊コードの大文字・小文字は問わな�
     
     <item>
       <title>CentOSにChromiumブラウザをインストール</title>
-      <link>http://blogrammers.net/post/2017/06/03/centos-chromium-install/</link>
+      <link>http://sohtaro.com/blog/2017/06/03/centos-chromium-install/</link>
       <pubDate>Sat, 03 Jun 2017 10:29:43 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/03/centos-chromium-install/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/03/centos-chromium-install/</guid>
       <description>会社でも自宅でもブラウザはChromeを使っていて、サブPCのCentOSでもChromeを使いたいと思ったのでインストール方法について調べてみた。
 しかし、ChromeはCentOSには提供されていないらしい。
 なので、代わりにChromiumブラウザをインストールしてみた。
@@ -44,10 +44,10 @@ $ yum install chromium  正常にインストールが完了するとアプリ�
     
     <item>
       <title>CentOSのバージョン確認・アーキテクチャ確認のコマンド</title>
-      <link>http://blogrammers.net/post/2017/06/02/centos-version-arch/</link>
+      <link>http://sohtaro.com/blog/2017/06/02/centos-version-arch/</link>
       <pubDate>Fri, 02 Jun 2017 09:49:39 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/02/centos-version-arch/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/02/centos-version-arch/</guid>
       <description> 自宅のサブPCとしてCentOSをたまに使っているのだが、バージョン確認のコマンドも知らなかったのでメモ。
 CentOSのバージョン確認 $ cat /etc/centos-release CentOS release 6.8 (Final)  アーキテクチャ確認(OSが32bitか64bitか確認) $ arch i686  32bitの場合i686、64bitの場合x86_64と表示される
 以下のコマンドでも確認できる。
@@ -56,10 +56,10 @@ $ uname -a Linux localhost.home 2.6.32-642.11.1.el6.centos.plus.i686 #1 SMP Sat 
     
     <item>
       <title>Windowsサービスのインストール</title>
-      <link>http://blogrammers.net/post/2017/06/01/windows-service-install/</link>
+      <link>http://sohtaro.com/blog/2017/06/01/windows-service-install/</link>
       <pubDate>Thu, 01 Jun 2017 22:57:46 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/01/windows-service-install/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/01/windows-service-install/</guid>
       <description>exeをWindowsのサービスとして登録する機会があったので調べてみた。
 サービスとして登録するには以下のコマンドを実行する必要がある。
 サービスのインストール InstallUtil exeのパス  サービスのアンインストール InstallUtil /u exeのパス  InstallUtilのパス InstallUtil.exeは.NET Frameworkのバージョンごとにパスが異なる。
@@ -69,10 +69,10 @@ $ uname -a Linux localhost.home 2.6.32-642.11.1.el6.centos.plus.i686 #1 SMP Sat 
     
     <item>
       <title>gitの設定ファイルについてまとめてみた</title>
-      <link>http://blogrammers.net/post/2017/06/01/git-config/</link>
+      <link>http://sohtaro.com/blog/2017/06/01/git-config/</link>
       <pubDate>Thu, 01 Jun 2017 22:16:45 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/01/git-config/</guid>
+      <guid>http://sohtaro.com/blog/2017/06/01/git-config/</guid>
       <description>Gitの設定ファイルには多くの設定があるが、設定ファイルの種類やよく使うコマンドについてまとめてみた。
 設定ファイルの種類 設定ファイルは以下の三つがあり、上から順に優先順位が高い。
    ファイルパス 対象 使用するオプション     .git/config リポジトリごと --local または指定なし   ~/.gitconfig ユーザーごと --global   /etc/gitconfig /usr/local/etc/gitconfig
@@ -83,10 +83,10 @@ $ uname -a Linux localhost.home 2.6.32-642.11.1.el6.centos.plus.i686 #1 SMP Sat 
     
     <item>
       <title>TortoiseGitのアイコンオーバレイが表示されない件の解決方法</title>
-      <link>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</link>
+      <link>http://sohtaro.com/blog/2017/05/30/git-tortoisegit-icon-overlay/</link>
       <pubDate>Tue, 30 May 2017 22:26:07 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/30/git-tortoisegit-icon-overlay/</guid>
       <description>TortoiseGitのアイコンオーバレイがなんらかのタイミングで表示されなくなったので解決方法のメモです。
 アイコンオーバレイとはエクスプローラーのフォルダやファイルのアイコン上に表示されるマークです。
 TortoiseGitの設定確認 TortoiseGitの[設定]-[アイコンオーバーレイ]-[オーバーレイハンドラー]の順に開きます。 TortoiseGit以外で9個のオーバーレイがインストールされているようです。
@@ -108,10 +108,10 @@ PC再起動 オーバーレイアイコンの設定が15個以下になったの
     
     <item>
       <title>git statusのショートフォーマット</title>
-      <link>http://blogrammers.net/post/2017/05/28/git-status-short/</link>
+      <link>http://sohtaro.com/blog/2017/05/28/git-status-short/</link>
       <pubDate>Sun, 28 May 2017 22:38:41 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/28/git-status-short/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/28/git-status-short/</guid>
       <description>git statusってよく使いますよね。ファイルを追加する前やコミットした後、Git Bashの起動直後など実によく使います。
 そのよく使うコマンドの一つのgit statusですが普通にオプションなしで実行すると
 $ git status On branch master Changes to be committed: (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage) modified: b.txt Changes not staged for commit: (use &amp;quot;git add/rm &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed) (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory) deleted: dir1/d.txt Untracked files: (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to include in what will be committed) a.txt  こんな感じで非常に長いです。
@@ -120,10 +120,10 @@ $ git status On branch master Changes to be committed: (use &amp;quot;git reset 
     
     <item>
       <title>ローカルリポジトリから共有リポジトリを作成する方法</title>
-      <link>http://blogrammers.net/post/2017/05/27/git-shared-repo-from-local-repo/</link>
+      <link>http://sohtaro.com/blog/2017/05/27/git-shared-repo-from-local-repo/</link>
       <pubDate>Sat, 27 May 2017 22:57:38 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/27/git-shared-repo-from-local-repo/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/27/git-shared-repo-from-local-repo/</guid>
       <description>今回はローカルリポジトリが存在する状態で共有リポジトリを作成する方法を調べてみました。
 以下の二つがあるようです。
  空の共有リポジトリを作成しローカルリポジトリからプッシュする ローカルリポジトリを共有リポジトリとして複製する  準備 以下のディレクトリを用意します。
@@ -143,10 +143,10 @@ $ cd c:/gittest/hoge # 送信対象で&amp;quot;*&amp;quot;を指定するとす
     
     <item>
       <title>Gitリポジトリ内のファイル削除・ファイル名変更</title>
-      <link>http://blogrammers.net/post/2017/05/26/git-repo-rm-mv/</link>
+      <link>http://sohtaro.com/blog/2017/05/26/git-repo-rm-mv/</link>
       <pubDate>Fri, 26 May 2017 21:53:17 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/26/git-repo-rm-mv/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/26/git-repo-rm-mv/</guid>
       <description>Gitで管理しているファイルを管理から外して削除したり、ファイル名を変更したい場合があります。
 Git Bashのrmやmvを実行してからでもできるのですが、gitに専用のコマンドが用意されています。
 両方試してみましょう。
@@ -161,10 +161,10 @@ $ git rm a.</description>
     
     <item>
       <title>Hugoを使いはじめる</title>
-      <link>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</link>
+      <link>http://sohtaro.com/blog/2017/05/24/hugo-quickstart/</link>
       <pubDate>Wed, 24 May 2017 21:55:38 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/24/hugo-quickstart/</guid>
       <description>前回はHugoをインストールしたので今回はサイトを作って記事を書いて動作確認までやってみる。
 環境 Windows7 64bit
 Hugo v0.20.7
@@ -177,10 +177,10 @@ $ mkdir c:\hugo\sites $ cd c:\hugo\sites $ hugo new site mysite $ tree . /F C:\H
     
     <item>
       <title>Gitで使うエディタを変更してみる</title>
-      <link>http://blogrammers.net/post/2017/05/24/git-config-editor/</link>
+      <link>http://sohtaro.com/blog/2017/05/24/git-config-editor/</link>
       <pubDate>Wed, 24 May 2017 11:47:28 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/24/git-config-editor/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/24/git-config-editor/</guid>
       <description>gitでコミットのメッセージを編集するときなどに使うエディタはviエディタが使われます(※)。viに慣れていない人にとっては他のエディタを使いたいかもしれません。ここではWindows環境で他のエディタを使用するように設定を変更してみます。
 (※)ただし、デフォルトエディタ(環境変数VISUALまたはEDITOR)が設定されている場合は、そのエディタが使われます。
 エディタを変更する エディタを変更するためには以下のコマンドを実行します。
@@ -191,10 +191,10 @@ $ echo a &amp;gt; a.txt $ git add a.txt $ git commit a.txt  コミットメッ�
     
     <item>
       <title>Gitのローカルリポジトリ作成</title>
-      <link>http://blogrammers.net/post/2017/05/23/git-local-repo/</link>
+      <link>http://sohtaro.com/blog/2017/05/23/git-local-repo/</link>
       <pubDate>Tue, 23 May 2017 17:45:03 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/23/git-local-repo/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/23/git-local-repo/</guid>
       <description>Gitのローカルリポジトリを作成するには以下の二つの方法があります。
 1. ディレクトリでリポジトリを作成(git init)
 2. 共有リポジトリを複製する(git clone)
@@ -210,10 +210,10 @@ $ echo a &amp;gt; a.txt $ git add a.txt $ git commit a.txt  コミットメッ�
     
     <item>
       <title>Gitの初期設定</title>
-      <link>http://blogrammers.net/post/2017/05/22/git-initial-setting/</link>
+      <link>http://sohtaro.com/blog/2017/05/22/git-initial-setting/</link>
       <pubDate>Mon, 22 May 2017 15:49:04 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/22/git-initial-setting/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/22/git-initial-setting/</guid>
       <description>前回、Gitのインストールを行いました。今回はGitを使い始めるためのいくつかの設定をします。
 名前とメールアドレスの設定 GitでファイルをコミットしたときにAuthorが記録されるのですが、名前とメールアドレスを設定していないとコミット時にエラーになるので最初に設定しておきます。
 以下の二つのコマンドを実行します。
@@ -228,10 +228,10 @@ $ git config --global core.quotepath false  これでGitを使うための準備
     
     <item>
       <title>imgタグのalt属性とtitle属性の違い</title>
-      <link>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</link>
+      <link>http://sohtaro.com/blog/2017/05/22/html-img-alt-title/</link>
       <pubDate>Mon, 22 May 2017 11:56:05 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/22/html-img-alt-title/</guid>
       <description>HTMLで画像を表示する際に使用するimgタグですが、属性としてaltとtitleがあります。
    属性 意味 必須     alt 代替テキストを指定 ○   title 説明(補足情報)を指定 -    alt属性は必須で代替テキストを指定し、title属性は省略可で説明を指定します。
 実際どのような違いがあるのでしょうか。調べてみました。
@@ -243,10 +243,10 @@ alt属性はアクセシビリティのために有効になりますし、SEO�
     
     <item>
       <title>GitHubのリポジトリを削除する方法</title>
-      <link>http://blogrammers.net/post/2017/05/22/github-delete-repo/</link>
+      <link>http://sohtaro.com/blog/2017/05/22/github-delete-repo/</link>
       <pubDate>Mon, 22 May 2017 09:44:16 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/22/github-delete-repo/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/22/github-delete-repo/</guid>
       <description>GitHubにいくつかリポジトリを作成していますが、不要なリポジトリがあるので削除してみました。
 削除方法は以下のとおりです。
  GitHubのリポジトリのページにアクセス Settingsをクリック  遷移した画面の一番下のDanger ZoneにあるDelete this repositoriyをクリック  削除すると元に戻せないメッセージなどの警告ダイアログが出る
@@ -257,10 +257,10 @@ Deleting a repository</description>
     
     <item>
       <title>GitHubのユーザー名を変える</title>
-      <link>http://blogrammers.net/post/2017/05/20/github-change-username/</link>
+      <link>http://sohtaro.com/blog/2017/05/20/github-change-username/</link>
       <pubDate>Sat, 20 May 2017 09:58:33 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/20/github-change-username/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/20/github-change-username/</guid>
       <description>GitHubのユーザー名にもろに自分を名字入れてまして、それをずっと変えたいと思ってましたので変更してみました。
 ユーザー名を変更するとどうなるか GitHub Helpでユーザー名変えるとどうなるかのページがあったので確認。
 What happens when I change my username?
@@ -274,10 +274,10 @@ What happens when I change my username?
     
     <item>
       <title>git add .とgit add -Aとgit add -uの違い</title>
-      <link>http://blogrammers.net/post/2017/05/19/git-add-option/</link>
+      <link>http://sohtaro.com/blog/2017/05/19/git-add-option/</link>
       <pubDate>Fri, 19 May 2017 14:56:48 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/19/git-add-option/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/19/git-add-option/</guid>
       <description>今までgit addするときはgit add .をずっと使ってきたのだが、-Aと-uとの違いがわからなかったので調べてみた。
 バージョン Git for Windows2.13.0
 ヘルプで確認 とりあえずヘルプで-Aと-uを確認。
@@ -290,10 +290,10 @@ If no &amp;lt;pathspec&amp;gt; is given when -A option is used, all files in the
     
     <item>
       <title>Gitインストール</title>
-      <link>http://blogrammers.net/post/2017/05/17/git-install/</link>
+      <link>http://sohtaro.com/blog/2017/05/17/git-install/</link>
       <pubDate>Wed, 17 May 2017 16:09:38 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/17/git-install/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/17/git-install/</guid>
       <description>環境とインストールバージョン  Windows7 64bit Git for Windows2.13.0  インストール手順  以下のページのDownloadsから最新版をダウンロードする。
 https://git-scm.com/
  ダウンロードしたexeファイルをダブルクリック。
@@ -316,10 +316,10 @@ https://git-scm.com/
     
     <item>
       <title>Hugoインストール</title>
-      <link>http://blogrammers.net/post/2017/05/17/hugo-install/</link>
+      <link>http://sohtaro.com/blog/2017/05/17/hugo-install/</link>
       <pubDate>Wed, 17 May 2017 14:35:27 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/17/hugo-install/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/17/hugo-install/</guid>
       <description>このサイトはHugoを使用して作成しています。
 Hugoとは静的なHTMLを生成する静的ページジェネレータでGoogleのGo言語で作られています。
 他にもJekyllやHexoなどのツールがあるようですが、記事数が増えるとビルドに時間がかかるらしく
@@ -330,10 +330,10 @@ Windows7へのインストール  Hugo ReleasesのDownloadsで自分の環境に
     
     <item>
       <title>Markdown記法</title>
-      <link>http://blogrammers.net/post/2017/05/12/markdown-notation/</link>
+      <link>http://sohtaro.com/blog/2017/05/12/markdown-notation/</link>
       <pubDate>Fri, 12 May 2017 21:27:11 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/12/markdown-notation/</guid>
+      <guid>http://sohtaro.com/blog/2017/05/12/markdown-notation/</guid>
       <description>このサイトはMarkdownを使用して記述しています。
 まだ使い始めたばかりですが、これからサクサク記事を書いていくために
 Markdown記法についてまとめてみました。
@@ -343,10 +343,10 @@ Markdownとは  文書を記述するための軽量マークアップ言語 HTM
     
     <item>
       <title>About</title>
-      <link>http://blogrammers.net/about/</link>
+      <link>http://sohtaro.com/about/</link>
       <pubDate>Thu, 11 May 2017 21:26:46 +0900</pubDate>
       
-      <guid>http://blogrammers.net/about/</guid>
+      <guid>http://sohtaro.com/about/</guid>
       <description>自己紹介 はじめまして、そうたろう です。プログラマをしています。
 一児の父で毎日子育てに奮闘しています。
 このブログでは日々仕事で経験したことや学んだこと、仕事以外で考えていることなどを中心に楽しく書いていきます。

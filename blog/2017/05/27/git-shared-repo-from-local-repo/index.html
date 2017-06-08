@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    ローカルリポジトリから共有リポジトリを作成する方法 | Sohtaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/05/27/git-shared-repo-from-local-repo/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="Sohtaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="Sohtaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">Sohtaro.com</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>ローカルリポジトリから共有リポジトリを作成する方法</h1>
+      <div class="meta">
+        May 27, 2017 &nbsp;
+        
+          #<a href="/tags/git">git</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>今回はローカルリポジトリが存在する状態で共有リポジトリを作成する方法を調べてみました。</p>
+
+<p>以下の二つがあるようです。</p>
+
+<ol>
+<li>空の共有リポジトリを作成しローカルリポジトリからプッシュする</li>
+<li>ローカルリポジトリを共有リポジトリとして複製する</li>
+</ol>
+
+<h2 id="準備">準備</h2>
+
+<p>以下のディレクトリを用意します。</p>
+
+<ul>
+<li>共有リポジトリを作成するディレクトリ：c:/share<br /></li>
+<li>ローカルリポジトリのあるディレクトリ:c:/gittest/hoge<br />
+(コミット履歴ありのリポジトリ)<br /></li>
+</ul>
+
+<h2 id="方法１-空の共有リポジトリを作成しローカルリポジトリからプッシュ">方法１．空の共有リポジトリを作成しローカルリポジトリからプッシュ</h2>
+
+<pre><code>$ cd c:/share
+# 共有リポジトリは慣例としてディレクトリ名の終わりを`.git`にします
+$ mkdir hoge.git
+$ cd hoge.git
+$ git init --bare --shared
+</code></pre>
+
+<p><code>--bare</code>はベアリポジトリを作成するオプション。
+ベアリポジトリとは作業ディレクトリを持たないリポジトリです。</p>
+
+<p><code>--shared</code>はリポジトリを共有するときのアクセス権を設定するオプションで<code>--shared=0666</code>のようにアクセス権を設定します。</p>
+
+<p>パーミッション指定なしの場合は<code>0664</code>です。<br />
+同じグループのみに読み書き許可するには<code>0660</code>を指定します。</p>
+
+<p>これで空の共有リポジトリが作成できました。</p>
+
+<p>あとはローカルリポジトリから共有リポジトリにプッシュします。</p>
+
+<pre><code>$ cd c:/gittest/hoge
+# 送信対象で&quot;*&quot;を指定するとすべてのブランチ、タグがプッシュされるようです
+$ git push c:/share/hoge.git &quot;*&quot;
+</code></pre>
+
+<h2 id="方法２-ローカルリポジトリを共有リポジトリとして複製する">方法２.ローカルリポジトリを共有リポジトリとして複製する</h2>
+
+<pre><code>$ cd c:/share
+$ git clone --bare c:/gittest/hoge hoge.git
+</code></pre>
+
+<p><code>--bare</code>は<code>git init</code>と同様にベアリポジトリを作成します。</p>
+
+<p>方法1.と2.で設定ファイルが微妙に違ったりしますが、特に問題ないと思います。</p>
+
+<p>あとはこのリポジトリをサーバー上に置き、アクセスするためのプロトコルの準備をすると他の開発者と共有できるようになります。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/05/26/git-repo-rm-mv/" rel="prev">Gitリポジトリ内のファイル削除・ファイル名変更</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/05/28/git-status-short/" rel="next">git statusのショートフォーマット</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Sohtaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

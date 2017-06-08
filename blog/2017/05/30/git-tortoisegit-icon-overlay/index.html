@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    TortoiseGitのアイコンオーバレイが表示されない件の解決方法 | Sohtaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/05/30/git-tortoisegit-icon-overlay/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="Sohtaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="Sohtaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">Sohtaro.com</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>TortoiseGitのアイコンオーバレイが表示されない件の解決方法</h1>
+      <div class="meta">
+        May 30, 2017 &nbsp;
+        
+          #<a href="/tags/git">git</a>&nbsp;
+        
+          #<a href="/tags/tortoisegit">TortoiseGit</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>TortoiseGitのアイコンオーバレイがなんらかのタイミングで表示されなくなったので解決方法のメモです。</p>
+
+<p>アイコンオーバレイとはエクスプローラーのフォルダやファイルのアイコン上に表示されるマークです。</p>
+
+<h2 id="tortoisegitの設定確認">TortoiseGitの設定確認</h2>
+
+<p>TortoiseGitの[設定]-[アイコンオーバーレイ]-[オーバーレイハンドラー]の順に開きます。
+<img src="/images/git/icon-overlay.png" alt="icon-overlay" /></p>
+
+<p>TortoiseGit以外で9個のオーバーレイがインストールされているようです。</p>
+
+<h2 id="レジストリの確認">レジストリの確認</h2>
+
+<p><code>レジストリエディターを起動する</code>をクリックし、レジストリを確認します。</p>
+
+<p>キー：HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers</p>
+
+<p><img src="/images/git/icon-overlay2.png" alt="icon-overlay2" /></p>
+
+<p>TortoiseGitで9個とTortoiseGit以外で9個で合計18個のオーバーレイの設定があります。</p>
+
+<p>Windowsの上限は15個のようです。</p>
+
+<p>この上限を超えると優先順位の低いものから表示されなくなるようです。</p>
+
+<h2 id="不要レジストリの削除">不要レジストリの削除</h2>
+
+<p>解決方法としては、不要なオーバーレイアイコンを削除します。</p>
+
+<p>Dropboxのオーバーレイアイコンが４つありますが、Dropboxはほとんど使ってないので削除します。</p>
+
+<p>ちなみに一番下の三つのオーバーレイアイコンはWindowsで使用しているらしいのでそのままにしておきます。</p>
+
+<ul>
+<li>EnhancedStorageShell<br /></li>
+<li>Offline Files<br /></li>
+<li>SharingPrivate<br /></li>
+</ul>
+
+<p>00aswと00avastも削除して問題ないと思いますがとりあえずそのままにしておきます。</p>
+
+<h2 id="pc再起動">PC再起動</h2>
+
+<p>オーバーレイアイコンの設定が15個以下になったのでPCを再起動します。</p>
+
+<p>オーバーレイアイコンが表示されることを確認できました。</p>
+
+<p><img src="/images/git/icon-overlay3.png" alt="icon-overlay3" /></p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/05/28/git-status-short/" rel="prev">git statusのショートフォーマット</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/06/01/git-config/" rel="next">gitの設定ファイルについてまとめてみた</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Sohtaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

@@ -13,10 +13,10 @@
     
     <item>
       <title>Gitで使うエディタを変更してみる</title>
-      <link>http://blogrammers.net/post/2017/05/24/git-config-editor/</link>
+      <link>http://blogrammers.net/post/git-config-editor/</link>
       <pubDate>Wed, 24 May 2017 11:47:28 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/24/git-config-editor/</guid>
+      <guid>http://blogrammers.net/post/git-config-editor/</guid>
       <description>gitでコミットのメッセージを編集するときなどに使うエディタはviエディタが使われます(※)。viに慣れていない人にとっては他のエディタを使いたいかもしれません。ここではWindows環境で他のエディタを使用するように設定を変更してみます。
 (※)ただし、デフォルトエディタ(環境変数VISUALまたはEDITOR)が設定されている場合は、そのエディタが使われます。
 エディタを変更する エディタを変更するためには以下のコマンドを実行します。

@@ -13,10 +13,10 @@
     
     <item>
       <title>TortoiseGitのアイコンオーバレイが表示されない件の解決方法</title>
-      <link>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</link>
+      <link>http://blogrammers.net/post/git-tortoisegit-icon-overlay/</link>
       <pubDate>Tue, 30 May 2017 22:26:07 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</guid>
+      <guid>http://blogrammers.net/post/git-tortoisegit-icon-overlay/</guid>
       <description>TortoiseGitのアイコンオーバレイがなんらかのタイミングで表示されなくなったので解決方法のメモです。
 アイコンオーバレイとはエクスプローラーのフォルダやファイルのアイコン上に表示されるマークです。
 TortoiseGitの設定確認 TortoiseGitの[設定]-[アイコンオーバーレイ]-[オーバーレイハンドラー]の順に開きます。 TortoiseGit以外で9個のオーバーレイがインストールされているようです。

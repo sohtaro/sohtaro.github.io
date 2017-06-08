@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Gitの初期設定 | Blogrammer&#39;s.Net
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blogrammers.net/post/git-initial-setting/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://blogrammers.net/index.xml" rel="alternate" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+  <link href="http://blogrammers.net/index.xml" rel="feed" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blogrammers.net/">Blogrammer&#39;s.Net</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/zth2" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Gitの初期設定</h1>
+      <div class="meta">
+        May 22, 2017 &nbsp;
+        
+          #<a href="/tags/git">git</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p><a href="/post/git-install/">前回</a>、Gitのインストールを行いました。今回はGitを使い始めるためのいくつかの設定をします。</p>
+
+<h1 id="名前とメールアドレスの設定">名前とメールアドレスの設定</h1>
+
+<p>GitでファイルをコミットしたときにAuthorが記録されるのですが、名前とメールアドレスを設定していないとコミット時にエラーになるので最初に設定しておきます。</p>
+
+<p>以下の二つのコマンドを実行します。</p>
+
+<pre><code>$ git config --global user.name &quot;Yamada Taro&quot;
+$ git config --global user.email &quot;yamadataro@example.com&quot;
+</code></pre>
+
+<p>git configコマンドはGitの設定を表示したり変更したりするコマンドです。<br />
+--globalを指定するとユーザのGitの設定が対象で、指定なしの場合はリポジトリのGitの設定が対象となります。</p>
+
+<p>~~globalで設定した内容は下記のファイルに書かれます。<br />
+<code>~/.gitconfig</code></p>
+
+<p>このファイルを直接編集してもよいのですが、いちいち開くのは面倒ですのでコマンドの方が便利です。また、以下のコマンドを実行すると.gitconfigをエディタで開くことができ、編集することもできます。</p>
+
+<pre><code>$ git config --global -e
+または
+$ git config --global --edit
+</code></pre>
+
+<h1 id="日本語ファイル名を表示する">日本語ファイル名を表示する</h1>
+
+<p>ファイル名に日本語が含まれる場合、git statusなどでファイル名がエスケープして表示されます。これを防止するには以下のコマンドを実行します。</p>
+
+<pre><code>$ git config --global core.quotepath false
+</code></pre>
+
+<p>これでGitを使うための準備ができました。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blogrammers.net/post/html-img-alt-title/" rel="prev">imgタグのalt属性とtitle属性の違い</a></span>
+    
+    
+      <span class="next"><a href="http://blogrammers.net/post/git-local-repo/" rel="next">Gitのローカルリポジトリ作成</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Soutarou</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

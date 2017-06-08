@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Gitで使うエディタを変更してみる | Blogrammer&#39;s.Net
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blogrammers.net/post/git-config-editor/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://blogrammers.net/index.xml" rel="alternate" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+  <link href="http://blogrammers.net/index.xml" rel="feed" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blogrammers.net/">Blogrammer&#39;s.Net</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/zth2" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Gitで使うエディタを変更してみる</h1>
+      <div class="meta">
+        May 24, 2017 &nbsp;
+        
+          #<a href="/tags/git">git</a>&nbsp;
+        
+          #<a href="/tags/editor">editor</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>gitでコミットのメッセージを編集するときなどに使うエディタはviエディタが使われます(※)。viに慣れていない人にとっては他のエディタを使いたいかもしれません。ここではWindows環境で他のエディタを使用するように設定を変更してみます。<br />
+(※)ただし、デフォルトエディタ(環境変数VISUALまたはEDITOR)が設定されている場合は、そのエディタが使われます。</p>
+
+<h1 id="エディタを変更する">エディタを変更する</h1>
+
+<p>エディタを変更するためには以下のコマンドを実行します。</p>
+
+<pre><code>$ git config --global core.editor &quot;エディタを実行するコマンド&quot;
+</code></pre>
+
+<p>今回はサクラエディタに変更してみます。</p>
+
+<pre><code># パスにスペースがあるのでシングルクオーテーションで囲む
+# -CODE=4はUTF-8で開くためのサクラエディタのオプション
+# フォルダの区切りは「/」(スラッシュ)
+$ git config --global core.editor &quot;'C:/Program Files/sakura2-2-0-1_x64/sakura.exe' -CODE=4&quot;
+
+# サクラエディタの実行ファイルのフォルダにパスが通っている場合は以下でもOK
+$ git config --global core.editor &quot;sakura.exe -CODE=4&quot;
+</code></pre>
+
+<p>実際にファイルを用意し、コミットすると</p>
+
+<pre><code>$ echo a &gt; a.txt
+$ git add a.txt
+$ git commit a.txt
+</code></pre>
+
+<p>コミットメッセージのファイルがサクラエディタで開きました。
+<img src="/images/git/config_editor.png" alt="config_editor" /></p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>viに慣れてない、またはお気に入りのエディタがある人は変更するとよいでしょう。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blogrammers.net/post/git-local-repo/" rel="prev">Gitのローカルリポジトリ作成</a></span>
+    
+    
+      <span class="next"><a href="http://blogrammers.net/post/hugo-quickstart/" rel="next">Hugoを使いはじめる</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Soutarou</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

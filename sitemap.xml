@@ -2,102 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blogrammers.net/post/2017/06/07/cmd-prompt/</loc>
+    <loc>http://blogrammers.net/test/</loc>
+    <lastmod>2017-06-08T09:54:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blogrammers.net/post/cmd-prompt/</loc>
     <lastmod>2017-06-07T15:50:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/06/03/centos-chromium-install/</loc>
+    <loc>http://blogrammers.net/post/centos-chromium-install/</loc>
     <lastmod>2017-06-03T10:29:43+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/06/02/centos-version-arch/</loc>
+    <loc>http://blogrammers.net/post/centos-version-arch/</loc>
     <lastmod>2017-06-02T09:49:39+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/06/01/windows-service-install/</loc>
+    <loc>http://blogrammers.net/post/windows-service-install/</loc>
     <lastmod>2017-06-01T22:57:46+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/06/01/git-config/</loc>
+    <loc>http://blogrammers.net/post/git-config/</loc>
     <lastmod>2017-06-01T22:16:45+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/30/git-tortoisegit-icon-overlay/</loc>
+    <loc>http://blogrammers.net/post/git-tortoisegit-icon-overlay/</loc>
     <lastmod>2017-05-30T22:26:07+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/28/git-status-short/</loc>
+    <loc>http://blogrammers.net/post/git-status-short/</loc>
     <lastmod>2017-05-28T22:38:41+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/27/git-shared-repo-from-local-repo/</loc>
+    <loc>http://blogrammers.net/post/git-shared-repo-from-local-repo/</loc>
     <lastmod>2017-05-27T22:57:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/26/git-repo-rm-mv/</loc>
+    <loc>http://blogrammers.net/post/git-repo-rm-mv/</loc>
     <lastmod>2017-05-26T21:53:17+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/24/hugo-quickstart/</loc>
+    <loc>http://blogrammers.net/post/hugo-quickstart/</loc>
     <lastmod>2017-05-24T21:55:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/24/git-config-editor/</loc>
+    <loc>http://blogrammers.net/post/git-config-editor/</loc>
     <lastmod>2017-05-24T11:47:28+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/23/git-local-repo/</loc>
+    <loc>http://blogrammers.net/post/git-local-repo/</loc>
     <lastmod>2017-05-23T17:45:03+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/22/git-initial-setting/</loc>
+    <loc>http://blogrammers.net/post/git-initial-setting/</loc>
     <lastmod>2017-05-22T15:49:04+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</loc>
+    <loc>http://blogrammers.net/post/html-img-alt-title/</loc>
     <lastmod>2017-05-22T11:56:05+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/22/github-delete-repo/</loc>
+    <loc>http://blogrammers.net/post/github-delete-repo/</loc>
     <lastmod>2017-05-22T09:44:16+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/20/github-change-username/</loc>
+    <loc>http://blogrammers.net/post/github-change-username/</loc>
     <lastmod>2017-05-20T09:58:33+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/19/git-add-option/</loc>
+    <loc>http://blogrammers.net/post/git-add-option/</loc>
     <lastmod>2017-05-19T14:56:48+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/17/git-install/</loc>
+    <loc>http://blogrammers.net/post/git-install/</loc>
     <lastmod>2017-05-17T16:09:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/17/hugo-install/</loc>
+    <loc>http://blogrammers.net/post/hugo-install/</loc>
     <lastmod>2017-05-17T14:35:27+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://blogrammers.net/post/2017/05/12/markdown-notation/</loc>
+    <loc>http://blogrammers.net/post/markdown-notation/</loc>
     <lastmod>2017-05-12T21:27:11+09:00</lastmod>
   </url>
   
@@ -114,7 +119,7 @@
   
   <url>
     <loc>http://blogrammers.net/</loc>
-    <lastmod>2017-06-07T15:50:05+09:00</lastmod>
+    <lastmod>2017-06-08T09:54:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -174,6 +179,12 @@
   <url>
     <loc>http://blogrammers.net/tags/</loc>
     <lastmod>2017-06-01T22:57:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blogrammers.net/tags/test/</loc>
+    <lastmod>2017-06-08T09:54:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

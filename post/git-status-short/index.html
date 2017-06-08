@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    git statusのショートフォーマット | Blogrammer&#39;s.Net
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blogrammers.net/post/git-status-short/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://blogrammers.net/index.xml" rel="alternate" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+  <link href="http://blogrammers.net/index.xml" rel="feed" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blogrammers.net/">Blogrammer&#39;s.Net</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/zth2" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>git statusのショートフォーマット</h1>
+      <div class="meta">
+        May 28, 2017 &nbsp;
+        
+          #<a href="/tags/git">git</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p><code>git status</code>ってよく使いますよね。ファイルを追加する前やコミットした後、Git Bashの起動直後など実によく使います。</p>
+
+<p>そのよく使うコマンドの一つの<code>git status</code>ですが普通にオプションなしで実行すると</p>
+
+<pre><code>$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
+
+        modified:   b.txt
+
+Changes not staged for commit:
+  (use &quot;git add/rm &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+
+        deleted:    dir1/d.txt
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+        a.txt
+</code></pre>
+
+<p>こんな感じで非常に長いです。</p>
+
+<p>最近まで私も知らなかったのですが、実は、短いフォーマットで出力するオプションが存在します。</p>
+
+<p><code>git status -s</code>です。</p>
+
+<pre><code>$ git status -s
+M  b.txt
+ D dir1/d.txt
+?? a.txt
+
+</code></pre>
+
+<p>違いは歴然ですね。圧倒的に短い。</p>
+
+<p>1文字目がインデックスの状態、2文字目が作業ツリーの状態をアルファベットで表しています。
+アルファベットの意味は以下の通りです。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">アルファベット</th>
+<th align="left">意味</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">M</td>
+<td align="left">変更</td>
+</tr>
+
+<tr>
+<td align="left">A</td>
+<td align="left">追加</td>
+</tr>
+
+<tr>
+<td align="left">D</td>
+<td align="left">削除</td>
+</tr>
+
+<tr>
+<td align="left">R</td>
+<td align="left">ファイル名変更</td>
+</tr>
+
+<tr>
+<td align="left">U</td>
+<td align="left">競合</td>
+</tr>
+
+<tr>
+<td align="left">?</td>
+<td align="left">未追跡</td>
+</tr>
+</tbody>
+</table>
+
+<p>未追跡ファイルは<code>??</code>、競合ファイルは<code>UU</code>となります。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>gitに慣れてきたら<code>git status -s</code>使いましょう。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blogrammers.net/post/git-shared-repo-from-local-repo/" rel="prev">ローカルリポジトリから共有リポジトリを作成する方法</a></span>
+    
+    
+      <span class="next"><a href="http://blogrammers.net/post/git-tortoisegit-icon-overlay/" rel="next">TortoiseGitのアイコンオーバレイが表示されない件の解決方法</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Soutarou</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

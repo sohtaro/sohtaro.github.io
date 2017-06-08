@@ -13,10 +13,10 @@
     
     <item>
       <title>コマンドプロンプトの表示を変更する</title>
-      <link>http://blogrammers.net/post/2017/06/07/cmd-prompt/</link>
+      <link>http://blogrammers.net/post/cmd-prompt/</link>
       <pubDate>Wed, 07 Jun 2017 15:50:05 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/06/07/cmd-prompt/</guid>
+      <guid>http://blogrammers.net/post/cmd-prompt/</guid>
       <description>コマンドプロンプトを使って作業するときプロンプトにカレントディレクトリのパスが表示され、カレントディレクトリによってコマンド入力位置が異なる。
 これがとてもウザいのでカスタマイズしてみた。
 デフォルトのプロンプト 以下のようにcdするたびに入力位置が変わり作業しづらい。 プロンプト変更 プロンプトに表示される内容はpromptコマンドで変更できる。

@@ -13,10 +13,10 @@
     
     <item>
       <title>GitHubのリポジトリを削除する方法</title>
-      <link>http://blogrammers.net/post/2017/05/22/github-delete-repo/</link>
+      <link>http://blogrammers.net/post/github-delete-repo/</link>
       <pubDate>Mon, 22 May 2017 09:44:16 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/22/github-delete-repo/</guid>
+      <guid>http://blogrammers.net/post/github-delete-repo/</guid>
       <description>GitHubにいくつかリポジトリを作成していますが、不要なリポジトリがあるので削除してみました。
 削除方法は以下のとおりです。
  GitHubのリポジトリのページにアクセス Settingsをクリック  遷移した画面の一番下のDanger ZoneにあるDelete this repositoriyをクリック  削除すると元に戻せないメッセージなどの警告ダイアログが出る
@@ -27,10 +27,10 @@ Deleting a repository</description>
     
     <item>
       <title>GitHubのユーザー名を変える</title>
-      <link>http://blogrammers.net/post/2017/05/20/github-change-username/</link>
+      <link>http://blogrammers.net/post/github-change-username/</link>
       <pubDate>Sat, 20 May 2017 09:58:33 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/2017/05/20/github-change-username/</guid>
+      <guid>http://blogrammers.net/post/github-change-username/</guid>
       <description>GitHubのユーザー名にもろに自分を名字入れてまして、それをずっと変えたいと思ってましたので変更してみました。
 ユーザー名を変更するとどうなるか GitHub Helpでユーザー名変えるとどうなるかのページがあったので確認。
 What happens when I change my username?

@@ -13,10 +13,10 @@
     
     <item>
       <title>CentOSのバージョン確認・アーキテクチャ確認のコマンド</title>
-      <link>http://blogrammers.net/post/centos-version-arch/</link>
+      <link>http://blogrammers.net/post/2017/06/02/centos-version-arch/</link>
       <pubDate>Fri, 02 Jun 2017 09:49:39 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/centos-version-arch/</guid>
+      <guid>http://blogrammers.net/post/2017/06/02/centos-version-arch/</guid>
       <description> 自宅のサブPCとしてCentOSをたまに使っているのだが、バージョン確認のコマンドも知らなかったのでメモ。
 CentOSのバージョン確認 $ cat /etc/centos-release CentOS release 6.8 (Final)  アーキテクチャ確認(OSが32bitか64bitか確認) $ arch i686  32bitの場合i686、64bitの場合x86_64と表示される
 以下のコマンドでも確認できる。

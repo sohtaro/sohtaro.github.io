@@ -13,10 +13,10 @@
     
     <item>
       <title>imgタグのalt属性とtitle属性の違い</title>
-      <link>http://blogrammers.net/post/html-img-alt-title/</link>
+      <link>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</link>
       <pubDate>Mon, 22 May 2017 11:56:05 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/html-img-alt-title/</guid>
+      <guid>http://blogrammers.net/post/2017/05/22/html-img-alt-title/</guid>
       <description>HTMLで画像を表示する際に使用するimgタグですが、属性としてaltとtitleがあります。
    属性 意味 必須     alt 代替テキストを指定 ○   title 説明(補足情報)を指定 -    alt属性は必須で代替テキストを指定し、title属性は省略可で説明を指定します。
 実際どのような違いがあるのでしょうか。調べてみました。

@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    コマンドプロンプトの表示を変更する | Blogrammer&#39;s.Net
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blogrammers.net/post/2017/06/07/cmd-prompt/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://blogrammers.net/index.xml" rel="alternate" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+  <link href="http://blogrammers.net/index.xml" rel="feed" type="application/rss+xml" title="Blogrammer&#39;s.Net" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://blogrammers.net/">Blogrammer&#39;s.Net</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/zth2" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>コマンドプロンプトの表示を変更する</h1>
+      <div class="meta">
+        Jun 7, 2017 &nbsp;
+        
+          #<a href="/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88">コマンドプロンプト</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>コマンドプロンプトを使って作業するときプロンプトにカレントディレクトリのパスが表示され、カレントディレクトリによってコマンド入力位置が異なる。</p>
+
+<p>これがとてもウザいのでカスタマイズしてみた。</p>
+
+<h2 id="デフォルトのプロンプト">デフォルトのプロンプト</h2>
+
+<p>以下のように<code>cd</code>するたびに入力位置が変わり作業しづらい。
+<img src="/images/cmd/prompt1.png" alt="prompt1" /></p>
+
+<h2 id="プロンプト変更">プロンプト変更</h2>
+
+<p>プロンプトに表示される内容は<code>prompt</code>コマンドで変更できる。</p>
+
+<pre><code>prompt 特殊コード
+</code></pre>
+
+<p>※特殊コードの大文字・小文字は問わない。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">特殊コード</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">$d</td>
+<td align="left">現在日付</td>
+</tr>
+
+<tr>
+<td align="left">$t</td>
+<td align="left">現在時刻(100分の1秒まで)</td>
+</tr>
+
+<tr>
+<td align="left">$h</td>
+<td align="left">バックスペース(直前の1文字消去)</td>
+</tr>
+
+<tr>
+<td align="left">$g</td>
+<td align="left">&gt;</td>
+</tr>
+
+<tr>
+<td align="left">$l</td>
+<td align="left">&lt;</td>
+</tr>
+
+<tr>
+<td align="left">$q</td>
+<td align="left">=</td>
+</tr>
+
+<tr>
+<td align="left">$v</td>
+<td align="left">Windowsのバージョン</td>
+</tr>
+
+<tr>
+<td align="left">$$</td>
+<td align="left">$</td>
+</tr>
+
+<tr>
+<td align="left">$p</td>
+<td align="left">カレントのドライブとパス</td>
+</tr>
+
+<tr>
+<td align="left">$s</td>
+<td align="left">空白</td>
+</tr>
+
+<tr>
+<td align="left">$_</td>
+<td align="left">改行</td>
+</tr>
+</tbody>
+</table>
+
+<p>どんなプロンプトが使いやすいか考えたが、とりあえず以下の三点を満たすプロンプトにする。</p>
+
+<ol>
+<li>現在日時を表示</li>
+<li>カレントのドライブとパスを表示を表示</li>
+<li>コマンド入力は常に同じ位置</li>
+</ol>
+
+<p>この三つを改行して設定するには以下のようにする。</p>
+
+<pre><code>prompt [$d$s$t$h$h$h]$_$p$_$g$s
+</code></pre>
+
+<p>現在日時の表示は単純に<code>$d$s$t</code>だと<code>2017/06/07 16:35:00.37</code>のように100分の1秒まで表示されるが、<code>$h</code>で3文字消すと秒までになる。</p>
+
+<p>これを実行してみると以下のように表示された。
+<img src="/images/cmd/prompt2.png" alt="prompt2" /></p>
+
+<p>カレントのパスは長くて改行されているが、コマンド入力位置が常に同じ位置になっている。素晴らしい。</p>
+
+<p>ただし、この<code>prompt</code>コマンドは現在のコマンドプロントしか有効じゃない。</p>
+
+<p>なのでコマンドプロンプト開くたびに有効にする必要があるが、そのためにレジストリをイジる必要がある。</p>
+
+<h2 id="レジストリをイジる">レジストリをイジる</h2>
+
+<p>コマンドプロンプトに関する設定は以下にある。</p>
+
+<blockquote>
+<p>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</p>
+</blockquote>
+
+<p>ここに<code>AutoRun</code>という名前の文字列値を新規に作り、prompt文を登録する。</p>
+
+<p><img src="/images/cmd/prompt3.png" alt="prompt3" /></p>
+
+<p>ここで登録したコマンドがコマンドプロンプト起動時に実行されるので、毎回素敵なプロンプトで作業ができる。</p>
+
+<h2 id="プロンプトを元に戻す">プロンプトを元に戻す</h2>
+
+<p>デフォルトのプロンプトに戻すには特殊コードなしで実行するだけ。</p>
+
+<pre><code>prompt
+</code></pre>
+
+<p>元のウザい感じに戻る。</p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://blogrammers.net/post/2017/06/03/centos-chromium-install/" rel="prev">CentOSにChromiumブラウザをインストール</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/profile.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Soutarou</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

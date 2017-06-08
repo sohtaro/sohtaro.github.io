@@ -13,10 +13,10 @@
     
     <item>
       <title>Windowsサービスのインストール</title>
-      <link>http://blogrammers.net/post/windows-service-install/</link>
+      <link>http://blogrammers.net/post/2017/06/01/windows-service-install/</link>
       <pubDate>Thu, 01 Jun 2017 22:57:46 +0900</pubDate>
       
-      <guid>http://blogrammers.net/post/windows-service-install/</guid>
+      <guid>http://blogrammers.net/post/2017/06/01/windows-service-install/</guid>
       <description>exeをWindowsのサービスとして登録する機会があったので調べてみた。
 サービスとして登録するには以下のコマンドを実行する必要がある。
 サービスのインストール InstallUtil exeのパス  サービスのアンインストール InstallUtil /u exeのパス  InstallUtilのパス InstallUtil.exeは.NET Frameworkのバージョンごとにパスが異なる。

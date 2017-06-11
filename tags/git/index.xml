@@ -6,13 +6,29 @@
     <description>Recent content in Git on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 01 Jun 2017 22:16:45 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jun 2017 13:32:51 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>gitの設定ファイルについてまとめてみた</title>
+      <title>Gitで過去のコミットのAuthor名とメールアドレスを変更するには</title>
+      <link>http://sohtaro.com/blog/2017/06/11/git/</link>
+      <pubDate>Sun, 11 Jun 2017 13:32:51 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/11/git/</guid>
+      <description>以前、GitHubのユーザー名とメールアドレスを変更したのだが、GitHubのリポジトリのコミット履歴のAuthor名とメールアドレスに古いものが含まれており、これを新しいものに変更したかったので調べてみた。
+Author名とメールアドレスを一括変更 以下のコマンドで一括で変更できるらしい。
+$ git filter-branch -f --env-filter \ &amp;quot;GIT_AUTHOR_NAME=&#39;&amp;lt;new name&amp;gt;&#39;; \ GIT_AUTHOR_EMAIL=&#39;&amp;lt;new email&amp;gt;&#39;; \ GIT_COMMITTER_NAME=&#39;&amp;lt;new name&amp;gt;&#39;; \ GIT_COMMITTER_EMAIL=&#39;&amp;lt;new email&amp;gt;&#39;;&amp;quot; \ &amp;lt;対象コミットリスト&amp;gt;  GitではAuthorの他にCommitterを記録しているのでこれも一緒に変更する。
+対象コミットリストは、すべてのコミットが対象ならHEAD、対象を制限するならHEAD~20..HEADのように指定する。
+実際に実行したコマンドは以下。
+$ git filter-branch -f --env-filter \ &amp;quot;GIT_AUTHOR_NAME=&#39;sohtaro&#39;; \ GIT_AUTHOR_EMAIL=&#39;sohtaro28@gmail.com&#39;; \ GIT_COMMITTER_NAME=&#39;sohtaro&#39;; \ GIT_COMMITTER_EMAIL=&#39;sohtaro28@gmail.com&#39;;&amp;quot; \ HEAD  あっさり変更できた。
+特定のAuthor名のコミットを変更 ところで上記のコマンドでは対象のコミットすべてが無条件に書き換えられるが、対象のコミットの中で特定の名前のみ書き換えたい場合は、以下のようにする。
+git filter-branch --commit-filter &#39; if [ &amp;quot;$GIT_COMMITTER_NAME&amp;quot; = &amp;quot;&amp;lt;old name&amp;gt;&amp;quot; ]; then GIT_COMMITTER_NAME=&amp;quot;&amp;lt;new name&amp;gt;&amp;quot;; GIT_AUTHOR_NAME=&amp;quot;&amp;lt;new name&amp;gt;&amp;quot;; GIT_COMMITTER_EMAIL=&amp;quot;&amp;lt;new email&amp;gt;&amp;quot;; GIT_AUTHOR_EMAIL=&amp;quot;&amp;lt;new email&amp;gt;&amp;quot;; git commit-tree &amp;quot;$@&amp;quot;; else git commit-tree &amp;quot;$@&amp;quot;; fi&#39; &amp;lt;対象コミットリスト&amp;gt;  参考サイト GitのCommit中のAuthor名およびCommitter名を変える</description>
+    </item>
+    
+    <item>
+      <title>Gitの設定ファイル(git-config)のまとめ</title>
       <link>http://sohtaro.com/blog/2017/06/01/git-config/</link>
       <pubDate>Thu, 01 Jun 2017 22:16:45 +0900</pubDate>
       

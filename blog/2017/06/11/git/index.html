@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Gitで過去のコミットのAuthor名とメールアドレスを変更するには | Sohtaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/06/11/git/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="Sohtaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="Sohtaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">Sohtaro.com</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Gitで過去のコミットのAuthor名とメールアドレスを変更するには</h1>
+      <div class="meta">
+        Jun 11, 2017 &nbsp;
+        
+          #<a href="/tags/git">git</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>以前、GitHubのユーザー名とメールアドレスを変更したのだが、GitHubのリポジトリのコミット履歴のAuthor名とメールアドレスに古いものが含まれており、これを新しいものに変更したかったので調べてみた。</p>
+
+<h2 id="author名とメールアドレスを一括変更">Author名とメールアドレスを一括変更</h2>
+
+<p>以下のコマンドで一括で変更できるらしい。</p>
+
+<pre><code>$ git filter-branch -f --env-filter \
+  &quot;GIT_AUTHOR_NAME='&lt;new name&gt;'; \
+   GIT_AUTHOR_EMAIL='&lt;new email&gt;'; \
+   GIT_COMMITTER_NAME='&lt;new name&gt;'; \
+   GIT_COMMITTER_EMAIL='&lt;new email&gt;';&quot; \
+  &lt;対象コミットリスト&gt;
+</code></pre>
+
+<p>GitではAuthorの他にCommitterを記録しているのでこれも一緒に変更する。</p>
+
+<p>対象コミットリストは、すべてのコミットが対象なら<code>HEAD</code>、対象を制限するなら<code>HEAD~20..HEAD</code>のように指定する。</p>
+
+<p>実際に実行したコマンドは以下。</p>
+
+<pre><code>$ git filter-branch -f --env-filter \
+  &quot;GIT_AUTHOR_NAME='sohtaro'; \
+   GIT_AUTHOR_EMAIL='sohtaro28@gmail.com'; \
+   GIT_COMMITTER_NAME='sohtaro'; \
+   GIT_COMMITTER_EMAIL='sohtaro28@gmail.com';&quot; \
+  HEAD
+</code></pre>
+
+<p>あっさり変更できた。</p>
+
+<h2 id="特定のauthor名のコミットを変更">特定のAuthor名のコミットを変更</h2>
+
+<p>ところで上記のコマンドでは対象のコミットすべてが無条件に書き換えられるが、対象のコミットの中で特定の名前のみ書き換えたい場合は、以下のようにする。</p>
+
+<pre><code>git filter-branch --commit-filter '
+        if [ &quot;$GIT_COMMITTER_NAME&quot; = &quot;&lt;old name&gt;&quot; ];
+        then
+                GIT_COMMITTER_NAME=&quot;&lt;new name&gt;&quot;;
+                GIT_AUTHOR_NAME=&quot;&lt;new name&gt;&quot;;
+                GIT_COMMITTER_EMAIL=&quot;&lt;new email&gt;&quot;;
+                GIT_AUTHOR_EMAIL=&quot;&lt;new email&gt;&quot;;
+                git commit-tree &quot;$@&quot;;
+        else
+                git commit-tree &quot;$@&quot;;
+        fi' &lt;対象コミットリスト&gt;
+</code></pre>
+
+<h2 id="参考サイト">参考サイト</h2>
+
+<p><a href="http://d.hatena.ne.jp/idesaku/20090908/1252419890">GitのCommit中のAuthor名およびCommitter名を変える</a><br />
+<a href="http://d.hatena.ne.jp/flalin/20110330/1301484566"> git でメールアドレスやら名前やらを間違えて commit してしまったときの修正方法</a></p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/06/07/cmd-prompt/" rel="prev">コマンドプロンプトの表示を変更する</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/icon.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Sohtaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

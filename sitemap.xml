@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sohtaro.com/blog/2017/06/11/git/</loc>
+    <lastmod>2017-06-11T13:32:51+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sohtaro.com/blog/2017/06/07/cmd-prompt/</loc>
     <lastmod>2017-06-07T15:50:05+09:00</lastmod>
   </url>
@@ -131,7 +136,7 @@
   
   <url>
     <loc>http://sohtaro.com/tags/git/</loc>
-    <lastmod>2017-06-01T22:16:45+09:00</lastmod>
+    <lastmod>2017-06-11T13:32:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -161,13 +166,13 @@
   
   <url>
     <loc>http://sohtaro.com/post/</loc>
-    <lastmod>2017-06-07T15:50:05+09:00</lastmod>
+    <lastmod>2017-06-11T13:32:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://sohtaro.com/</loc>
-    <lastmod>2017-06-07T15:50:05+09:00</lastmod>
+    <lastmod>2017-06-11T13:32:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   

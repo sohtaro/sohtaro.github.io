@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Gist</title>
+      <link>http://sohtaro.com/tags/gist/</link>
+      <pubDate>Mon, 22 May 2017 13:56:00 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/tags/gist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Git</title>
       <link>http://sohtaro.com/tags/git/</link>
       <pubDate>Sun, 11 Jun 2017 13:32:51 +0900</pubDate>
@@ -50,7 +59,7 @@
     <item>
       <title>Github</title>
       <link>http://sohtaro.com/tags/github/</link>
-      <pubDate>Mon, 22 May 2017 09:44:16 +0900</pubDate>
+      <pubDate>Mon, 22 May 2017 13:56:00 +0900</pubDate>
       
       <guid>http://sohtaro.com/tags/github/</guid>
       <description></description>

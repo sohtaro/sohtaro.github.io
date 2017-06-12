@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Gistでソースコードを共有してみる | Sohtaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/05/22/gist/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="Sohtaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="Sohtaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">Sohtaro.com</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Gistでソースコードを共有してみる</h1>
+      <div class="meta">
+        May 22, 2017 &nbsp;
+        
+          #<a href="/tags/github">github</a>&nbsp;
+        
+          #<a href="/tags/gist">gist</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>GitHubにはGistというソースコードを共有するサービスがあります。まだ使ったことがなかったのでどのようなサービスなのか試してみました。</p>
+
+<h1 id="gistとは">Gistとは</h1>
+
+<p>GistについてのページがGitHub Helpにあります。<br />
+<a href="https://help.github.com/articles/about-gists/">About gists</a></p>
+
+<p>以下のような特徴があるようです。</p>
+
+<ul>
+<li>コードの共有ができる</li>
+<li>登録したgistはGitのリポジトリになるのでFork、Cloneができる(バージョン管理ができる)</li>
+<li>Publicなgistとsecretなgistがある</li>
+<li>zipファイルとしてダウンロードできる</li>
+<li>ブログなどに埋め込むことができる(javascriptとして埋め込む)</li>
+</ul>
+
+<h1 id="gistに登録">Gistに登録</h1>
+
+<ol>
+<li>GitHubにサインイン<br /></li>
+<li><a href="https://gist.github.com/">Gist</a>のページにアクセス
+<img src="/images/github/gist_1.png" alt="gist_1" /><br /></li>
+<li>登録するgistの説明とファイル名(拡張子含む)を入力(オプション)<br /></li>
+<li>真ん中のテキストボックスにコードを入力<br /></li>
+<li>別のコードを追加する場合は、<code>Add file</code>をクリック<br /></li>
+<li>インデントモード、インデントサイズ、改行モードを変更する場合はプルダウンで変更(画像の赤枠部分)<br /></li>
+<li>非公開のgistを作成する場合は<code>Create secret gist</code>、公開するgistを作成する場合は、<code>Create public gist</code>をクリック<br /></li>
+</ol>
+
+<p>今回は以下の内容でpublic gistとして登録してみました。
+<img src="/images/github/gist_2.png" alt="gist_2" /></p>
+
+<h1 id="ブログにコードを埋め込む">ブログにコードを埋め込む</h1>
+
+<ol>
+<li>登録したgistの上部に表示されているプルダウンで<code>Embed</code>を選択しテキストの内容をコピーする(赤枠のボタンでコピーできる)
+<img src="/images/github/gist_3.png" alt="gist_3" /><br /></li>
+<li>ブログの中に貼り付け</li>
+</ol>
+
+<p>実際に貼り付けた内容が以下です。</p>
+
+<script src="https://gist.github.com/zth2/935d867e7a2aabe7d3eea2e4924d5346.js"></script>
+
+<h1 id="gistをcloneして編集してみる">Gistをcloneして編集してみる</h1>
+
+<p>gistの画面の上部にある<code>Edit</code>ボタンをクリックするとWeb上でgistの更新ができますが、cloneしてローカルで編集し再度pushしてみます。</p>
+
+<ol>
+<li>登録したgistの上部に表示されているプルダウンで<code>Clone via HTTPS</code>または<code>Clone via SSH</code>を選択しテキストの内容をコピーする(赤枠のボタンでコピーできる)
+<img src="/images/github/gist_4.png" alt="gist_4" /><br /></li>
+<li>Git Bashを起動</li>
+<li>cloneするディレクトリに移動し、git cloneを実行</li>
+</ol>
+
+<pre><code>$ git clone git@gist.github.com:935d867e7a2aabe7d3eea2e4924d5346.git js_sample
+</code></pre>
+
+<p>以下のようなメッセージが表示される。<br />
+<a href="https://help.github.com/articles/github-s-ssh-key-fingerprints/">GitHub&rsquo;s SSH key fingerprints</a>にあるfingerprintsと一致することを確認し、<code>yes</code>を入力</p>
+
+<pre><code>The authenticity of host 'gist.github.com (192.30.253.119)' can't be established
+.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)?
+</code></pre>
+
+<p>cloneすることができましたが、以下の警告メッセージが表示されました。</p>
+
+<pre><code>Warning: Permanently added 'gist.github.com,192.30.253.119' (RSA) to the list of
+ known hosts.
+</code></pre>
+
+<p>SSH関連についてはまた後日調べようと思います。<br />
+とりあえずcloneはできたので普通のリポジトリのように編集してcommit、pushしてみます。</p>
+
+<pre><code>$ ls
+test.html
+</code></pre>
+
+<p>ファイル名は入力したファイル名となっています。</p>
+
+<pre><code>$ vi test.html
+# alertを１行追加 (Hello World2!)
+$ git add test.html
+$ git commit -m &quot;add Hello World2&quot;
+$ git push origin master
+</code></pre>
+
+<p>再度、Gistのページを開きます。
+<img src="/images/github/gist_5.png" alt="gist_5" /><br />
+更新されていることを確認できました。ここで<code>Revisions</code>をクリックすると履歴が確認できます。
+<img src="/images/github/gist_6.png" alt="gist_6" /></p>
+
+<!--://akio-t.hatenablog.com/entry/2015/05/05/163032  
+http://www.paka3.net/github05/
+http://qiita.com/nyamogera/items/d4fb0e9f016391d499b5
+https://gist.github.com/t-nissie/9580883
+-->
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/05/22/html-img-alt-title/" rel="prev">imgタグのalt属性とtitle属性の違い</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/05/22/git-initial-setting/" rel="next">Gitの初期設定</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/icon.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Sohtaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

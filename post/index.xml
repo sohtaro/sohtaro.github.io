@@ -22,9 +22,9 @@ Author名とメールアドレスを一括変更 以下のコマンドで一括�
 $ git filter-branch -f --env-filter \ &amp;quot;GIT_AUTHOR_NAME=&#39;&amp;lt;new name&amp;gt;&#39;; \ GIT_AUTHOR_EMAIL=&#39;&amp;lt;new email&amp;gt;&#39;; \ GIT_COMMITTER_NAME=&#39;&amp;lt;new name&amp;gt;&#39;; \ GIT_COMMITTER_EMAIL=&#39;&amp;lt;new email&amp;gt;&#39;;&amp;quot; \ &amp;lt;対象コミットリスト&amp;gt;  GitではAuthorの他にCommitterを記録しているのでこれも一緒に変更する。
 対象コミットリストは、すべてのコミットが対象ならHEAD、対象を制限するならHEAD~20..HEADのように指定する。
 実際に実行したコマンドは以下。
-$ git filter-branch -f --env-filter \ &amp;quot;GIT_AUTHOR_NAME=&#39;sohtaro&#39;; \ GIT_AUTHOR_EMAIL=&#39;sohtaro28@gmail.com&#39;; \ GIT_COMMITTER_NAME=&#39;sohtaro&#39;; \ GIT_COMMITTER_EMAIL=&#39;sohtaro28@gmail.com&#39;;&amp;quot; \ HEAD  あっさり変更できた。
-特定のAuthor名のコミットを変更 ところで上記のコマンドでは対象のコミットすべてが無条件に書き換えられるが、対象のコミットの中で特定の名前のみ書き換えたい場合は、以下のようにする。
-git filter-branch --commit-filter &#39; if [ &amp;quot;$GIT_COMMITTER_NAME&amp;quot; = &amp;quot;&amp;lt;old name&amp;gt;&amp;quot; ]; then GIT_COMMITTER_NAME=&amp;quot;&amp;lt;new name&amp;gt;&amp;quot;; GIT_AUTHOR_NAME=&amp;quot;&amp;lt;new name&amp;gt;&amp;quot;; GIT_COMMITTER_EMAIL=&amp;quot;&amp;lt;new email&amp;gt;&amp;quot;; GIT_AUTHOR_EMAIL=&amp;quot;&amp;lt;new email&amp;gt;&amp;quot;; git commit-tree &amp;quot;$@&amp;quot;; else git commit-tree &amp;quot;$@&amp;quot;; fi&#39; &amp;lt;対象コミットリスト&amp;gt;  参考サイト GitのCommit中のAuthor名およびCommitter名を変える</description>
+$ git filter-branch -f --env-filter \ &amp;quot;GIT_AUTHOR_NAME=&#39;sohtaro&#39;; \ GIT_AUTHOR_EMAIL=&#39;sohtaro28@gmail.com&#39;; \ GIT_COMMITTER_NAME=&#39;sohtaro&#39;; \ GIT_COMMITTER_EMAIL=&#39;sohtaro28@gmail.com&#39;;&amp;quot; \ HEAD  AuthorとCommitter両方を確認するためにgit log --pretty=fullを実行。
+通常、AuthorとCommitterは同じだが`git commit &amp;ndash;author=&amp;ldquo;Yamada Taro &amp;lt;yamada@example.com&amp;gt;&amp;ldquo;の形式でAuthor名を指定できる）
+$ git log --pretty=full -1 commit 35afa51b289fff2403a6ecd0f3afce4e917034e0 (HEAD -&amp;gt; master) Author: sohtaro &amp;lt;sohtaro28@gmail.com&amp;gt; Commit: sohtaro &amp;lt;sohtaro28@gmail.com&amp;gt; Update public files  あっさり変更できた。</description>
     </item>
     
     <item>

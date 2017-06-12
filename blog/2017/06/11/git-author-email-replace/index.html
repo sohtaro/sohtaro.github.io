@@ -100,6 +100,17 @@
   HEAD
 </code></pre>
 
+<p>AuthorとCommitter両方を確認するために<code>git log --pretty=full</code>を実行。<br />
+通常、AuthorとCommitterは同じだが`git commit &ndash;author=&ldquo;Yamada Taro &lt;yamada@example.com&gt;&ldquo;の形式でAuthor名を指定できる）</p>
+
+<pre><code>$ git log --pretty=full -1
+commit 35afa51b289fff2403a6ecd0f3afce4e917034e0 (HEAD -&gt; master)
+Author: sohtaro &lt;sohtaro28@gmail.com&gt;
+Commit: sohtaro &lt;sohtaro28@gmail.com&gt;
+
+    Update public files
+</code></pre>
+
 <p>あっさり変更できた。</p>
 
 <h2 id="特定のauthor名のコミットを変更">特定のAuthor名のコミットを変更</h2>

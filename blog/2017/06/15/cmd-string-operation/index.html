@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    バッチファイルで文字列操作 | Sohtaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/06/15/cmd-string-operation/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="Sohtaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="Sohtaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">Sohtaro.com</a></h1>
+        <h2>平凡なプログラマの平凡なプログラマによる誰かのためのブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>バッチファイルで文字列操作</h1>
+      <div class="meta">
+        Jun 15, 2017 &nbsp;
+        
+          #<a href="/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88">コマンドプロンプト</a>&nbsp;
+        
+          #<a href="/tags/%E3%83%90%E3%83%83%E3%83%81%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB">バッチファイル</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>バッチファイルで部分文字列を取得したり、置換したり文字列を操作する方法についてまとめる。</p>
+
+<h2 id="部分文字列を取得">部分文字列を取得</h2>
+
+<p><code>%var:m,n%</code>で変数varのm番目からn文字を取得する。</p>
+
+<pre><code>$ set name=sohtaro.com
+$ echo %name:~0,5%
+sohta
+$ echo %name:~7,4%
+.com
+</code></pre>
+
+<p>mを省略したりnを省略したり-nで最後のn文字分を除いたりできるが基本はm,nだけでいいと思う。</p>
+
+<p>詳細はコマンドプロンプトで<code>set /?</code>を実行すると確認できる。</p>
+
+<h2 id="文字列を置換">文字列を置換</h2>
+
+<p><code>%var:s1=s2%</code>で変数varのすべてのs1をs2に置換する。<br />
+削除する場合はs2をブランクにする。</p>
+
+<pre><code>$ set name=sohtaro.com
+$ echo %name:soh=Sou%
+Soutaro.com
+$ echo %name:o=O%
+sOhtarO.cOm
+$ echo %name:soh=%
+taro.com
+</code></pre>
+
+<h2 id="指定の文字列を含むか判定">指定の文字列を含むか判定</h2>
+
+<p>大文字小文字を区別しないで判定するには、元の文字列から指定の文字列を削除した文字列が元の文字列と異なるか判定する。異なる場合、含むと判定する。</p>
+
+<p>大文字小文字を区別して判定するには<code>findstr</code>を使う。</p>
+
+<pre><code># 大文字小文字を区別しない場合
+$ set name=sohtaro.com
+$ if not %name:taro=% == %name% (echo 含む) else (echo 含まない)
+含む
+$ if not %name:TARO=% == %name% (echo 含む) else (echo 含まない)
+含む
+$ if not %name:jiro=% == %name% (echo 含む) else (echo 含まない)
+含まない
+
+# 大文字小文字を区別する場合
+$ echo %name% | findstr &quot;taro&quot; &gt;NUL
+$ if not ERRORLEVEL 1 (echo 含む) else (echo 含まない)
+含む
+$ echo %name% | findstr &quot;Taro&quot; &gt;NUL
+$ if not ERRORLEVEL 1 (echo 含む) else (echo 含まない)
+含まない
+</code></pre>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/06/11/git-author-email-replace/" rel="prev">Gitで過去のコミットのAuthor名とメールアドレスを変更する方法</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/06/16/cmd-date-time/" rel="next">バッチファイルで現在日付、現在時刻を取得する方法</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/icon.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >Sohtaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

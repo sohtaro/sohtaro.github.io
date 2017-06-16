@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sohtaro.com/blog/2017/06/16/cmd-date-time/</loc>
+    <lastmod>2017-06-16T22:03:15+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sohtaro.com/blog/2017/06/15/cmd-string-operation/</loc>
+    <lastmod>2017-06-15T22:20:44+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sohtaro.com/blog/2017/06/11/git-author-email-replace/</loc>
     <lastmod>2017-06-11T13:32:51+09:00</lastmod>
   </url>
@@ -177,13 +187,13 @@
   
   <url>
     <loc>http://sohtaro.com/post/</loc>
-    <lastmod>2017-06-11T13:32:51+09:00</lastmod>
+    <lastmod>2017-06-16T22:03:15+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://sohtaro.com/</loc>
-    <lastmod>2017-06-11T13:32:51+09:00</lastmod>
+    <lastmod>2017-06-16T22:03:15+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -213,7 +223,13 @@
   
   <url>
     <loc>http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/</loc>
-    <lastmod>2017-06-07T15:50:05+09:00</lastmod>
+    <lastmod>2017-06-16T22:03:15+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sohtaro.com/tags/%E3%83%90%E3%83%83%E3%83%81%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/</loc>
+    <lastmod>2017-06-16T22:03:15+09:00</lastmod>
     <priority>0</priority>
   </url>
   

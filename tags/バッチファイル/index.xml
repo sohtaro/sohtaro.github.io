@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>コマンドプロンプト on Sohtaro.com</title>
-    <link>http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/</link>
-    <description>Recent content in コマンドプロンプト on Sohtaro.com</description>
+    <title>バッチファイル on Sohtaro.com</title>
+    <link>http://sohtaro.com/tags/%E3%83%90%E3%83%83%E3%83%81%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/</link>
+    <description>Recent content in バッチファイル on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 16 Jun 2017 22:03:15 +0900</lastBuildDate>
     
-	<atom:link href="http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/tags/%E3%83%90%E3%83%83%E3%83%81%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -36,20 +36,6 @@ $ set name=sohtaro.com $ echo %name:~0,5% sohta $ echo %name:~7,4% .com  mを省
 $ set name=sohtaro.com $ echo %name:soh=Sou% Soutaro.com $ echo %name:o=O% sOhtarO.cOm $ echo %name:soh=% taro.com  指定の文字列を含むか判定 大文字小文字を区別しないで判定するには、元の文字列から指定の文字列を削除した文字列が元の文字列と異なるか判定する。異なる場合、含むと判定する。
 大文字小文字を区別して判定するにはfindstrを使う。
 # 大文字小文字を区別しない場合 $ set name=sohtaro.com $ if not %name:taro=% == %name% (echo 含む) else (echo 含まない) 含む $ if not %name:TARO=% == %name% (echo 含む) else (echo 含まない) 含む $ if not %name:jiro=% == %name% (echo 含む) else (echo 含まない) 含まない # 大文字小文字を区別する場合 $ echo %name% | findstr &amp;quot;taro&amp;quot; &amp;gt;NUL $ if not ERRORLEVEL 1 (echo 含む) else (echo 含まない) 含む $ echo %name% | findstr &amp;quot;Taro&amp;quot; &amp;gt;NUL $ if not ERRORLEVEL 1 (echo 含む) else (echo 含まない) 含まない  </description>
-    </item>
-    
-    <item>
-      <title>コマンドプロンプトの表示を変更する</title>
-      <link>http://sohtaro.com/blog/2017/06/07/cmd-prompt/</link>
-      <pubDate>Wed, 07 Jun 2017 15:50:05 +0900</pubDate>
-      
-      <guid>http://sohtaro.com/blog/2017/06/07/cmd-prompt/</guid>
-      <description>コマンドプロンプトを使って作業するときプロンプトにカレントディレクトリのパスが表示され、カレントディレクトリによってコマンド入力位置が異なる。
-これがとてもウザいのでカスタマイズしてみた。
-デフォルトのプロンプト 以下のようにcdするたびに入力位置が変わり作業しづらい。 プロンプト変更 プロンプトに表示される内容はpromptコマンドで変更できる。
-prompt 特殊コード  ※特殊コードの大文字・小文字は問わない。
-   特殊コード 説明     $d 現在日付   $t 現在時刻(100分の1秒まで)   $h バックスペース(直前の1文字消去)   $g &amp;gt;   $l &amp;lt;   $q =   $v Windowsのバージョン   $$ $   $p カレントのドライブとパス   $s 空白   $_ 改行    どんなプロンプトが使いやすいか考えたが、とりあえず以下の三点を満たすプロンプトにする。
- 現在日時を表示 カレントのドライブとパスを表示を表示 コマンド入力は常に同じ位置  この三つを改行して設定するには以下のようにする。</description>
     </item>
     
   </channel>

@@ -6,14 +6,14 @@
   
   <meta charset="UTF-8">
   <title>
-    コマンドプロンプト | Sohtaro.com
+    バッチファイルで現在日付、現在時刻を取得する方法 | Sohtaro.com
   </title>
 
   
   <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
 
   
-  <link rel="canonical" href="http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/"/>
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/06/16/cmd-date-time/"/>
 
   
   <link rel="stylesheet" href="/css/sanitize.css">
@@ -59,11 +59,9 @@
 
 
   
-  <main id="list" role="main">
-    <div class="article-header light-gray"><h1>#コマンドプロンプト</h1></div>
-    
-    <div class="summary">
-      <h2><a href="http://sohtaro.com/blog/2017/06/16/cmd-date-time/">バッチファイルで現在日付、現在時刻を取得する方法 </a></h2>
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>バッチファイルで現在日付、現在時刻を取得する方法</h1>
       <div class="meta">
         Jun 16, 2017 &nbsp;
         
@@ -73,30 +71,58 @@
         
       </div>
     </div>
+    <article>
+      
+
+<p>バッチファイルの中でフォルダ名やファイル名に現在日付、現在時刻を使うことがよくあるが、すぐ忘れるのでメモしておく。</p>
+
+<h2 id="現在日付を表示">現在日付を表示</h2>
+
+<pre><code>$ echo %date%
+2017/06/16
+$ date /t
+2017/06/16
+</code></pre>
+
+<h2 id="現在時刻を表示">現在時刻を表示</h2>
+
+<pre><code>$ echo %time%
+11:58:29.47
+$ time /t
+11:59
+</code></pre>
+
+<h2 id="yyyymmdd形式で表示">yyyyMMdd形式で表示</h2>
+
+<pre><code>$ set yyyymmdd=%date:~0,4%%date:~5,2%%date:~8,2%
+$ echo %yyyymmdd%
+20170616
+</code></pre>
+
+<h2 id="yyyymmddhhmmss形式で表示">yyyyMMddHHmmss形式で表示</h2>
+
+<pre><code>$ set yyyymmddhhmmss=%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%
+$ echo %yyyymmddhhmmss%
+20170616221123
+</code></pre>
+
+<p><code>%var:~m,n%</code>は変数varのm番目からn文字を切り出す。(mは0始まり)</p>
+
+      
+      
+      
+    </article>
     
-    <div class="summary">
-      <h2><a href="http://sohtaro.com/blog/2017/06/15/cmd-string-operation/">バッチファイルで文字列操作 </a></h2>
-      <div class="meta">
-        Jun 15, 2017 &nbsp;
-        
-          #<a href="/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88">コマンドプロンプト</a>&nbsp;
-        
-          #<a href="/tags/%E3%83%90%E3%83%83%E3%83%81%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB">バッチファイル</a>&nbsp;
-        
-      </div>
-    </div>
-    
-    <div class="summary">
-      <h2><a href="http://sohtaro.com/blog/2017/06/07/cmd-prompt/">コマンドプロンプトの表示を変更する </a></h2>
-      <div class="meta">
-        Jun 7, 2017 &nbsp;
-        
-          #<a href="/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88">コマンドプロンプト</a>&nbsp;
-        
-      </div>
-    </div>
-    
+
+
   </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/06/15/cmd-string-operation/" rel="prev">バッチファイルで文字列操作</a></span>
+    
+    
+  </nav>
 
 
   

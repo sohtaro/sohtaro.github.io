@@ -6,10 +6,37 @@
     <description>Recent content on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 11 Jun 2017 13:32:51 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jun 2017 22:03:15 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>バッチファイルで現在日付、現在時刻を取得する方法</title>
+      <link>http://sohtaro.com/blog/2017/06/16/cmd-date-time/</link>
+      <pubDate>Fri, 16 Jun 2017 22:03:15 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/16/cmd-date-time/</guid>
+      <description>バッチファイルの中でフォルダ名やファイル名に現在日付、現在時刻を使うことがよくあるが、すぐ忘れるのでメモしておく。
+現在日付を表示 $ echo %date% 2017/06/16 $ date /t 2017/06/16  現在時刻を表示 $ echo %time% 11:58:29.47 $ time /t 11:59  yyyyMMdd形式で表示 $ set yyyymmdd=%date:~0,4%%date:~5,2%%date:~8,2% $ echo %yyyymmdd% 20170616  yyyyMMddHHmmss形式で表示 $ set yyyymmddhhmmss=%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2% $ echo %yyyymmddhhmmss% 20170616221123  %var:~m,n%は変数varのm番目からn文字を切り出す。(mは0始まり)</description>
+    </item>
+    
+    <item>
+      <title>バッチファイルで文字列操作</title>
+      <link>http://sohtaro.com/blog/2017/06/15/cmd-string-operation/</link>
+      <pubDate>Thu, 15 Jun 2017 22:20:44 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/15/cmd-string-operation/</guid>
+      <description> バッチファイルで部分文字列を取得したり、置換したり文字列を操作する方法についてまとめる。
+部分文字列を取得 %var:m,n%で変数varのm番目からn文字を取得する。
+$ set name=sohtaro.com $ echo %name:~0,5% sohta $ echo %name:~7,4% .com  mを省略したりnを省略したり-nで最後のn文字分を除いたりできるが基本はm,nだけでいいと思う。
+詳細はコマンドプロンプトでset /?を実行すると確認できる。
+文字列を置換 %var:s1=s2%で変数varのすべてのs1をs2に置換する。
+削除する場合はs2をブランクにする。
+$ set name=sohtaro.com $ echo %name:soh=Sou% Soutaro.com $ echo %name:o=O% sOhtarO.cOm $ echo %name:soh=% taro.com  指定の文字列を含むか判定 大文字小文字を区別しないで判定するには、元の文字列から指定の文字列を削除した文字列が元の文字列と異なるか判定する。異なる場合、含むと判定する。
+大文字小文字を区別して判定するにはfindstrを使う。
+# 大文字小文字を区別しない場合 $ set name=sohtaro.com $ if not %name:taro=% == %name% (echo 含む) else (echo 含まない) 含む $ if not %name:TARO=% == %name% (echo 含む) else (echo 含まない) 含む $ if not %name:jiro=% == %name% (echo 含む) else (echo 含まない) 含まない # 大文字小文字を区別する場合 $ echo %name% | findstr &amp;quot;taro&amp;quot; &amp;gt;NUL $ if not ERRORLEVEL 1 (echo 含む) else (echo 含まない) 含む $ echo %name% | findstr &amp;quot;Taro&amp;quot; &amp;gt;NUL $ if not ERRORLEVEL 1 (echo 含む) else (echo 含まない) 含まない  </description>
+    </item>
     
     <item>
       <title>Gitで過去のコミットのAuthor名とメールアドレスを変更する方法</title>

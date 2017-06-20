@@ -6,10 +6,30 @@
     <description>Recent content on Sohtaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 Jun 2017 22:03:15 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jun 2017 23:01:34 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>小さな習慣の感想</title>
+      <link>http://sohtaro.com/blog/2017/06/20/small-habit/</link>
+      <pubDate>Tue, 20 Jun 2017 23:01:34 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/20/small-habit/</guid>
+      <description>毎日のデスクワークと育児で最近は全く運動をしてなかったので、かなり運動不足を感じている。
+筋トレとかランニングをしようと思うんだけど、なかなか時間が取れない。そこで毎日少しでもいいから筋トレをしようと思って、こんな本を買ってみた。 
+この本ではなぜ小さな習慣がいいかを脳科学的に説明しており、モチベーションではなく少しの意志の力でやれるように極端に習慣を小さくするようにすすめている。
+腕立てふせ一回とか、一日に文章を50ワード書くとか。
+今までの人生振り返ってみると、何かをしようと思って新しいことを始めてみても、一か月か二ヶ月でやめてしまうことが多かった。
+やはり早く結果を出したいという気持ちが強くなり目標が大きかったのが原因だったような気がする。
+たとえば、いきなり筋トレ何種目かを３セットとか。毎日１時間勉強するとか。
+モチベーションが高い間はできるが、少しでも疲れていたり、やる気がない日はどうしてもできなくなる。
+一日でもできない日が出てくるとさらにモチベーションが下がってしまう。
+この本を読んで何かを習慣化するには小さくするしかないと思った。
+とりあえずこれから毎日腕立て伏せ一回、スクワット一回をやっていこうと思う。
+これはダイエットとか禁煙とかにも効果があると思うので、興味ある人は読んでみてもいいと思う。</description>
+    </item>
     
     <item>
       <title>バッチファイルで現在日付、現在時刻を取得する方法</title>

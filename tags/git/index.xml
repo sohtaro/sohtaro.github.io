@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on Sohtaro.com</title>
+    <title>Git on soHTaro.com</title>
     <link>http://sohtaro.com/tags/git/</link>
-    <description>Recent content in Git on Sohtaro.com</description>
+    <description>Recent content in Git on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 11 Jun 2017 13:32:51 +0900</lastBuildDate>

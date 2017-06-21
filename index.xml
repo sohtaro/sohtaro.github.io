@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sohtaro.com</title>
+    <title>soHTaro.com</title>
     <link>http://sohtaro.com/</link>
-    <description>Recent content on Sohtaro.com</description>
+    <description>Recent content on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 20 Jun 2017 23:01:34 +0900</lastBuildDate>
@@ -441,7 +441,7 @@ Markdownとは  文書を記述するための軽量マークアップ言語 HTM
       <pubDate>Thu, 11 May 2017 21:26:46 +0900</pubDate>
       
       <guid>http://sohtaro.com/about/</guid>
-      <description>自己紹介 はじめまして、そうたろう です。プログラマをしています。
+      <description>自己紹介 はじめまして、soHTaroです。プログラマをしています。
 一児の父で毎日子育てに奮闘しています。
 このブログでは日々仕事で経験したことや学んだこと、仕事以外で考えていることなどを中心に書いていきたいと思います。
 プログラミング経験  Java C# JavaScript
@@ -460,7 +460,7 @@ etc  好きな言葉  人間万事塞翁が馬
       <pubDate>Thu, 11 May 2017 21:26:46 +0900</pubDate>
       
       <guid>http://sohtaro.com/contact/</guid>
-      <description>読み込んでいます... </description>
+      <description>読み込んでいます...-- </description>
     </item>
     
   </channel>

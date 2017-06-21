@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gist on Sohtaro.com</title>
+    <title>Gist on soHTaro.com</title>
     <link>http://sohtaro.com/tags/gist/</link>
-    <description>Recent content in Gist on Sohtaro.com</description>
+    <description>Recent content in Gist on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 22 May 2017 13:56:00 +0900</lastBuildDate>

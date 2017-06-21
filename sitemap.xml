@@ -207,12 +207,6 @@
   </url>
   
   <url>
-    <loc>http://sohtaro.com/</loc>
-    <lastmod>2017-06-20T23:01:34+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://sohtaro.com/tags/</loc>
     <lastmod>2017-06-01T22:57:46+09:00</lastmod>
     <priority>0</priority>
@@ -233,6 +227,12 @@
   <url>
     <loc>http://sohtaro.com/tags/windows/</loc>
     <lastmod>2017-06-01T22:57:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sohtaro.com/</loc>
+    <lastmod>2017-06-20T23:01:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   

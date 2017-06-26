@@ -6,10 +6,44 @@
     <description>Recent content in バッチファイル on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 Jun 2017 22:03:15 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jun 2017 15:46:46 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/tags/%E3%83%90%E3%83%83%E3%83%81%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>コマンドプロンプトのpushdコマンド</title>
+      <link>http://sohtaro.com/blog/2017/06/26/cmd-pushd/</link>
+      <pubDate>Mon, 26 Jun 2017 15:46:46 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/26/cmd-pushd/</guid>
+      <description>コマンドプロンプトでカレントディレクトリを移動するにはcdを使う。
+cd /d d:\tempのように/dオプションを使えば別のドライブに移動できる。
+今まで当たり前のようにディレクトリの移動にはcdを使ってきたが、pushdというcdより素敵なコマンドを発見したので使ってみる。(Windows7)
+pushdの利点 pushdコマンドはcdと同様にカレントディレクトリを移動できるが以下の利点がある。
+ pushdを実行した後、popdで元のディレクトリに戻れる 現在のドライブとは別のドライブに移動できる \server\hoge\fugaのようなUNCパスに移動できる  popdで元のディレクトリに戻る pushdでカレントディレクトリを移動すると移動前のカレントディレクトリがディレクトリスタックに保存されていく。
+pushdを引数なしで実行すると現在のディレクトリスタックを表示する。
+popdを実行すると直前に保存したパスに移動され、そのパスはディレクトリスタックから削除される。
+C:\temp&amp;gt;pushd C:\ C:\&amp;gt;pushd Windows C:\Windows&amp;gt;pushd Logs # 引数なしのpushdでディレクトリスタックを表示 C:\Windows\Logs&amp;gt;pushd C:\Windows C:\ C:\temp # popdで移動前のディレクトリに戻る C:\Windows\Logs&amp;gt;popd C:\Windows&amp;gt;popd C:\&amp;gt;popd C:\temp&amp;gt;  別のドライブに移動 C:\temp&amp;gt;pushd E:\test E:\test&amp;gt;  UNCパスに移動 UNCパスをpushdすると空きドライブに自動的に割り当てられ、移動できる。 popdで元のディレクトリに戻るとドライブの割り当ては解除される。
+E:\test&amp;gt;pushd \\server1\UserData\UserData\test Z:\test&amp;gt; Z:\test&amp;gt;net use ステータス ローカル名 リモート名 ネットワーク名 -------------------------------------------------------------------------- OK Z: \\server1\UserData Microsoft Windows Network コマンドは正常に終了しました。 Z:\test&amp;gt;popd E:\test&amp;gt;net use 新しい接続は記憶されます。 一覧にエントリが存在しません。  pushdでZドライブが割り当られ、popdで割り当ては解除された。</description>
+    </item>
+    
+    <item>
+      <title>バッチファイルのテンプレート</title>
+      <link>http://sohtaro.com/blog/2017/06/17/cmd-date-time/</link>
+      <pubDate>Sat, 17 Jun 2017 22:03:15 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/17/cmd-date-time/</guid>
+      <description>バッチファイルを作ることは最近減ってきているが、たまに作るときに一から作成すると時間がかかるので、最低限のテンプレートを用意しておく。
+@echo off rem バッチファイルの説明 rem 環境変数の定義 set VAR1=&amp;quot;VAR1の値&amp;quot; set VAR2=&amp;quot;VAR2の値&amp;quot; pushd &amp;quot;%~dp0&amp;quot; pause  echo offは実行するコマンドを表示させないコマンド。@をコマンドの前につけるとそのコマンドは表示されなくなるが、すべてのコマンドに@をつけるのは面倒なのでecho offですべてのコマンドを表示しないようにする。
+ただし、echo off自体は表示されてしまうので@をつける。
+remはコマンド行。
+setは環境変数を設定する。
+pushdはディレクトリの移動するコマンドで、%~dp0はこのバッチファイルがあるディレクトリを表す。
+なのでpushd &amp;quot;%~dp0&amp;quot;はこのバッチファイルがあるディレクトリをカレントディレクトリにする。
+ディレクトリの移動はcdでもできるが、cdと比べてpushdは以下の利点がある。
+ pushdを実行した後、popdで元のディレクトリに戻れる 現在のドライブとは別のドライブに移動できる \server\hoge\fugaのようなUNCパスに移動できる  pauseは処理を一時停止するコマンド。このコマンドがないとウィンドウが閉じてしまい処理結果がわからないので入れておく。</description>
+    </item>
     
     <item>
       <title>バッチファイルで現在日付、現在時刻を取得する方法</title>

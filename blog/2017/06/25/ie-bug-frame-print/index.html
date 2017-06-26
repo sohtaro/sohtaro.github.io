@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    IEでフレームを使用している画面が印刷できない件 | soHTaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/06/25/ie-bug-frame-print/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="soHTaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="soHTaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">soHTaro.com</a></h1>
+        <h2>普通のプログラマの普通のプログラマによる普通のブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+          <li><a href="https://ssl.form-mailer.jp/fms/2a618e9b518329" target="_blank">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>IEでフレームを使用している画面が印刷できない件</h1>
+      <div class="meta">
+        Jun 25, 2017 &nbsp;
+        
+          #<a href="/tags/ie">IE</a>&nbsp;
+        
+          #<a href="/tags/%E4%B8%8D%E5%85%B7%E5%90%88">不具合</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>2017年6月度のWindows UpdateでIEの印刷に不具合があり、フレームを使用している画面で印刷ができないらしい。この件に関して、Microsoftは修正しないようだ。</p>
+
+<p>代替案としては、JavaScriptでwindow.print()を使用してるのであればdocument.execCommand(&lsquo;print&rsquo;, false, null)に変更してみるとよいらしい。</p>
+
+<p>実際に試してみる。</p>
+
+<h2 id="環境">環境</h2>
+
+<p>Internet Explorer 11.0.9600.18697</p>
+
+<h2 id="frame-html">frame.html</h2>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;frame&lt;/title&gt;
+&lt;/head&gt;
+&lt;frameset rows=&quot;100%&quot;&gt;
+  &lt;noframes&gt;
+  このページはフレーム未対応です。
+  &lt;/noframes&gt;
+  &lt;frame src=&quot;contents.html&quot; name=&quot;frame1&quot;&gt;
+&lt;/frameset&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="contents-html">contents.html</h2>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;input type=&quot;button&quot; value=&quot;window.print&quot; onclick=&quot;window.print()&quot;&gt;&lt;br&gt;
+    &lt;input type=&quot;button&quot; value=&quot;document.execCommand&quot;
+      onclick=&quot;document.execCommand('print', false, null)&quot;&gt;&lt;br&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2 id="印刷結果">印刷結果</h2>
+
+<p>window.printは印刷できなかったが(印刷結果が真っ白)、document.execCommandは印刷できた。</p>
+
+<h2 id="参考サイト">参考サイト</h2>
+
+<p><a href="http://blog.livedoor.jp/nichepcgamer/archives/1066488585.html">【アプデ】 2017年6月度のパッチでInternet Explorerの印刷に不具合 [Update 1: 修正パッチが出ました。記事下部の追記参照]</a></p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/06/20/small-habit/" rel="prev">小さな習慣の感想</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/06/26/generation-gap-pattern/" rel="next">Generation Gapパターンとは？</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/icon.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >soHTaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

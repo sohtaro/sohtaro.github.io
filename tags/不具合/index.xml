@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>不具合 on soHTaro.com</title>
+    <link>http://sohtaro.com/tags/%E4%B8%8D%E5%85%B7%E5%90%88/</link>
+    <description>Recent content in 不具合 on soHTaro.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 25 Jun 2017 14:15:09 +0900</lastBuildDate>
+    
+	<atom:link href="http://sohtaro.com/tags/%E4%B8%8D%E5%85%B7%E5%90%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IEでフレームを使用している画面が印刷できない件</title>
+      <link>http://sohtaro.com/blog/2017/06/25/ie-bug-frame-print/</link>
+      <pubDate>Sun, 25 Jun 2017 14:15:09 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/25/ie-bug-frame-print/</guid>
+      <description>2017年6月度のWindows UpdateでIEの印刷に不具合があり、フレームを使用している画面で印刷ができないらしい。この件に関して、Microsoftは修正しないようだ。
+代替案としては、JavaScriptでwindow.print()を使用してるのであればdocument.execCommand(&amp;lsquo;print&amp;rsquo;, false, null)に変更してみるとよいらしい。
+実際に試してみる。
+環境 Internet Explorer 11.0.9600.18697
+frame.html &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;frame&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;frameset rows=&amp;quot;100%&amp;quot;&amp;gt; &amp;lt;noframes&amp;gt; このページはフレーム未対応です。 &amp;lt;/noframes&amp;gt; &amp;lt;frame src=&amp;quot;contents.html&amp;quot; name=&amp;quot;frame1&amp;quot;&amp;gt; &amp;lt;/frameset&amp;gt; &amp;lt;/html&amp;gt;  contents.html &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input type=&amp;quot;button&amp;quot; value=&amp;quot;window.print&amp;quot; onclick=&amp;quot;window.print()&amp;quot;&amp;gt;&amp;lt;br&amp;gt; &amp;lt;input type=&amp;quot;button&amp;quot; value=&amp;quot;document.execCommand&amp;quot; onclick=&amp;quot;document.execCommand(&#39;print&#39;, false, null)&amp;quot;&amp;gt;&amp;lt;br&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  印刷結果 window.printは印刷できなかったが(印刷結果が真っ白)、document.execCommandは印刷できた。
+参考サイト 【アプデ】 2017年6月度のパッチでInternet Explorerの印刷に不具合 [Update 1: 修正パッチが出ました。記事下部の追記参照]</description>
+    </item>
+    
+  </channel>
+</rss>

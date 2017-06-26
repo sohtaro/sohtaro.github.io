@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Generation Gapパターンとは？ | soHTaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/06/26/generation-gap-pattern/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="soHTaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="soHTaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">soHTaro.com</a></h1>
+        <h2>普通のプログラマの普通のプログラマによる普通のブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+          <li><a href="https://ssl.form-mailer.jp/fms/2a618e9b518329" target="_blank">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Generation Gapパターンとは？</h1>
+      <div class="meta">
+        Jun 26, 2017 &nbsp;
+        
+          #<a href="/tags/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">デザインパターン</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>最近関わっているプロジェクトでソースコードを自動生成するツールがあってそのツールでGeneration Gapパターンという聞いたことのないデザインパターンを使っていた。</p>
+
+<p>はじめて聞いたデザインパターンだったので調べてみた。</p>
+
+<p>Generation Patternとは、ソースコードを自動生成ツールがあることを前提としており、ソースコードを自動生成した後、そのコードに手を加えると再度自動生成した際に手を加えた部分が消えてしまうので、サブクラスを作ってそこに手を加えるというもの。</p>
+
+<p>Javaのクラスを自動生成するツールをPythonで作ってみた。</p>
+
+<p>このツールを実行すると名前、年齢、体重をフィールドとSetter、Getter、toStringメソッドを持つHumanクラスを自動生成する。</p>
+
+<script src="https://gist.github.com/sohtaro/61f5b077011ca1bc120c7393af117e8e.js"></script>
+
+<p>実行すると以下のようなクラスが生成される。</p>
+
+<pre><code>public class Human{
+
+    protected String name;
+    protected int age;
+    protected double weight;
+
+    public Human(String name, int age, double weight){
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
+    public String toString(){
+        return &quot;name=&quot; + this.name + &quot;, &quot; + &quot;age=&quot; + this.age + &quot;, &quot; + &quot;weight=&quot; + this.weight;
+    }
+}
+</code></pre>
+
+<p>このHumanクラスには手を加えず、Humanクラスを継承したMyHumanクラスを自分で作り、10代かどうかを判定するメソッドを追加する。</p>
+
+<pre><code>public class MyHuman extends Human{
+    public boolean isTeen(){
+    	return super.age &gt;= 10 &amp;&amp; super.age &lt;= 19;
+    }
+}
+</code></pre>
+
+<p>MyHumanを利用するTestHumanクラスを作り実行してみる。</p>
+
+<pre><code>public class TestHuman {
+	public static void main(String[] args) {
+		MyHuman human1 = new MyHuman();
+		human1.setName(&quot;山田太郎&quot;);
+		human1.setAge(35);
+		human1.setWeight(80.0);
+
+		MyHuman human2 = new MyHuman();
+		human2.setName(&quot;田中花子&quot;);
+		human2.setAge(19);
+		human2.setWeight(48.6);
+
+		System.out.println(human1);
+		System.out.println(human1.isTeen() ? &quot;10代です。&quot; : &quot;10代ではありません。&quot;);
+		System.out.println(human2);
+		System.out.println(human2.isTeen() ? &quot;10代です。&quot; : &quot;10代ではありません。&quot;);
+	}
+}
+</code></pre>
+
+<p>実行結果は以下のとおり。</p>
+
+<pre><code>name=山田太郎, age=35, weight=80.0
+10代ではありません。
+name=田中花子, age=19, weight=48.6
+10代です。
+</code></pre>
+
+<p>ここで、仕様変更となり、Humanクラスにhobbyフィールドが追加されたとする。<br />
+自動生成ツールのfield_listにhobbyを追加し、再実行する。<br />
+（本来ならfield_listはxmlなど外部ファイルにし、自動生成ツールは変更しない方がいいと思う）</p>
+
+<pre><code>field_list = {
+    &quot;name&quot;:&quot;String&quot;,
+    &quot;age&quot;:&quot;int&quot;,
+    &quot;weight&quot;:&quot;double&quot;,
+    &quot;hobby&quot;:&quot;String&quot;, # 追加
+}
+</code></pre>
+
+<p>再実行すると、hobbyフィールド追加版のHumanクラスが生成されるのでHumanクラスをコンパイルする。</p>
+
+<p>MyHumanはコンパイルする必要はない。</p>
+
+<p>再度、TestHumanを実行する。</p>
+
+<pre><code>name=山田太郎, age=35, weight=80.0, hobby=null
+10代ではありません。
+name=田中花子, age=19, weight=48.6, hobby=null
+10代です。
+</code></pre>
+
+<p>hobbyをセットしていないので、nullとなっている。</p>
+
+<p>サンプルとしてはよくないが、こんな感じで自動生成ツールを再実行しても自分で手を加えた部分は消えてしまうことはない。</p>
+
+<h2 id="参考サイト">参考サイト</h2>
+
+<p><a href="http://www.hyuki.com/dp/dpinfo.html#GenerationGap">Generation Gapパターン</a></p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/06/25/ie-bug-frame-print/" rel="prev">IEでフレームを使用している画面が印刷できない件</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/06/26/cmd-pushd/" rel="next">コマンドプロンプトのpushdコマンド</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/icon.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >soHTaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

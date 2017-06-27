@@ -6,10 +6,24 @@
     <description>Recent content on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 26 Jun 2017 15:46:46 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jun 2017 16:12:19 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Atomでスニペット登録</title>
+      <link>http://sohtaro.com/blog/2017/06/27/atom_snippet/</link>
+      <pubDate>Tue, 27 Jun 2017 16:12:19 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/27/atom_snippet/</guid>
+      <description>Atomでスニペットを登録するための手順をメモしておく。
+スニペットの定義 ファイルメニューからスニペットを選択し、snippets.csonを開く。このファイルにスニペットを定義していく。
+コメント行の真ん中あたりに定義の例が書いてある。
+# &#39;.source.coffee&#39;: # &#39;Console log&#39;: # &#39;prefix&#39;: &#39;log&#39; # &#39;body&#39;: &#39;console.log $1&#39;  各行には以下を設定する。
+   行 例 説明     1 &amp;rsquo;.source.coffee&amp;rsquo;: セレクタ   2 &amp;lsquo;Console log&amp;rsquo;: スニペット名   3 &amp;lsquo;prefix&amp;rsquo;: &amp;lsquo;log&amp;rsquo; スニペットを展開するために入力する文字列   4 &amp;lsquo;body&amp;rsquo;: &amp;lsquo;console.log $1&amp;rsquo; 候補から選択した時に展開する内容    セレクタ セレクタには以下のようなものがある。
+   ファイルの種類 セレクタ     md .source.gfm   CSS .</description>
+    </item>
     
     <item>
       <title>コマンドプロンプトのpushdコマンド</title>

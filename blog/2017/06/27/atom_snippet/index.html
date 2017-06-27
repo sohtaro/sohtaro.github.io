@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Atomでスニペット登録 | soHTaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/06/27/atom_snippet/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="soHTaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="soHTaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">soHTaro.com</a></h1>
+        <h2>普通のプログラマの普通のプログラマによる普通のブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+          <li><a href="https://ssl.form-mailer.jp/fms/2a618e9b518329" target="_blank">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Atomでスニペット登録</h1>
+      <div class="meta">
+        Jun 27, 2017 &nbsp;
+        
+          #<a href="/tags/atom">atom</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>Atomでスニペットを登録するための手順をメモしておく。</p>
+
+<h2 id="スニペットの定義">スニペットの定義</h2>
+
+<p>ファイルメニューからスニペットを選択し、snippets.csonを開く。このファイルにスニペットを定義していく。</p>
+
+<p>コメント行の真ん中あたりに定義の例が書いてある。</p>
+
+<pre><code># '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+</code></pre>
+
+<p>各行には以下を設定する。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">行</th>
+<th align="left">例</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">&rsquo;.source.coffee&rsquo;:</td>
+<td align="left">セレクタ</td>
+</tr>
+
+<tr>
+<td align="left">2</td>
+<td align="left">&lsquo;Console log&rsquo;:</td>
+<td align="left">スニペット名</td>
+</tr>
+
+<tr>
+<td align="left">3</td>
+<td align="left">&lsquo;prefix&rsquo;: &lsquo;log&rsquo;</td>
+<td align="left">スニペットを展開するために入力する文字列</td>
+</tr>
+
+<tr>
+<td align="left">4</td>
+<td align="left">&lsquo;body&rsquo;: &lsquo;console.log $1&rsquo;</td>
+<td align="left">候補から選択した時に展開する内容</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="セレクタ">セレクタ</h2>
+
+<p>セレクタには以下のようなものがある。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">ファイルの種類</th>
+<th align="left">セレクタ</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">md</td>
+<td align="left">.source.gfm</td>
+</tr>
+
+<tr>
+<td align="left">CSS</td>
+<td align="left">.source.css</td>
+</tr>
+
+<tr>
+<td align="left">HTML</td>
+<td align="left">.text.html.basic</td>
+</tr>
+
+<tr>
+<td align="left">JavaScript</td>
+<td align="left">.source.js</td>
+</tr>
+
+<tr>
+<td align="left">CoffeeScript</td>
+<td align="left">.source.coffee</td>
+</tr>
+</tbody>
+</table>
+
+<p>セレクタは<a href="https://github.com/atom/autocomplete-plus/wiki/Autocomplete-Providers">Autocomplete Providers</a>で一覧を見ることができる。</p>
+
+<p>Atomから確認する場合は、<code>Ctrl+Shift+P</code>でコマンドパレットを開き、&rdquo;scope&rdquo;でフィルターをかけて<code>Editor:Log Cursor Scope</code>を選択する。</p>
+
+<p><img src="/images/atom/snippet1.png" alt="snippet1" /></p>
+
+<p>すると、現在開いているファイルのセレクタを確認できる。
+例えば、mdファイルを表示した状態で確認すると以下のように表示される。</p>
+
+<p><img src="/images/atom/snippet2.png" alt="snippet2" /></p>
+
+<p>セレクタを指定する場合は、ここで表示されたセレクタの前に&rdquo;.&ldquo;(ドット)をつけて<code>.source.gfm</code>のようにする必要がある。</p>
+
+<p>複数のセレクタに同じスニペットを定義したい場合は、セレクタをカンマ区切りで指定する。</p>
+
+<pre><code>'.source.js, .source.coffee':
+</code></pre>
+
+<h2 id="スニペット名">スニペット名</h2>
+
+<p>スニペット名はどんな名前でもよいがコードヒントとして以下のように右側に表示されるのでわかりやすい名前にする。</p>
+
+<p><img src="/images/atom/snippet3.png" alt="snippet3" /></p>
+
+<h2 id="prefix">prefix</h2>
+
+<p>スニペットを展開するために入力する文字列で、上記の例であれば、<code>log</code>と入力するとスニペットの候補が表示される。</p>
+
+<h2 id="body">body</h2>
+
+<p>展開する内容を指定する。展開後のカーソル位置は$1、$2、$3というふうに複数指定できる。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">body</th>
+<th align="left">展開後</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">&lsquo;console.log $1&rsquo;</td>
+<td align="left">$1にカーソル位置が移動</td>
+</tr>
+
+<tr>
+<td align="left">&lsquo;console.log $1;$2&rsquo;</td>
+<td align="left">$1にカーソル位置が移動し、<code>Tab</code>で$2に移動</td>
+</tr>
+
+<tr>
+<td align="left">&lsquo;console.log(&ldquo;${1:msg1}&ldquo;);$2&rsquo;</td>
+<td align="left">msg1が選択状態になり、<code>Tab</code>で$2に移動</td>
+</tr>
+</tbody>
+</table>
+
+<p>bodyに複数行指定する場合は、以下のように<code>&quot;&quot;&quot;</code>で囲って書く。</p>
+
+<p>mdファイルで３×３のテーブルを展開するスニペットの例。</p>
+
+<pre><code>'.source.gfm':
+   'Table33':
+     'prefix': 'table33'
+     'body': &quot;&quot;&quot;
+     | ${1:Header One}     | ${2:Header Two}     | ${3:Header Three}   |
+     | :------------- | :------------- | :------------- |
+     | ${4:Item 1}         | ${5:Item 2}         | ${6:Item 3}         |
+     | ${7:Item 4}         | ${8:Item 5}         | ${9:Item 6}         |
+&quot;&quot;&quot;
+</code></pre>
+
+<p>セレクタに対して、スニペットを複数指定する場合は、以下のようにセレクタの後、スニペット以降を繰り返して書く。</p>
+
+<pre><code>'.source.js':
+  'Test1':
+    'prefix': 'test1'
+    'body': 'test1($1)'
+  'Test2':
+    'prefix': 'test2'
+    'body': 'test2($1)'
+</code></pre>
+
+<h2 id="参考サイト">参考サイト</h2>
+
+<ul>
+<li><a href="http://minegishi.mods.jp/blog/?p=483">Atomでのスニペット登録</a></li>
+<li><a href="http://rfs.jp/sb/atom-github/atom05_snipet.html">Atom講座-スニペット登録</a></li>
+</ul>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/06/26/cmd-pushd/" rel="prev">コマンドプロンプトのpushdコマンド</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/icon.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >soHTaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

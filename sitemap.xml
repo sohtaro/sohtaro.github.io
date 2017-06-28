@@ -27,6 +27,11 @@
   </url>
   
   <url>
+    <loc>http://sohtaro.com/blog/2017/06/19/git-add-option/</loc>
+    <lastmod>2017-06-19T14:56:48+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sohtaro.com/blog/2017/06/17/cmd-date-time/</loc>
     <lastmod>2017-06-17T22:03:15+09:00</lastmod>
   </url>
@@ -132,11 +137,6 @@
   </url>
   
   <url>
-    <loc>http://sohtaro.com/blog/2017/05/19/git-add-option/</loc>
-    <lastmod>2017-05-19T14:56:48+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://sohtaro.com/blog/2017/05/17/git-install/</loc>
     <lastmod>2017-05-17T16:09:38+09:00</lastmod>
   </url>
@@ -203,7 +203,7 @@
   
   <url>
     <loc>http://sohtaro.com/tags/git/</loc>
-    <lastmod>2017-06-11T13:32:51+09:00</lastmod>
+    <lastmod>2017-06-19T14:56:48+09:00</lastmod>
     <priority>0</priority>
   </url>
   

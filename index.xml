@@ -96,6 +96,22 @@ frame.html &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;g
     </item>
     
     <item>
+      <title>git add .とgit add -Aとgit add -uの違い</title>
+      <link>http://sohtaro.com/blog/2017/06/19/git-add-option/</link>
+      <pubDate>Mon, 19 Jun 2017 14:56:48 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/19/git-add-option/</guid>
+      <description>今までgit addするときはgit add .をずっと使ってきたのだが、-Aと-uとの違いがわからなかったので調べてみた。
+バージョン Git for Windows2.13.0
+ヘルプで確認 とりあえずヘルプで-Aと-uを確認。
+$ git help add   -A
+&amp;ndash;all
+&amp;ndash;no-ignore-removal
+Update the index not only where the working tree has a file matching &amp;lt;pathspec&amp;gt; but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree.
+If no &amp;lt;pathspec&amp;gt; is given when -A option is used, all files in the entire working tree are updated (old versions of Git used to limit the update to the current directory and its subdirectories).</description>
+    </item>
+    
+    <item>
       <title>バッチファイルのテンプレート</title>
       <link>http://sohtaro.com/blog/2017/06/17/cmd-date-time/</link>
       <pubDate>Sat, 17 Jun 2017 22:03:15 +0900</pubDate>
@@ -252,10 +268,9 @@ PC再起動 オーバーレイアイコンの設定が15個以下になったの
       <pubDate>Sun, 28 May 2017 22:38:41 +0900</pubDate>
       
       <guid>http://sohtaro.com/blog/2017/05/28/git-status-short/</guid>
-      <description>git statusってよく使いますよね。ファイルを追加する前やコミットした後、Git Bashの起動直後など実によく使います。
-そのよく使うコマンドの一つのgit statusですが普通にオプションなしで実行すると
-$ git status On branch master Changes to be committed: (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage) modified: b.txt Changes not staged for commit: (use &amp;quot;git add/rm &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed) (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory) deleted: dir1/d.txt Untracked files: (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to include in what will be committed) a.txt  こんな感じで非常に長いです。
-最近まで私も知らなかったのですが、実は、短いフォーマットで出力するオプションが存在します。</description>
+      <description>git statusはファイルを追加する前やコミットした後、Git Bashの起動直後などgitコマンドの中でもよく使うコマンドであるが、シンプルなフォーマットで表示するオプションがある。
+通常フォーマット git statusを普通にオプションなしで実行すると
+$ git status On branch master Changes to be committed: (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage) modified: b.txt Changes not staged for commit: (use &amp;quot;git add/rm &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed) (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory) deleted: dir1/d.txt Untracked files: (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to include in what will be committed) a.txt  こんな感じで非常に長い。</description>
     </item>
     
     <item>
@@ -435,22 +450,6 @@ What happens when I change my username?
     </item>
     
     <item>
-      <title>git add .とgit add -Aとgit add -uの違い</title>
-      <link>http://sohtaro.com/blog/2017/05/19/git-add-option/</link>
-      <pubDate>Fri, 19 May 2017 14:56:48 +0900</pubDate>
-      
-      <guid>http://sohtaro.com/blog/2017/05/19/git-add-option/</guid>
-      <description>今までgit addするときはgit add .をずっと使ってきたのだが、-Aと-uとの違いがわからなかったので調べてみた。
-バージョン Git for Windows2.13.0
-ヘルプで確認 とりあえずヘルプで-Aと-uを確認。
-$ git help add   -A
-&amp;ndash;all
-&amp;ndash;no-ignore-removal
-Update the index not only where the working tree has a file matching &amp;lt;pathspec&amp;gt; but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree.
-If no &amp;lt;pathspec&amp;gt; is given when -A option is used, all files in the entire working tree are updated (old versions of Git used to limit the update to the current directory and its subdirectories).</description>
-    </item>
-    
-    <item>
       <title>Gitインストール</title>
       <link>http://sohtaro.com/blog/2017/05/17/git-install/</link>
       <pubDate>Wed, 17 May 2017 16:09:38 +0900</pubDate>
@@ -510,7 +509,7 @@ Markdownとは  文書を記述するための軽量マークアップ言語 HTM
       
       <guid>http://sohtaro.com/reading_list/</guid>
       <description> 順番はだいたい読んだ順で上に行くほど最近ですが、正確ではないです。読んでる途中の本やまったく読んでない本も結構ありますw
-2017年  サピエンス全史 上（途中） 実践力を身につけるPythonの教科書（途中） 世界でもっとも強力な９のアルゴリズム 小さな習慣&amp;nbsp;→&amp;nbsp;感想 改訂新版JavaScript本格入門 ～モダンスタイルによる基礎から現場での応用まで（Kindle版）（途中） 言葉の偉大なる力: 幸せになる言葉の使い方とは？ JavaScriptの理解を深めた人がさらにもう一歩先に進むための本（Kindle版) 何となくJavaScriptを書いていた人が一歩先に進むための本（Kindle版) 進化しすぎた脳（未読） 相対性理論の世界（未読） プログラマのための文字コード技術入門（途中） 新・明解C言語 入門編 (明解シリーズ)（Kindle版） 絶対わかる情報処理安全確保支援士2017年春版（途中） ｢1日30分｣を続けなさい！人生勝利の勉強法55（Kindle版） だから仏教は面白い！前編（Kindle版) 言ってはいけない格差の真実【文春e-Books】（Kindle版） 素数夜曲―女王陛下のLISP（途中） 痛快!コンピュータ学 人間失格 走れメロス ヴィヨンの妻 ナイフを持つまえにダザイを読め!! ボッコちゃん（途中） 短編小説を読もう（途中） 人工知能と経済の未来 2030年雇用大崩壊 AIの衝撃 人工知能は人類の敵か 人工知能は人間を超えるか ディープラーニングの先にあるもの WEB+DB PRESS vol.86 2015（Atomの箇所のみ） C++プログラミング入門（O&amp;rsquo;Reilly EbookのPDF）  2016年  文章は接続詞で決まる（途中） Windows PowerShellクックブック（O&amp;rsquo;Reilly EbookのPDF）（途中） 脳が目覚める！けん玉レッスン すべての疲労は脳が原因 旧約聖書を知っていますか（途中） ギリシア神話を知っていますか（未読） 元素111の新知識（途中） 10倍ラクして成果を上げる完全自動のExcel術（途中） プリンシプルオブプログラミング ふつうのHaskellプログラミング（途中） 現代人のための瞑想法 インターネット インターネット的 赤ちゃんと脳科学（未読） 学びとは何か（途中） 読むだけですっきりわかる国語読解力（未読） 無常の見方 シンプルを極める 遊ぶ力は生きる力 勉強なんてカンタンだ！ 頭がよくなる必殺！読書術 世界のエリートがやっている最高の休息法 大往生（未読） じょうぶな子どもをつくる基本食 1食100円「病気にならない」食事 バカの壁 新書がベスト 進化から見た病気「ダーウィン医学」のすすめ あなたはコンピュータを理解していますか？ プロフェッショナル宣言 定本育児の百科（中） 物語中国の歴史（未読） 歴史とはなにか（未読） 勝ち組SE・負け組SE（未読） 知的生活習慣 知的生産の技術 知的生活の方法 おとなの教養 超初心者のためのサイバーセキュリティ入門 思考する機械コンピュータ Javaエンジニア養成読本 ポケットスタディ情報セキュリティスペシャリスト第２版（途中） 開発現場で役立つCOBOLプログラミング入門 日本人（途中） 日本仏教史 仏教に学ぶ「がんばらない思想」 デタラメ・あきらめ・いい加減 読むだけですっきりわかる日本史 読むだけですっきりわかる世界史（古代編） その健康法では「早死に」する！ ビジュアル版コンピュータ＆テクノロジー解体新書（途中）  </description>
+2017年  進化しすぎた脳（途中） サピエンス全史 上（途中） 実践力を身につけるPythonの教科書（途中） 世界でもっとも強力な９のアルゴリズム（途中） 小さな習慣&amp;nbsp;→&amp;nbsp;感想 改訂新版JavaScript本格入門 ～モダンスタイルによる基礎から現場での応用まで（Kindle版）（途中） 言葉の偉大なる力: 幸せになる言葉の使い方とは？ JavaScriptの理解を深めた人がさらにもう一歩先に進むための本（Kindle版) 何となくJavaScriptを書いていた人が一歩先に進むための本（Kindle版) プログラマのための文字コード技術入門（途中） 新・明解C言語 入門編 (明解シリーズ)（Kindle版） 絶対わかる情報処理安全確保支援士2017年春版（途中） ｢1日30分｣を続けなさい！人生勝利の勉強法55（Kindle版） だから仏教は面白い！前編（Kindle版) 言ってはいけない格差の真実【文春e-Books】（Kindle版） 素数夜曲―女王陛下のLISP（途中） 量子コンピューターが本当にすごい 痛快!コンピュータ学 人間失格 走れメロス ヴィヨンの妻 ナイフを持つまえにダザイを読め!! ボッコちゃん（途中） 短編小説を読もう（途中） 人工知能と経済の未来 2030年雇用大崩壊 AIの衝撃 人工知能は人類の敵か 人工知能は人間を超えるか ディープラーニングの先にあるもの WEB+DB PRESS vol.86 2015（Atomの箇所のみ） C++プログラミング入門（O&amp;rsquo;Reilly EbookのPDF）  2016年  文章は接続詞で決まる（途中） Windows PowerShellクックブック（O&amp;rsquo;Reilly EbookのPDF）（途中） 脳が目覚める！けん玉レッスン すべての疲労は脳が原因 旧約聖書を知っていますか（途中） 元素111の新知識（途中） 10倍ラクして成果を上げる完全自動のExcel術（途中） プリンシプルオブプログラミング ふつうのHaskellプログラミング（途中） 現代人のための瞑想法 インターネット インターネット的 学びとは何か（途中） 無常の見方 シンプルを極める 遊ぶ力は生きる力 勉強なんてカンタンだ！ 頭がよくなる必殺！読書術 世界のエリートがやっている最高の休息法 じょうぶな子どもをつくる基本食 1食100円「病気にならない」食事 バカの壁 新書がベスト 進化から見た病気「ダーウィン医学」のすすめ あなたはコンピュータを理解していますか？ プロフェッショナル宣言 定本育児の百科【中】 知的生活習慣 知的生産の技術 知的生活の方法 おとなの教養 超初心者のためのサイバーセキュリティ入門 思考する機械コンピュータ Javaエンジニア養成読本 ポケットスタディ情報セキュリティスペシャリスト第２版（途中） 開発現場で役立つCOBOLプログラミング入門 日本人（途中） 日本仏教史 仏教に学ぶ「がんばらない思想」 デタラメ・あきらめ・いい加減 読むだけですっきりわかる日本史 読むだけですっきりわかる世界史（古代編） その健康法では「早死に」する！ ビジュアル版コンピュータ＆テクノロジー解体新書（途中）  購入したのに未読の本（そのうち読むつもりです）  相対性理論の世界 ギリシア神話を知っていますか 赤ちゃんと脳科学 読むだけですっきりわかる国語読解力 大往生 物語中国の歴史 歴史とはなにか 勝ち組SE・負け組SE  </description>
     </item>
     
     <item>

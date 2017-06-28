@@ -6,10 +6,26 @@
     <description>Recent content in Git on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 11 Jun 2017 13:32:51 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jun 2017 14:56:48 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git add .とgit add -Aとgit add -uの違い</title>
+      <link>http://sohtaro.com/blog/2017/06/19/git-add-option/</link>
+      <pubDate>Mon, 19 Jun 2017 14:56:48 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/06/19/git-add-option/</guid>
+      <description>今までgit addするときはgit add .をずっと使ってきたのだが、-Aと-uとの違いがわからなかったので調べてみた。
+バージョン Git for Windows2.13.0
+ヘルプで確認 とりあえずヘルプで-Aと-uを確認。
+$ git help add   -A
+&amp;ndash;all
+&amp;ndash;no-ignore-removal
+Update the index not only where the working tree has a file matching &amp;lt;pathspec&amp;gt; but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree.
+If no &amp;lt;pathspec&amp;gt; is given when -A option is used, all files in the entire working tree are updated (old versions of Git used to limit the update to the current directory and its subdirectories).</description>
+    </item>
     
     <item>
       <title>Gitで過去のコミットのAuthor名とメールアドレスを変更する方法</title>
@@ -72,10 +88,9 @@ PC再起動 オーバーレイアイコンの設定が15個以下になったの
       <pubDate>Sun, 28 May 2017 22:38:41 +0900</pubDate>
       
       <guid>http://sohtaro.com/blog/2017/05/28/git-status-short/</guid>
-      <description>git statusってよく使いますよね。ファイルを追加する前やコミットした後、Git Bashの起動直後など実によく使います。
-そのよく使うコマンドの一つのgit statusですが普通にオプションなしで実行すると
-$ git status On branch master Changes to be committed: (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage) modified: b.txt Changes not staged for commit: (use &amp;quot;git add/rm &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed) (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory) deleted: dir1/d.txt Untracked files: (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to include in what will be committed) a.txt  こんな感じで非常に長いです。
-最近まで私も知らなかったのですが、実は、短いフォーマットで出力するオプションが存在します。</description>
+      <description>git statusはファイルを追加する前やコミットした後、Git Bashの起動直後などgitコマンドの中でもよく使うコマンドであるが、シンプルなフォーマットで表示するオプションがある。
+通常フォーマット git statusを普通にオプションなしで実行すると
+$ git status On branch master Changes to be committed: (use &amp;quot;git reset HEAD &amp;lt;file&amp;gt;...&amp;quot; to unstage) modified: b.txt Changes not staged for commit: (use &amp;quot;git add/rm &amp;lt;file&amp;gt;...&amp;quot; to update what will be committed) (use &amp;quot;git checkout -- &amp;lt;file&amp;gt;...&amp;quot; to discard changes in working directory) deleted: dir1/d.txt Untracked files: (use &amp;quot;git add &amp;lt;file&amp;gt;...&amp;quot; to include in what will be committed) a.txt  こんな感じで非常に長い。</description>
     </item>
     
     <item>
@@ -199,22 +214,6 @@ What happens when I change my username?
 5. I understand, let&#39;s change my usernameをクリック 6. 新しいユーザー名を入力し、Change my usernameをクリック
 7. ユーザー名変更完了 表示されているリンクのupdate your local repositoriesにリモートURL変更手順が書いてありますので手順どおり変更します。
 ローカルPCの設定変更 # Git Bash起動 $ cd ローカルプロジェクト # 変更前の設定確認 $ git remote -v origin git@github.com:old_username/repository_name.git (fetch) origin git@github.com:old_username/repository_name.git (push) # リモートURL変更 $ git remote set-url origin git@github.</description>
-    </item>
-    
-    <item>
-      <title>git add .とgit add -Aとgit add -uの違い</title>
-      <link>http://sohtaro.com/blog/2017/05/19/git-add-option/</link>
-      <pubDate>Fri, 19 May 2017 14:56:48 +0900</pubDate>
-      
-      <guid>http://sohtaro.com/blog/2017/05/19/git-add-option/</guid>
-      <description>今までgit addするときはgit add .をずっと使ってきたのだが、-Aと-uとの違いがわからなかったので調べてみた。
-バージョン Git for Windows2.13.0
-ヘルプで確認 とりあえずヘルプで-Aと-uを確認。
-$ git help add   -A
-&amp;ndash;all
-&amp;ndash;no-ignore-removal
-Update the index not only where the working tree has a file matching &amp;lt;pathspec&amp;gt; but also where the index already has an entry. This adds, modifies, and removes index entries to match the working tree.
-If no &amp;lt;pathspec&amp;gt; is given when -A option is used, all files in the entire working tree are updated (old versions of Git used to limit the update to the current directory and its subdirectories).</description>
     </item>
     
     <item>

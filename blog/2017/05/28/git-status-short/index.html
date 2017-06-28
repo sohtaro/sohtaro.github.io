@@ -73,9 +73,11 @@
     <article>
       
 
-<p><code>git status</code>ってよく使いますよね。ファイルを追加する前やコミットした後、Git Bashの起動直後など実によく使います。</p>
+<p><code>git status</code>はファイルを追加する前やコミットした後、Git Bashの起動直後などgitコマンドの中でもよく使うコマンドであるが、シンプルなフォーマットで表示するオプションがある。</p>
 
-<p>そのよく使うコマンドの一つの<code>git status</code>ですが普通にオプションなしで実行すると</p>
+<h2 id="通常フォーマット">通常フォーマット</h2>
+
+<p><code>git status</code>を普通にオプションなしで実行すると</p>
 
 <pre><code>$ git status
 On branch master
@@ -96,11 +98,11 @@ Untracked files:
         a.txt
 </code></pre>
 
-<p>こんな感じで非常に長いです。</p>
+<p>こんな感じで非常に長い。</p>
 
-<p>最近まで私も知らなかったのですが、実は、短いフォーマットで出力するオプションが存在します。</p>
+<h2 id="ショートフォーマット">ショートフォーマット</h2>
 
-<p><code>git status -s</code>です。</p>
+<p>シンプルな短いフォーマットで出力するには<code>git status -s</code>を使う。</p>
 
 <pre><code>$ git status -s
 M  b.txt
@@ -109,10 +111,10 @@ M  b.txt
 
 </code></pre>
 
-<p>違いは歴然ですね。圧倒的に短い。</p>
+<p>違いは歴然で圧倒的に短い。</p>
 
-<p>1文字目がインデックスの状態、2文字目が作業ツリーの状態をアルファベットで表しています。
-アルファベットの意味は以下の通りです。</p>
+<p>1文字目がインデックスの状態、2文字目が作業ツリーの状態をアルファベットで表す。
+アルファベットの意味は以下の通り。</p>
 
 <table>
 <thead>
@@ -155,11 +157,66 @@ M  b.txt
 </tbody>
 </table>
 
-<p>未追跡ファイルは<code>??</code>、競合ファイルは<code>UU</code>となります。</p>
+<p>未追跡ファイルは<code>??</code>、競合ファイルは<code>UU</code>。</p>
 
-<h2 id="まとめ">まとめ</h2>
+<h2 id="ブランチ情報も出力">ブランチ情報も出力</h2>
 
-<p>gitに慣れてきたら<code>git status -s</code>使いましょう。</p>
+<p>ローカルブランチとリモート追跡ブランチの情報も短いフォーマットで出力できる。</p>
+
+<p><code>-b</code>をつける。</p>
+
+<pre><code>$ git status -sb
+## master...origin/master
+ M content/post/git_20170528.md
+ M content/reading_list.md
+</code></pre>
+
+<p>最初の行に表示されるのがブランチの情報で、ローカルブランチとリモート追跡ブランチの状態によって表示内容が変わる。</p>
+
+<p>表示内容は以下の３パターンがある。</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">表示内容</th>
+<th align="left">ローカルブランチの状態</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">## master&hellip;origin/master</td>
+<td align="left">リモートと同期している</td>
+</tr>
+
+<tr>
+<td align="left">## master&hellip;origin/master [behind 1]</td>
+<td align="left">リモートより古い(遅れている)</td>
+</tr>
+
+<tr>
+<td align="left">## master&hellip;origin/master [ahead 1]</td>
+<td align="left">リモートより新しい(進んでいる)</td>
+</tr>
+</tbody>
+</table>
+
+<p>behindやaheadの後の数字はコミット数を表す。</p>
+
+<h2 id="git-statusのエイリアス">git statusのエイリアス</h2>
+
+<p><code>git status -sb</code>を毎回入力するのは面倒なので、以下のようなエイリアスを設定すると手間が省ける。</p>
+
+<pre><code>$ git config --global alias.st &quot;status -sb&quot;
+</code></pre>
+
+<p>以下のようにラクチンになる。</p>
+
+<pre><code>$ git st
+## master...origin/master
+ M content/post/git_20170528.md
+ M content/reading_list.md
+</code></pre>
 
       
       

@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Windows7でバイナリダンプ&amp;Base64エンコード/デコードする方法 | soHTaro.com
+  </title>
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sohtaro.com/blog/2017/07/04/cmd-certutil/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-light.min.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+
+  
+  <link href="http://sohtaro.com/index.xml" rel="alternate" type="application/rss+xml" title="soHTaro.com" />
+  <link href="http://sohtaro.com/index.xml" rel="feed" type="application/rss+xml" title="soHTaro.com" />
+
+  <link rel="apple-touch-icon" href="/images/icon.png"/>
+
+  
+  
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="http://sohtaro.com/">soHTaro.com</a></h1>
+        <h2>普通のプログラマの普通のプログラマによる普通のブログ</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="/about" >About</a></li>
+          
+          
+          <li><a href="https://github.com/sohtaro" target="_blank">GitHub</a></li>
+          
+          <li><a href="https://ssl.form-mailer.jp/fms/2a618e9b518329" target="_blank">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>Windows7でバイナリダンプ&amp;Base64エンコード/デコードする方法</h1>
+      <div class="meta">
+        Jul 4, 2017 &nbsp;
+        
+          #<a href="/tags/cmd">cmd</a>&nbsp;
+        
+          #<a href="/tags/batch">batch</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>Windowsでバイナリダンプするにはdebugコマンドを使う方法があるようだが、残念ながら64bit版Window7には搭載されていない。</p>
+
+<p>他にないか調べてみると、<code>certutil</code>コマンドが使えるらしい。さらにこのコマンドでBASE64エンコード、デコードができるらしい。</p>
+
+<h2 id="環境">環境</h2>
+
+<p>Window7 64bit</p>
+
+<h2 id="ファイルを16進テキストに変換">ファイルを16進テキストに変換</h2>
+
+<pre><code>certutil -f -encodehex &lt;入力ファイル名&gt; &lt;出力ファイル名&gt; (&lt;フォーマット値&gt;)
+</code></pre>
+
+<h2 id="16進テキストからバイナリに変換">16進テキストからバイナリに変換</h2>
+
+<pre><code>certutil -f -decodehex &lt;入力ファイル名&gt; &lt;出力ファイル名&gt; (&lt;フォーマット値&gt;)
+</code></pre>
+
+<p>フォーマット値は、以下のサイトにあるものを指定できるのだと思う。たぶん。11がデフォルト。
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa380285(v=vs.85).aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/aa380285(v=vs.85).aspx</a></p>
+
+<h2 id="例">例</h2>
+
+<pre><code>$ echo abcdefg &gt; test.txt
+$ echo 1234567890 &gt;&gt; test.txt
+
+# 16進テキストに変換
+$ certutil -f -encodehex test.txt test_hex.txt
+入力長 = 23
+出力長 = 139
+CertUtil: -encodehex コマンドは正常に完了しました。
+
+$ type test_hex.txt
+0000    61 62 63 64 65 66 67 20  0d 0a 31 32 33 34 35 36   abcdefg ..123456
+0010    37 38 39 30 20 0d 0a                               7890 ..
+
+# バイナリに変換
+$ certutil -f -decodehex test_hex.txt test2.txt
+入力長 = 139
+出力長 = 23
+CertUtil: -decodehex コマンドは正常に完了しました。
+
+$ type test2.txt
+abcdefg
+1234567890
+</code></pre>
+
+<h2 id="その他のフォーマット">その他のフォーマット</h2>
+
+<h6 id="base64フォーマット-1">BASE64フォーマット (1)</h6>
+
+<pre><code>$ certutil -f -encodehex test.txt test_hex.txt 1 &amp; type test_hex.txt
+入力長 = 23
+出力長 = 34
+CertUtil: -encodehex コマンドは正常に完了しました。
+YWJjZGVmZyANCjEyMzQ1Njc4OTAgDQo=
+</code></pre>
+
+<h6 id="hexフォーマット-4">HEXフォーマット (4)</h6>
+
+<pre><code>$ certutil -f -encodehex test.txt test_hex.txt 4 &amp; type test_hex.txt
+入力長 = 23
+出力長 = 72
+CertUtil: -encodehex コマンドは正常に完了しました。
+61 62 63 64 65 66 67 20  0d 0a 31 32 33 34 35 36
+37 38 39 30 20 0d 0a
+</code></pre>
+
+<h6 id="hexrawフォーマット-12">HEXRAWフォーマット (12）</h6>
+
+<pre><code>$ certutil -f -encodehex test.txt test_hex.txt 12 &amp; type test_hex.txt
+入力長 = 23
+出力長 = 48
+CertUtil: -encodehex コマンドは正常に完了しました。
+61626364656667200d0a31323334353637383930200d0a
+</code></pre>
+
+<h2 id="base64エンコード-デコード">BASE64エンコード／デコード</h2>
+
+<p>上記でBASE64フォーマットを指定できるが、以下でもBASE64エンコードとデコードができる。</p>
+
+<h6 id="base64エンコード">BASE64エンコード</h6>
+
+<pre><code>$ certutil -f -encode &lt;入力ファイル名&gt; &lt;出力ファイル名&gt;
+</code></pre>
+
+<h6 id="base64デコード">BASE64デコード</h6>
+
+<pre><code>$ certutil -f -decode &lt;入力ファイル名&gt; &lt;出力ファイル名&gt;
+</code></pre>
+
+<h2 id="例-1">例</h2>
+
+<pre><code>$ certutil -f -encode test.txt test64.txt &amp; type test64.txt
+入力長 = 23
+出力長 = 90
+CertUtil: -encode コマンドは正常に完了しました。
+-----BEGIN CERTIFICATE-----
+YWJjZGVmZyANCjEyMzQ1Njc4OTAgDQo=
+-----END CERTIFICATE-----
+
+$ certutil -f -decode test64.txt test2.txt &amp; type test2.txt
+入力長 = 90
+出力長 = 23
+CertUtil: -decode コマンドは正常に完了しました。
+abcdefg
+1234567890
+</code></pre>
+
+<h2 id="16進ダンプとbase64エンコード-デコードのバッチを送るメニューに追加">16進ダンプとBASE64エンコード／デコードのバッチを送るメニューに追加</h2>
+
+<p>certutilコマンドを使えば、16進ダンプやBASE64変換などができて便利ということがわかったが、いちいちコマンド実行するのは面倒くさいので、バッチファイルを作り右クリックの送るメニューで簡単に実行できるようにしてみる。</p>
+
+<p>以下の３ファイルを作成。</p>
+
+<p>次に、ファイル名を指定して実行で<code>shell:sendto</code>を入力して、送るメニューのフォルダを開き、そこにファイルを置いた。</p>
+
+<h2 id="16進ダンプ-bat">16進ダンプ.bat</h2>
+
+<pre><code>@echo off
+set outfile=certutilhex.txt
+certutil -f -encodehex &quot;%~1&quot; %outfile%
+type %outfile%
+del  %outfile%
+pause
+</code></pre>
+
+<h2 id="base64エンコード-bat">BASE64エンコード.bat</h2>
+
+<pre><code>@echo off
+set outfile=certutil_base64encode.txt
+certutil -f -encode &quot;%~1&quot; %outfile%
+type %outfile%
+del  %outfile%
+pause
+</code></pre>
+
+<h2 id="base64デコード-bat">BASE64デコード.bat</h2>
+
+<pre><code>@echo off
+set outfile=certutil_base64decode.txt
+certutil -f -decode &quot;%~1&quot; %outfile%
+type %outfile%
+del  %outfile%
+pause
+</code></pre>
+
+<h2 id="参考サイト">参考サイト</h2>
+
+<ul>
+<li><a href="http://d.hatena.ne.jp/EijiYoshida/20140618/1403092219">Windowsでファイルを16進数テキストに変換したり、16進数テキストをファイルに変換したりする方法</a></li>
+<li><a href="http://www.atmarkit.co.jp/ait/articles/0607/29/news017.html">debugコマンド</a></li>
+</ul>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="http://sohtaro.com/blog/2017/06/27/atom_snippet/" rel="prev">Atomでスニペット登録</a></span>
+    
+    
+      <span class="next"><a href="http://sohtaro.com/blog/2017/07/04/reading-sapience-history/" rel="next">サピエンス全史(上)の感想</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/icon.png" width="64" height="64"><br>
+      
+      Written by <a href="/about" >soHTaro</a>
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

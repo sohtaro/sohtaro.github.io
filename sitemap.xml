@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://sohtaro.com/blog/2017/07/04/reading-sapience-history/</loc>
+    <lastmod>2017-07-04T17:16:29+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sohtaro.com/blog/2017/07/04/cmd-certutil/</loc>
+    <lastmod>2017-07-04T14:47:55+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://sohtaro.com/blog/2017/06/27/atom_snippet/</loc>
     <lastmod>2017-06-27T16:12:19+09:00</lastmod>
   </url>
@@ -22,7 +32,7 @@
   </url>
   
   <url>
-    <loc>http://sohtaro.com/blog/2017/06/20/small-habit/</loc>
+    <loc>http://sohtaro.com/blog/2017/06/20/reading-small-habit/</loc>
     <lastmod>2017-06-20T23:01:34+09:00</lastmod>
   </url>
   
@@ -179,6 +189,12 @@
   </url>
   
   <url>
+    <loc>http://sohtaro.com/tags/batch/</loc>
+    <lastmod>2017-07-04T14:47:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://sohtaro.com/categories/</loc>
     <priority>0</priority>
   </url>
@@ -186,6 +202,12 @@
   <url>
     <loc>http://sohtaro.com/tags/centos/</loc>
     <lastmod>2017-06-03T10:29:43+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sohtaro.com/tags/cmd/</loc>
+    <lastmod>2017-07-04T14:47:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -239,7 +261,7 @@
   
   <url>
     <loc>http://sohtaro.com/post/</loc>
-    <lastmod>2017-06-27T16:12:19+09:00</lastmod>
+    <lastmod>2017-07-04T17:16:29+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -269,7 +291,7 @@
   
   <url>
     <loc>http://sohtaro.com/</loc>
-    <lastmod>2017-06-27T16:12:19+09:00</lastmod>
+    <lastmod>2017-07-04T17:16:29+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -305,7 +327,7 @@
   
   <url>
     <loc>http://sohtaro.com/tags/%E8%AA%AD%E6%9B%B8/</loc>
-    <lastmod>2017-06-20T23:01:34+09:00</lastmod>
+    <lastmod>2017-07-04T17:16:29+09:00</lastmod>
     <priority>0</priority>
   </url>
   

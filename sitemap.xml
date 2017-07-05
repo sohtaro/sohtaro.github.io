@@ -189,12 +189,6 @@
   </url>
   
   <url>
-    <loc>http://sohtaro.com/tags/batch/</loc>
-    <lastmod>2017-07-04T14:47:55+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://sohtaro.com/categories/</loc>
     <priority>0</priority>
   </url>
@@ -202,12 +196,6 @@
   <url>
     <loc>http://sohtaro.com/tags/centos/</loc>
     <lastmod>2017-06-03T10:29:43+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://sohtaro.com/tags/cmd/</loc>
-    <lastmod>2017-07-04T14:47:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -297,7 +285,7 @@
   
   <url>
     <loc>http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/</loc>
-    <lastmod>2017-06-26T15:46:46+09:00</lastmod>
+    <lastmod>2017-07-04T14:47:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -309,7 +297,7 @@
   
   <url>
     <loc>http://sohtaro.com/tags/%E3%83%90%E3%83%83%E3%83%81%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/</loc>
-    <lastmod>2017-06-26T15:46:46+09:00</lastmod>
+    <lastmod>2017-07-04T14:47:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   

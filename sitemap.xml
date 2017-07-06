@@ -107,13 +107,13 @@
   </url>
   
   <url>
-    <loc>http://sohtaro.com/blog/2017/05/24/hugo-quickstart/</loc>
-    <lastmod>2017-05-24T21:55:38+09:00</lastmod>
+    <loc>http://sohtaro.com/blog/2017/05/25/git-config-editor/</loc>
+    <lastmod>2017-05-25T11:47:28+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://sohtaro.com/blog/2017/05/24/git-config-editor/</loc>
-    <lastmod>2017-05-24T11:47:28+09:00</lastmod>
+    <loc>http://sohtaro.com/blog/2017/05/24/hugo-quickstart/</loc>
+    <lastmod>2017-05-24T21:55:38+09:00</lastmod>
   </url>
   
   <url>
@@ -189,19 +189,8 @@
   </url>
   
   <url>
-    <loc>http://sohtaro.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://sohtaro.com/tags/centos/</loc>
     <lastmod>2017-06-03T10:29:43+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://sohtaro.com/tags/editor/</loc>
-    <lastmod>2017-05-24T11:47:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   

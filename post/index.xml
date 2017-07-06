@@ -345,6 +345,20 @@ $ git rm a.</description>
     </item>
     
     <item>
+      <title>Gitで使うエディタを変更してみる</title>
+      <link>http://sohtaro.com/blog/2017/05/25/git-config-editor/</link>
+      <pubDate>Thu, 25 May 2017 11:47:28 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/05/25/git-config-editor/</guid>
+      <description>gitでコミットのメッセージを編集するときなどに使うエディタはviエディタが使われます(※)。viに慣れていない人にとっては他のエディタを使いたいかもしれません。ここではWindows環境で他のエディタを使用するように設定を変更してみます。
+(※)ただし、デフォルトエディタ(環境変数VISUALまたはEDITOR)が設定されている場合は、そのエディタが使われます。
+エディタを変更する エディタを変更するためには以下のコマンドを実行します。
+$ git config --global core.editor &amp;quot;エディタを実行するコマンド&amp;quot;  今回はサクラエディタに変更してみます。
+# パスにスペースがあるのでシングルクオーテーションで囲む # -CODE=4はUTF-8で開くためのサクラエディタのオプション # フォルダの区切りは「/」(スラッシュ) $ git config --global core.editor &amp;quot;&#39;C:/Program Files/sakura2-2-0-1_x64/sakura.exe&#39; -CODE=4&amp;quot; # サクラエディタの実行ファイルのフォルダにパスが通っている場合は以下でもOK $ git config --global core.editor &amp;quot;sakura.exe -CODE=4&amp;quot;  実際にファイルを用意し、コミットすると
+$ echo a &amp;gt; a.txt $ git add a.txt $ git commit a.txt  コミットメッセージのファイルがサクラエディタで開きました。 まとめ viに慣れてない、またはお気に入りのエディタがある人は変更するとよいでしょう。</description>
+    </item>
+    
+    <item>
       <title>Hugoを使いはじめる</title>
       <link>http://sohtaro.com/blog/2017/05/24/hugo-quickstart/</link>
       <pubDate>Wed, 24 May 2017 21:55:38 +0900</pubDate>
@@ -358,20 +372,6 @@ hugo new site [path]
 ここではC:\hugo\sitesにmysiteというサイトを作成する。
 $ mkdir c:\hugo\sites $ cd c:\hugo\sites $ hugo new site mysite $ tree . /F C:\HUGO\SITES\MYSITE │ config.toml │ ├─archetypes ├─content ├─data ├─layouts ├─static └─themes  1ファイル、6ディレクトリが作成された。
    ファイル/ディレクトリ 説明     config.toml サイト全体の設定ファイル。デフォルトでは設定ファイルはTOML形式だがYAMLまたはJSONも使用できる。   archetypes このディレクトリのdefault.mdの設定が新しい記事に適用される。   content サイトのコンテンツ(記事など)を置く。   data config.toml以外にサイト全体で使用する設定ファイルを置く。TOML、YAML、またはJSON形式。   layouts コンテンツを静的なサイトに変換するために使用するレイアウト(html)を置く。   static 画像、CSS、JavaScriptなどの静的コンテンツを置く。   themes サイトのテーマを置く。テーマは独自に作成することも可能。    記事作成 サイトディレクトリでhugo newコマンドを実行し記事を作成。</description>
-    </item>
-    
-    <item>
-      <title>Gitで使うエディタを変更してみる</title>
-      <link>http://sohtaro.com/blog/2017/05/24/git-config-editor/</link>
-      <pubDate>Wed, 24 May 2017 11:47:28 +0900</pubDate>
-      
-      <guid>http://sohtaro.com/blog/2017/05/24/git-config-editor/</guid>
-      <description>gitでコミットのメッセージを編集するときなどに使うエディタはviエディタが使われます(※)。viに慣れていない人にとっては他のエディタを使いたいかもしれません。ここではWindows環境で他のエディタを使用するように設定を変更してみます。
-(※)ただし、デフォルトエディタ(環境変数VISUALまたはEDITOR)が設定されている場合は、そのエディタが使われます。
-エディタを変更する エディタを変更するためには以下のコマンドを実行します。
-$ git config --global core.editor &amp;quot;エディタを実行するコマンド&amp;quot;  今回はサクラエディタに変更してみます。
-# パスにスペースがあるのでシングルクオーテーションで囲む # -CODE=4はUTF-8で開くためのサクラエディタのオプション # フォルダの区切りは「/」(スラッシュ) $ git config --global core.editor &amp;quot;&#39;C:/Program Files/sakura2-2-0-1_x64/sakura.exe&#39; -CODE=4&amp;quot; # サクラエディタの実行ファイルのフォルダにパスが通っている場合は以下でもOK $ git config --global core.editor &amp;quot;sakura.exe -CODE=4&amp;quot;  実際にファイルを用意し、コミットすると
-$ echo a &amp;gt; a.txt $ git add a.txt $ git commit a.txt  コミットメッセージのファイルがサクラエディタで開きました。 まとめ viに慣れてない、またはお気に入りのエディタがある人は変更するとよいでしょう。</description>
     </item>
     
     <item>

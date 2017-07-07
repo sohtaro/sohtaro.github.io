@@ -543,9 +543,18 @@ Markdownとは  文書を記述するための軽量マークアップ言語 HTM
     </item>
     
     <item>
-      <title>About</title>
-      <link>http://sohtaro.com/about/</link>
+      <title>お問い合わせ</title>
+      <link>http://sohtaro.com/contact/</link>
       <pubDate>Thu, 11 May 2017 21:26:46 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/contact/</guid>
+      <description>読み込んでいます...-- </description>
+    </item>
+    
+    <item>
+      <title>自己紹介＆このブログについて</title>
+      <link>http://sohtaro.com/about/</link>
+      <pubDate>Thu, 11 May 2017 10:28:46 +0900</pubDate>
       
       <guid>http://sohtaro.com/about/</guid>
       <description>自己紹介 はじめまして、soHTaroです。プログラマをしています。
@@ -559,15 +568,6 @@ etc  好きな言葉  人間万事塞翁が馬
 好きな数字 28 (息子の誕生日 かつ 完全数なので)
 好きな本のジャンル IT、科学、哲学、仏教、数学、世界史、健康など（読書リストはこちら）
 よろしくお願いします。</description>
-    </item>
-    
-    <item>
-      <title>お問い合わせ</title>
-      <link>http://sohtaro.com/contact/</link>
-      <pubDate>Thu, 11 May 2017 21:26:46 +0900</pubDate>
-      
-      <guid>http://sohtaro.com/contact/</guid>
-      <description>読み込んでいます...-- </description>
     </item>
     
   </channel>

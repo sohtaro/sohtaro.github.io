@@ -6,10 +6,23 @@
     <description>Recent content in Posts on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 04 Jul 2017 17:16:29 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Aug 2017 15:01:28 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Windows Server2012でチャームを表示するショットカット</title>
+      <link>http://sohtaro.com/blog/2017/08/01/windows-shortcut-charm/</link>
+      <pubDate>Tue, 01 Aug 2017 15:01:28 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/08/01/windows-shortcut-charm/</guid>
+      <description>Windows Server2012をGUIでシャットダウンをするにはWindowsボタンでスタート画面を表示し、マウスポインタを画面右上に移動させ、[チャーム」を表示し、[設定]をクリック、[電源]をクリックしてメニューから[シャットダウン]を選んでいるのだが、[チャーム]を表示するのが面倒くさいのでショットカットがないか調べてみた。
+ありました。
+Windowsボタン + C。
+これでマウスポインターを右上に合わせる必要もなく一発でチャームが開くのでかなり便利なのだが、[設定]チャームを直接開くショットカットもあった。
+   操作 キー     チャームを表示 Windows + C   設定チャームを表示 Windows + I    めちゃめちゃ便利です。シャットダウンがうんと楽になりそう。</description>
+    </item>
     
     <item>
       <title>サピエンス全史(上)の感想</title>

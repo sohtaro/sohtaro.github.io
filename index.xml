@@ -6,17 +6,29 @@
     <description>Recent content on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Oct 2017 13:22:03 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Oct 2017 13:50:02 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>コマンドプロンプトでファイル比較</title>
-      <link>http://sohtaro.com/blog/2017/10/16/cmd-fc/</link>
-      <pubDate>Mon, 16 Oct 2017 13:22:03 +0900</pubDate>
+      <title>ファイルのタイムスタンプを変更</title>
+      <link>http://sohtaro.com/blog/2017/10/16/ps1-change-timestamp/</link>
+      <pubDate>Mon, 16 Oct 2017 13:50:02 +0900</pubDate>
       
-      <guid>http://sohtaro.com/blog/2017/10/16/cmd-fc/</guid>
+      <guid>http://sohtaro.com/blog/2017/10/16/ps1-change-timestamp/</guid>
+      <description> ハウスキープ処理などで指定の日数経過したファイルを削除するテストを行うとき、ファイルの更新日時を過去の日付に変更したい場合がある。PowerShellで作成日時や更新日時を変更できるようなのでメモしておく。
+作成日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name CreationTime -Value &amp;quot;日時&amp;quot;  更新日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name LastWriteTime -Value &amp;quot;日時&amp;quot;  日時には&amp;rdquo;2017/10/16 13:55:20&amp;rdquo;のような形式で指定する
+実行例 複数ファイルの更新日時を７日前の日付に変更する場合
+PS&amp;gt; $previous_days=7 PS&amp;gt; $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&amp;quot;yyyy/MM/dd HH:mm:ss&amp;quot;) PS&amp;gt; Get-ChildItem -Path &amp;quot;C:\test\*.txt&amp;quot; | Where-Object { $_ -is [System.IO.FileInfo] } | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &amp;quot;$previous_date&amp;quot; }  </description>
+    </item>
+    
+    <item>
+      <title>コマンドプロンプトでファイル比較</title>
+      <link>http://sohtaro.com/blog/2017/10/15/cmd-fc/</link>
+      <pubDate>Sun, 15 Oct 2017 13:22:03 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/10/15/cmd-fc/</guid>
       <description>普段ファイル比較をする場合、WinMergeを使用しているが、WinMergeがない環境で比較したい場合がたまにある。 そんなわけで、コマンドプロンプトで比較するコマンドfcについてメモしておく。
 コマンド構文 fc オプション ファイル1 ファイル2  オプション よく使いそうなオプションは以下。
    オプション 説明     /C 英字の大文字と小文字を区別しない   /B バイナリの比較   /L ASCIIテキストとして比較(デフォルト)   /N ASCIIの比較で行番号を表示   /U Unicodeテキストファイルとして比較    実行例 &amp;gt; fc /N a.txt b.txt ファイル a.txt と B.TXT を比較しています ***** a.txt 1: abc 2: def 3: ghi ***** B.TXT 1: abc 2: DEF 3: ghi ***** # 大文字小文字を区別しないで比較 &amp;gt; fc /C /N a.</description>

@@ -30,15 +30,6 @@
     </item>
     
     <item>
-      <title>Design Pattern</title>
-      <link>http://sohtaro.com/tags/design-pattern/</link>
-      <pubDate>Mon, 26 Jun 2017 14:38:39 +0900</pubDate>
-      
-      <guid>http://sohtaro.com/tags/design-pattern/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Git</title>
       <link>http://sohtaro.com/tags/git/</link>
       <pubDate>Mon, 19 Jun 2017 14:56:48 +0900</pubDate>
@@ -93,11 +84,11 @@
     </item>
     
     <item>
-      <title>Tortoisegit</title>
-      <link>http://sohtaro.com/tags/tortoisegit/</link>
-      <pubDate>Tue, 30 May 2017 22:26:07 +0900</pubDate>
+      <title>Powershell</title>
+      <link>http://sohtaro.com/tags/powershell/</link>
+      <pubDate>Mon, 16 Oct 2017 13:50:02 +0900</pubDate>
       
-      <guid>http://sohtaro.com/tags/tortoisegit/</guid>
+      <guid>http://sohtaro.com/tags/powershell/</guid>
       <description></description>
     </item>
     
@@ -111,11 +102,11 @@
     </item>
     
     <item>
-      <title>コマンドプロンプト</title>
-      <link>http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/</link>
-      <pubDate>Mon, 16 Oct 2017 13:22:03 +0900</pubDate>
+      <title>Windowsコマンド</title>
+      <link>http://sohtaro.com/tags/windows%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/</link>
+      <pubDate>Sun, 15 Oct 2017 13:22:03 +0900</pubDate>
       
-      <guid>http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/</guid>
+      <guid>http://sohtaro.com/tags/windows%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/</guid>
       <description></description>
     </item>
     
@@ -125,6 +116,15 @@
       <pubDate>Tue, 01 Aug 2017 15:01:28 +0900</pubDate>
       
       <guid>http://sohtaro.com/tags/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E3%82%AB%E3%83%83%E3%83%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>デザインパターン</title>
+      <link>http://sohtaro.com/tags/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3/</link>
+      <pubDate>Mon, 26 Jun 2017 14:38:39 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/tags/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3/</guid>
       <description></description>
     </item>
     

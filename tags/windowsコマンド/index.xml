@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>コマンドプロンプト on soHTaro.com</title>
-    <link>http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/</link>
-    <description>Recent content in コマンドプロンプト on soHTaro.com</description>
+    <title>Windowsコマンド on soHTaro.com</title>
+    <link>http://sohtaro.com/tags/windows%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/</link>
+    <description>Recent content in Windowsコマンド on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Oct 2017 13:22:03 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 13:22:03 +0900</lastBuildDate>
     
-	<atom:link href="http://sohtaro.com/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://sohtaro.com/tags/windows%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>コマンドプロンプトでファイル比較</title>
-      <link>http://sohtaro.com/blog/2017/10/16/cmd-fc/</link>
-      <pubDate>Mon, 16 Oct 2017 13:22:03 +0900</pubDate>
+      <link>http://sohtaro.com/blog/2017/10/15/cmd-fc/</link>
+      <pubDate>Sun, 15 Oct 2017 13:22:03 +0900</pubDate>
       
-      <guid>http://sohtaro.com/blog/2017/10/16/cmd-fc/</guid>
+      <guid>http://sohtaro.com/blog/2017/10/15/cmd-fc/</guid>
       <description>普段ファイル比較をする場合、WinMergeを使用しているが、WinMergeがない環境で比較したい場合がたまにある。 そんなわけで、コマンドプロンプトで比較するコマンドfcについてメモしておく。
 コマンド構文 fc オプション ファイル1 ファイル2  オプション よく使いそうなオプションは以下。
    オプション 説明     /C 英字の大文字と小文字を区別しない   /B バイナリの比較   /L ASCIIテキストとして比較(デフォルト)   /N ASCIIの比較で行番号を表示   /U Unicodeテキストファイルとして比較    実行例 &amp;gt; fc /N a.txt b.txt ファイル a.txt と B.TXT を比較しています ***** a.txt 1: abc 2: def 3: ghi ***** B.TXT 1: abc 2: DEF 3: ghi ***** # 大文字小文字を区別しないで比較 &amp;gt; fc /C /N a.</description>

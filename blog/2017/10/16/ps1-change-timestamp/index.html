@@ -22,21 +22,21 @@
     <title>ファイルのタイムスタンプを変更 - soHTaro.com</title>
     
 
-<meta name="description" content=" ハウスキープ処理などで指定の日数経過したファイルを削除するテストを行うとき、ファイルの更新日時を過去の日付に変更したい場合がある。PowerShellで作成日時や更新日時を変更できるようなのでメモしておく。作成日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name CreationTime -Value &amp;quot;日時&amp;quot;  更新日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name LastWriteTime -Value &amp;quot;日時&amp;quot;  日時には&amp;rdquo;2017/10/16 13:55:20&amp;rdquo;のような形式で指定する実行例 複数ファイルの更新日時を７日前の日付に変更する場合PS&amp;gt; $previous_days=7 PS&amp;gt; $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&amp;quot;yyyy/MM/dd HH:mm:ss&amp;quot;) PS&amp;gt; Get-ChildItem -Path &amp;quot;C:\test\*.txt&amp;quot; | Where-Object { $_ -is [System.IO.FileInfo] } | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &amp;quot;$previous_date&amp;quot; }  ">
+<meta name="description" content=" ハウスキープ処理などで指定の日数経過したファイルを削除するテストを行うとき、ファイルの更新日時を過去の日付に変更したい場合がある。PowerShellで作成日時や更新日時を変更できるようなのでメモしておく。作成日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name CreationTime -Value &amp;quot;日時&amp;quot;  更新日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name LastWriteTime -Value &amp;quot;日時&amp;quot;  日時には&amp;rdquo;2017/10/16 13:55:20&amp;rdquo;のような形式で指定する実行例 複数ファイルの更新日時を７日前の日付に変更する$previous_days=7 $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&amp;quot;yyyy/MM/dd HH:mm:ss&amp;quot;) $filesPath=&amp;quot;C:\script\CleanUp\test\LC\bkup_a\b\*.txt&amp;quot; Get-ChildItem -Path $filesPath ` | Where-Object { $_ -is [System.IO.FileInfo] } ` | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &amp;quot;$previous_date&amp;quot; }  ">
 
 <meta property="og:title" content="ファイルのタイムスタンプを変更 - soHTaro.com">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://sohtaro.com/blog/2017/10/16/ps1-change-timestamp/">
 <meta property="og:image" content="http://sohtaro.com/images/thumbnail/powershell.png">
 <meta property="og:site_name" content="soHTaro.com">
-<meta property="og:description" content=" ハウスキープ処理などで指定の日数経過したファイルを削除するテストを行うとき、ファイルの更新日時を過去の日付に変更したい場合がある。PowerShellで作成日時や更新日時を変更できるようなのでメモしておく。作成日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name CreationTime -Value &amp;quot;日時&amp;quot;  更新日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name LastWriteTime -Value &amp;quot;日時&amp;quot;  日時には&amp;rdquo;2017/10/16 13:55:20&amp;rdquo;のような形式で指定する実行例 複数ファイルの更新日時を７日前の日付に変更する場合PS&amp;gt; $previous_days=7 PS&amp;gt; $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&amp;quot;yyyy/MM/dd HH:mm:ss&amp;quot;) PS&amp;gt; Get-ChildItem -Path &amp;quot;C:\test\*.txt&amp;quot; | Where-Object { $_ -is [System.IO.FileInfo] } | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &amp;quot;$previous_date&amp;quot; }  ">
+<meta property="og:description" content=" ハウスキープ処理などで指定の日数経過したファイルを削除するテストを行うとき、ファイルの更新日時を過去の日付に変更したい場合がある。PowerShellで作成日時や更新日時を変更できるようなのでメモしておく。作成日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name CreationTime -Value &amp;quot;日時&amp;quot;  更新日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name LastWriteTime -Value &amp;quot;日時&amp;quot;  日時には&amp;rdquo;2017/10/16 13:55:20&amp;rdquo;のような形式で指定する実行例 複数ファイルの更新日時を７日前の日付に変更する$previous_days=7 $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&amp;quot;yyyy/MM/dd HH:mm:ss&amp;quot;) $filesPath=&amp;quot;C:\script\CleanUp\test\LC\bkup_a\b\*.txt&amp;quot; Get-ChildItem -Path $filesPath ` | Where-Object { $_ -is [System.IO.FileInfo] } ` | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &amp;quot;$previous_date&amp;quot; }  ">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="soHTaro.com">
 <meta name="twitter:url" content="http://sohtaro.com/blog/2017/10/16/ps1-change-timestamp/">
 <meta name="twitter:title" content="ファイルのタイムスタンプを変更 - soHTaro.com">
-<meta name="twitter:description" content=" ハウスキープ処理などで指定の日数経過したファイルを削除するテストを行うとき、ファイルの更新日時を過去の日付に変更したい場合がある。PowerShellで作成日時や更新日時を変更できるようなのでメモしておく。作成日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name CreationTime -Value &amp;quot;日時&amp;quot;  更新日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name LastWriteTime -Value &amp;quot;日時&amp;quot;  日時には&amp;rdquo;2017/10/16 13:55:20&amp;rdquo;のような形式で指定する実行例 複数ファイルの更新日時を７日前の日付に変更する場合PS&amp;gt; $previous_days=7 PS&amp;gt; $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&amp;quot;yyyy/MM/dd HH:mm:ss&amp;quot;) PS&amp;gt; Get-ChildItem -Path &amp;quot;C:\test\*.txt&amp;quot; | Where-Object { $_ -is [System.IO.FileInfo] } | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &amp;quot;$previous_date&amp;quot; }  ">
+<meta name="twitter:description" content=" ハウスキープ処理などで指定の日数経過したファイルを削除するテストを行うとき、ファイルの更新日時を過去の日付に変更したい場合がある。PowerShellで作成日時や更新日時を変更できるようなのでメモしておく。作成日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name CreationTime -Value &amp;quot;日時&amp;quot;  更新日時を変更する構文 PS&amp;gt; Set-ItemProperty &amp;lt;ファイル&amp;gt; -Name LastWriteTime -Value &amp;quot;日時&amp;quot;  日時には&amp;rdquo;2017/10/16 13:55:20&amp;rdquo;のような形式で指定する実行例 複数ファイルの更新日時を７日前の日付に変更する$previous_days=7 $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&amp;quot;yyyy/MM/dd HH:mm:ss&amp;quot;) $filesPath=&amp;quot;C:\script\CleanUp\test\LC\bkup_a\b\*.txt&amp;quot; Get-ChildItem -Path $filesPath ` | Where-Object { $_ -is [System.IO.FileInfo] } ` | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &amp;quot;$previous_date&amp;quot; }  ">
 <meta name="twitter:image" content="http://sohtaro.com/images/thumbnail/powershell.png">
 
 
@@ -73,8 +73,8 @@
     },
     "description": " ハウスキープ処理などで指定の日数経過したファイルを削除するテストを行うとき、ファイルの更新日時を過去の日付に変更したい場合がある。PowerShellで作成日時や更新日時を変更できるようなのでメモしておく。
 作成日時を変更する構文 PS&gt; Set-ItemProperty &lt;ファイル&gt; -Name CreationTime -Value &quot;日時&quot;  更新日時を変更する構文 PS&gt; Set-ItemProperty &lt;ファイル&gt; -Name LastWriteTime -Value &quot;日時&quot;  日時には&rdquo;2017/10/16 13:55:20&rdquo;のような形式で指定する
-実行例 複数ファイルの更新日時を７日前の日付に変更する場合
-PS&gt; $previous_days=7 PS&gt; $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;) PS&gt; Get-ChildItem -Path &quot;C:\test\*.txt&quot; | Where-Object { $_ -is [System.IO.FileInfo] } | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &quot;$previous_date&quot; }  "
+実行例 複数ファイルの更新日時を７日前の日付に変更する
+$previous_days=7 $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;) $filesPath=&quot;C:\script\CleanUp\test\LC\bkup_a\b\*.txt&quot; Get-ChildItem -Path $filesPath ` | Where-Object { $_ -is [System.IO.FileInfo] } ` | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &quot;$previous_date&quot; }  "
   }
 </script>
 
@@ -149,11 +149,14 @@ PS&gt; $previous_days=7 PS&gt; $previous_date=($(Get-Date).AddDays(-$previous_da
 
 <h2 id="実行例">実行例</h2>
 
-<p>複数ファイルの更新日時を７日前の日付に変更する場合</p>
+<p>複数ファイルの更新日時を７日前の日付に変更する</p>
 
-<pre><code>PS&gt; $previous_days=7
-PS&gt; $previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;)
-PS&gt; Get-ChildItem -Path &quot;C:\test\*.txt&quot; | Where-Object { $_ -is [System.IO.FileInfo] }
+<pre><code>$previous_days=7
+$previous_date=($(Get-Date).AddDays(-$previous_days)).ToString(&quot;yyyy/MM/dd HH:mm:ss&quot;)
+$filesPath=&quot;C:\script\CleanUp\test\LC\bkup_a\b\*.txt&quot;
+
+Get-ChildItem -Path $filesPath `
+  | Where-Object { $_ -is [System.IO.FileInfo] } `
   | ForEach-Object { Set-ItemProperty $_.FullName -Name LastWriteTime -Value &quot;$previous_date&quot; }
 </code></pre>
 </div>

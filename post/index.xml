@@ -6,10 +6,25 @@
     <description>Recent content in Posts on soHTaro.com</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Oct 2017 13:50:02 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 08 Dec 2017 10:04:08 +0900</lastBuildDate>
     
 	<atom:link href="http://sohtaro.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SQL Developerでタブを固定する方法</title>
+      <link>http://sohtaro.com/blog/2017/12/08/sqldevelopper-fix-tab/</link>
+      <pubDate>Fri, 08 Dec 2017 10:04:08 +0900</pubDate>
+      
+      <guid>http://sohtaro.com/blog/2017/12/08/sqldevelopper-fix-tab/</guid>
+      <description>Oracle SQL Developperでテーブルを開くとすでに開いているテーブルのタブが更新されてしまう。
+新しいタブで開くにはどうすればよいのか。解決方法は二つ。
+コンテンツの凍結 左にある「コンテンツの凍結」のアイコンをクリックするとこのテーブルのタブは固定され、新しいタブで開くことができる。
+ただし、新しく開いたテーブルは固定されていない。
+設定変更 開いたテーブルすべてに対して固定するのは面倒くさいので設定変更する。
+[ツール]-[プレファレンス]を開く。
+プリファレンスで[データベース]-[ObjectViewer]-[オブジェクト・ビューア・ウィンドウの自動固定]をチェックする。 これで常に新しいタブで開くことができる。</description>
+    </item>
     
     <item>
       <title>ファイルのタイムスタンプを変更</title>
